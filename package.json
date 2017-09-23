@@ -4,25 +4,47 @@
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "start:watch": "nodemon",
-    "prestart:prod": "tsc",
-    "start:prod": "node dist/server.js"
+    "start": "npm run server",
+    "server": "ts-node -F app/server",
+    "server:inspect": "ts-node --inspect -F app/server",
+    "start:dev": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
+    "start:dev:v": "npm run start:dev -- --verbose",
+    "test": "npm run eslint && npm run tscheck && npm run t",
+    "t": "echo no tests",
+    "test:w": "echo no tests",
+    "tscheck": "echo tscheck... && tsc --noEmit",
+    "tscheck:w": "npm run tscheck -- --watch",
+    "eslint": "eslint --ext ts app",
+    "eslint:w": "gulp eslint:w"
   },
   "dependencies": {
-    "@nestjs/common": "^4.0.0",
-    "@nestjs/core": "^4.0.0",
-    "@nestjs/microservices": "^4.0.0",
-    "@nestjs/testing": "^4.0.0",
-    "@nestjs/websockets": "^4.0.0",
-    "redis": "^2.7.1",
-    "reflect-metadata": "^0.1.10",
-    "rxjs": "^5.4.0",
-    "typescript": "^2.5.2"
+    "@nestjs/common": "4.0.2",
+    "@nestjs/core": "4.0.2",
+    "@nestjs/microservices": "4.0.2",
+    "@nestjs/testing": "4.0.2",
+    "@nestjs/websockets": "4.0.2",
+    "redis": "2.8.0",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.4.3",
+    "tslib": "1.7.1",
+    "typescript": "2.5.2"
   },
   "devDependencies": {
-    "@types/node": "^8.0.28",
-    "nodemon": "^1.12.1",
-    "ts-node": "^3.3.0"
+    "@types/node": "8.0.30",
+    "nodemon": "1.12.1",
+    "ts-node": "3.3.0",
+    "eslint": "4.7.2",
+    "eslint-import-resolver-node": "0.3.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-typescript": "0.7.0",
+    "eslint-plugin-unicorn": "2.1.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-eslint": "4.0.0",
+    "gulp-if": "2.0.2",
+    "gulp-ignore": "2.0.2",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-memory-cache": "0.3.0",
+    "typescript": "2.5.2",
+    "typescript-eslint-parser": "8.0.0"
   }
 }
