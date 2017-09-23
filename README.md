@@ -2,19 +2,24 @@
 
 The [Nest](https://github.com/unlight/nest-typescript-starter) framework starter repository. 
 
-## Installation
-
+Installation
+---
 ```
 $ npm install
 ```
 
-## Start
-
+Start
+---
 ```
 $ npm run start
 ```
 
-## People
-
+People
+---
 - Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
 - Website - [http://nestjs.com](http://nestjs.com/)
+
+TODO
+---
+* example route/controller
+* example unit test
