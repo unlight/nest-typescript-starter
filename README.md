@@ -1,6 +1,6 @@
 [![Nest Logo](http://kamilmysliwiec.com/public/nest-logo.png)](http://nestjs.com/)
 
-The [Nest](https://github.com/kamilmysliwiec/nest) framework starter repository. 
+The [Nest](https://github.com/unlight/nest-typescript-starter) framework starter repository. 
 
 ## Installation
 
@@ -16,5 +16,5 @@ $ npm run start
 
 ## People
 
-- Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
+- Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
 - Website - [http://nestjs.com](http://nestjs.com/)
