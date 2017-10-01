@@ -21,6 +21,7 @@ module.exports = {
         "no-undef": 0,
         "no-unused-vars": 0,
         "no-console": 0,
+        "indent": 0,
         "import/newline-after-import": 1,
         "import/no-duplicates": 1,
         "import/max-dependencies": [1, { "max": 10 }],
