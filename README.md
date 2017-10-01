@@ -21,5 +21,4 @@ People
 
 TODO
 ---
-* example route/controller
 * example unit test

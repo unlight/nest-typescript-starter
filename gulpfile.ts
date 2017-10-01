@@ -1,5 +1,4 @@
-/// <reference path="node_modules/@types/node/index.d.ts" />
-/// <reference path="node_modules/typescript/lib/lib.es2015.d.ts" />
+/// <reference types="node" />
 import * as fs from 'fs';
 const gulp = require('gulp');
 const g = require('gulp-load-plugins')();
