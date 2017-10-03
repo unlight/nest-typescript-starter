@@ -26,7 +26,6 @@ module.exports = {
         "import/no-duplicates": 1,
         "import/max-dependencies": [1, { "max": 10 }],
         "import/newline-after-import": 0,
-        "indent": ["warn", 4],
         "quotes": [1, "single", { "allowTemplateLiterals": true }],
         "semi": ["warn", "always"],
     }

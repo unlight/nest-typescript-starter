@@ -18,7 +18,10 @@
     "tsclint:w": "npm run tsclint -- --watch",
     "eslint": "eslint --ext ts app",
     "eslint:fix": "eslint app --ext \"ts\" --fix",
-    "eslint:w": "gulp eslint:w"
+    "eslint:w": "gulp eslint:w",
+    "lint:w": "npm run concurrently -- \"npm run tsclint:w\" \"npm run eslint:w\"",
+    "concurrently": "concurrently",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@nestjs/common": "4.0.2",
@@ -35,6 +38,7 @@
   "devDependencies": {
     "@types/express": "4.0.37",
     "@types/node": "8.0.30",
+    "concurrently": "3.5.0",
     "eslint": "4.7.2",
     "eslint-import-resolver-node": "0.3.1",
     "eslint-plugin-import": "2.7.0",
