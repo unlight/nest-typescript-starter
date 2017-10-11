@@ -21,4 +21,5 @@ People
 
 TODO
 ---
-* example unit test
+
+* example typeorm

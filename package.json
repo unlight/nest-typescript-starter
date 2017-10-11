@@ -10,8 +10,8 @@
     "start:dev": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "start:dev:v": "npm run start:dev -- --verbose",
     "test": "npm run eslint && npm run tscheck && npm run t",
-    "t": "echo no tests",
-    "test:w": "echo no tests",
+    "t": "jest",
+    "test:w": "jest --watch",
     "tscheck": "echo tscheck... && tsc --noEmit",
     "tscheck:w": "npm run tscheck -- --watch",
     "tsclint": "npm run tsc -- --noEmit --pretty false --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
@@ -22,6 +22,17 @@
     "lint:w": "npm run concurrently -- \"npm run tsclint:w\" \"npm run eslint:w\"",
     "concurrently": "concurrently",
     "tsc": "tsc"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(test|spec)\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   },
   "dependencies": {
     "@nestjs/common": "4.0.3",
@@ -36,6 +47,7 @@
   },
   "devDependencies": {
     "@types/express": "4.0.37",
+    "@types/jest": "21.1.2",
     "@types/node": "8.0.32",
     "concurrently": "3.5.0",
     "eslint": "4.8.0",
@@ -49,7 +61,9 @@
     "gulp-ignore": "2.0.2",
     "gulp-load-plugins": "1.5.0",
     "gulp-memory-cache": "0.3.0",
+    "jest": "21.2.1",
     "nodemon": "1.12.1",
+    "ts-jest": "21.1.2",
     "ts-node": "3.3.0",
     "typescript": "2.5.3",
     "typescript-eslint-parser": "8.0.0"
