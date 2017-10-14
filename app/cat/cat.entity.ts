@@ -1,11 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Cat {
 
-    @PrimaryGeneratedColumn()
+    @ObjectIdColumn()
     id: number;
 
-    @Column({ length: 500 })
+    @Column({ length: 250 })
     name: string;
 }

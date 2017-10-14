@@ -1,5 +1,4 @@
 [![Nest Logo](http://kamilmysliwiec.com/public/nest-logo.png)](http://nestjs.com/)
-
 The [Nest](https://github.com/unlight/nest-typescript-starter) framework starter repository. 
 
 STACK
@@ -15,11 +14,23 @@ INSTALLATION
 $ npm install
 ```
 
-START
+TASKS
 ---
-```
-$ npm run start
-```
+| Command              | Description                                       |
+|:---------------------|:--------------------------------------------------|
+| `npm start`          | Start application                                 |
+| `npm run start:dev`  | Start application in development mode             |
+| `npm test`           | Run all tests                                     |
+| `npm run t`          | Run unit tests                                    |
+| `npm run test:w`     | Run unit tests in watch mode                      |
+| `npm run tscheck`    | Run TypeScript checks                             |
+| `npm run tscheck:w`  | Run TypeScript checks in watch mode               |
+| `npm run tsclint`    | Run TypeScript more stricter checks               |
+| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode |
+| `npm run eslint`     | Run ESLint                                        |
+| `npm run eslint:w`   | Run ESLint in watch mode                          |
+| `npm run eslint:fix` | Run ESLint in fix mode                            |
+| `npm run lint:w`     | Run all linting commands in watch mode            |
 
 PEOPLE
 ---

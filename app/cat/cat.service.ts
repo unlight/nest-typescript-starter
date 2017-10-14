@@ -1,6 +1,7 @@
 import { Component, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Cat } from './cat.entity';
+import { CreateCatDTO } from './create-cat-dto';
 
 @Component()
 export class CatService {
@@ -13,12 +14,9 @@ export class CatService {
         return await this.catRepository.find();
     }
 
-    async create(cat: Cat) {
-        try {
-            return await this.catRepository.save(cat);
-        } catch (err) {
-            debugger;
-        }
-
+    async create(createCatDTO: CreateCatDTO) {
+        const cat = this.catRepository.create(createCatDTO);
+        await this.catRepository.save(cat);
+        return { data: cat.id, message: 'New cat created successfully.' };
     }
 }

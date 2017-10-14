@@ -1,6 +1,7 @@
 import { Controller, Get, Res, Req, Body, HttpStatus, Post  } from '@nestjs/common';
 import { Response, Request } from 'express';
 import { CatService } from './cat.service';
+import { CreateCatDTO } from './create-cat-dto';
 
 @Controller('/cat')
 export class CatController {
@@ -15,8 +16,7 @@ export class CatController {
     }
 
     @Post('/')
-    async createCat(@Req() req: Request, @Body() body: any) {
-        debugger;
+    async createCat(@Req() req: Request, @Body() body: CreateCatDTO) {
         return this.catService.create(body);
     }
 }
