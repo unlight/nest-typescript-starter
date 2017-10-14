@@ -2,24 +2,34 @@
 
 The [Nest](https://github.com/unlight/nest-typescript-starter) framework starter repository. 
 
-Installation
+STACK
+---
+* TypeScript
+* ESLint
+* Jest
+* TypeORM (MongoDB)
+
+INSTALLATION
 ---
 ```
 $ npm install
 ```
 
-Start
+START
 ---
 ```
 $ npm run start
 ```
 
-People
+PEOPLE
 ---
 - Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
 - Website - [http://nestjs.com](http://nestjs.com/)
 
 TODO
 ---
-
-* example typeorm
+* SQL (TypeORM)
+* MongoDB (Mongoose)
+* Swagger
+* GraphQL
+* DTO object validation

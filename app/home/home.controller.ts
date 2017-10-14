@@ -1,4 +1,4 @@
-import { Controller, Get, Res, Req, Body, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Res, Req, Body, HttpStatus, Post } from '@nestjs/common';
 import { Response, Request } from 'express';
 import { HomeService } from './home.service';
 
@@ -20,10 +20,4 @@ export class HomeController {
         const { name } = req.params;
         res.status(HttpStatus.OK).json(['Hello', name]);
     }
-
-    @Get('/cats')
-    async cats() {
-        return this.homeService.findAll();
-    }
-
 }

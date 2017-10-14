@@ -40,10 +40,13 @@
     "@nestjs/microservices": "4.0.2",
     "@nestjs/testing": "4.0.2",
     "@nestjs/websockets": "4.0.2",
+    "body-parser": "1.18.2",
+    "mongodb": "2.2.33",
     "redis": "2.8.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.4.3",
-    "tslib": "1.7.1"
+    "tslib": "1.7.1",
+    "typeorm": "0.1.0"
   },
   "devDependencies": {
     "@types/express": "4.0.37",
