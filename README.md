@@ -39,8 +39,8 @@ PEOPLE
 
 TODO
 ---
-* SQL (TypeORM)
-* MongoDB (Mongoose)
+* Pipe
+* TypeORM (MySQL, Mongoose)
+* DTO object validation
 * Swagger
 * GraphQL
-* DTO object validation
