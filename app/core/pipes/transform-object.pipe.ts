@@ -19,8 +19,7 @@ export class TransformObjectPipe implements PipeTransform<any> {
         return object;
     }
 
-    private toValidate(metatype): boolean {
-        const types = [String, Boolean, Number, Array, Object];
-        return !types.find((type) => metatype === type);
+    private toValidate(type): boolean {
+        return ![String, Boolean, Number, Array, Object].includes(type);
     }
 }
