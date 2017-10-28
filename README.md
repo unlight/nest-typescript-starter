@@ -39,8 +39,10 @@ PEOPLE
 
 TODO
 ---
-* Pipe
+* Guard
 * TypeORM (MySQL, Mongoose)
 * DTO object validation
 * Swagger
 * GraphQL
+* https://github.com/adrien2p/nestjs-graphql
+* https://github.com/pleerock/class-validator
