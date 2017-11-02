@@ -16,21 +16,22 @@ $ npm install
 
 TASKS
 ---
-| Command              | Description                                       |
-|:---------------------|:--------------------------------------------------|
-| `npm start`          | Start application                                 |
-| `npm run start:dev`  | Start application in development mode             |
-| `npm test`           | Run all tests                                     |
-| `npm run t`          | Run unit tests                                    |
-| `npm run test:w`     | Run unit tests in watch mode                      |
-| `npm run tscheck`    | Run TypeScript checks                             |
-| `npm run tscheck:w`  | Run TypeScript checks in watch mode               |
-| `npm run tsclint`    | Run TypeScript more stricter checks               |
-| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode |
-| `npm run eslint`     | Run ESLint                                        |
-| `npm run eslint:w`   | Run ESLint in watch mode                          |
-| `npm run eslint:fix` | Run ESLint in fix mode                            |
-| `npm run lint:w`     | Run all linting commands in watch mode            |
+| Command                | Description                                       |
+|:-----------------------|:--------------------------------------------------|
+| `npm start`            | Start application                                 |
+| `npm run start:dev`    | Start application in development mode             |
+| `npm run start:debug`  | Start application in debug mode                   |
+| `npm test`             | Run all tests                                     |
+| `npm run t`            | Run unit tests                                    |
+| `npm run test:w`       | Run unit tests in watch mode                      |
+| `npm run tscheck`      | Run TypeScript checks                             |
+| `npm run tscheck:w`    | Run TypeScript checks in watch mode               |
+| `npm run tsclint`      | Run TypeScript more stricter checks               |
+| `npm run tsclint:w`    | Run TypeScript more stricter checks in watch mode |
+| `npm run eslint`       | Run ESLint                                        |
+| `npm run eslint:w`     | Run ESLint in watch mode                          |
+| `npm run eslint:fix`   | Run ESLint in fix mode                            |
+| `npm run lint:w`       | Run all linting commands in watch mode            |
 
 PEOPLE
 ---
@@ -39,10 +40,11 @@ PEOPLE
 
 TODO
 ---
-* Guard
+* Pure start (no need mongodb)
+* Interceptors
 * TypeORM (MySQL, Mongoose)
 * DTO object validation
-* Swagger
+* Swagger https://github.com/nestjs/swagger
 * GraphQL
 * https://github.com/adrien2p/nestjs-graphql
 * https://github.com/pleerock/class-validator

@@ -7,6 +7,7 @@
     "start": "npm run server",
     "server": "ts-node -F app/server",
     "server:debug": "ts-node --inspect -F app/server",
+    "start:debug": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node --inspect -F app/server\"",
     "start:dev": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "start:dev:v": "npm run start:dev -- --verbose",
     "test": "npm run eslint && npm run tscheck && npm run t",
@@ -68,7 +69,7 @@
     "nodemon": "1.12.1",
     "ts-jest": "21.1.4",
     "ts-node": "3.3.0",
-    "typescript": "2.5.3",
+    "typescript": "2.6.1",
     "typescript-eslint-parser": "8.0.1"
   }
 }
