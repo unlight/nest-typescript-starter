@@ -12,7 +12,7 @@ describe('CatsController', () => {
             controllers: [CatController],
             components: [
                 CatService,
-                { provide: 'CatRepository', useValue: null }
+                { provide: 'CatRepository', useValue: null },
             ],
         }).compile();
 

@@ -2,7 +2,6 @@ import { Controller, Get, Res, Req, Body, HttpStatus, Post } from '@nestjs/commo
 import { Response, Request } from 'express';
 import { HomeService } from './home.service';
 
-
 @Controller('/')
 export class HomeController {
 
