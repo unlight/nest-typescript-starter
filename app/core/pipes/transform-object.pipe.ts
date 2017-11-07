@@ -3,7 +3,6 @@ import { validate } from 'class-validator';
 import { plainToClass } from 'class-transformer';
 import { HttpException } from '@nestjs/core';
 
-
 @Pipe()
 export class TransformObjectPipe implements PipeTransform<any> {
     async transform(value, metadata: ArgumentMetadata) {

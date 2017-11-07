@@ -11,7 +11,7 @@ export const databaseProviders = [
             // synchronize: false,
             entities: [
                 Cat,
-            ]
+            ],
         }),
     },
 ];

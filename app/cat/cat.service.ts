@@ -7,7 +7,7 @@ import { CreateCatDto } from './create-cat.dto';
 export class CatService {
 
     constructor(
-        @Inject('CatRepository') private readonly catRepository: Repository<Cat>
+        @Inject('CatRepository') private readonly catRepository: Repository<Cat>,
     ) { }
 
     async findAll(): Promise<Cat[]> {
