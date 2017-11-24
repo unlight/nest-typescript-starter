@@ -6,6 +6,13 @@ const tslintRules = Object.assign({}, tslintRulesRecommended, {
     "no-var-keyword": false,
     "object-literal-sort-keys": false,
     "no-console": false,
+    "arrow-parens": false,
+    "max-line-length": false,
+    "object-literal-key-quotes": false,
+    "no-shadowed-variable": false,
+    "only-arrow-functions": false,
+    "no-var-requires": false,
+    "semicolon": false,
 });
 
 module.exports = {

@@ -40,7 +40,6 @@ PEOPLE
 
 TODO
 ---
-* Pure start (no need mongodb)
 * Interceptors
 * TypeORM (MySQL, Mongoose)
 * DTO object validation
