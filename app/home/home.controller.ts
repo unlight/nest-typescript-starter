@@ -1,4 +1,4 @@
-import { Controller, Get, Res, Req, Body, HttpStatus, Post } from '@nestjs/common';
+import { Controller, Get, Res, Req, Body, HttpStatus } from '@nestjs/common';
 import { Response, Request } from 'express';
 import { HomeService } from './home.service';
 
