@@ -1,6 +1,7 @@
 import { Guard, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs/Observable';
 import { Reflector } from '@nestjs/core';
+import { Request } from 'express';
 
 @Guard()
 export class RolesGuard implements CanActivate {
@@ -9,7 +10,7 @@ export class RolesGuard implements CanActivate {
         private readonly reflector: Reflector,
     ) { }
 
-    canActivate(req, context: ExecutionContext): boolean {
+    canActivate(req: Request, context: ExecutionContext): boolean {
         const { parent, handler } = context;
         const roles = this.reflector.get<string[]>('roles', handler);
         if (!roles) {

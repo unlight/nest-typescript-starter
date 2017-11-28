@@ -40,6 +40,7 @@ PEOPLE
 
 TODO
 ---
+* Seed script
 * TypeORM (MySQL, Mongoose)
 * DTO object validation
 * Swagger https://github.com/nestjs/swagger
