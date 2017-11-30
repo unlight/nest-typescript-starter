@@ -6,7 +6,7 @@ STACK
 * TypeScript
 * ESLint
 * Jest
-* TypeORM (MongoDB)
+* TypeORM
 
 INSTALLATION
 ---
@@ -41,6 +41,17 @@ Database seed and migrations example:
 npx ts-node -F app/scripts seed migrate
 ```
 
+SETUP ENVIRONMENT (EXAMPLE)
+---
+```
+set CONNECTION_TYPE=mongodb
+set CONNECTION_DATABASE=nest-typescript-starter
+```
+
+RESOURCES
+---
+* GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
+
 PEOPLE
 ---
 - Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
@@ -49,8 +60,8 @@ PEOPLE
 TODO
 ---
 * Generating migrations
+* DTO object validation (cat birthdate should be more than current date)
 * TypeORM (MySQL, Mongoose)
-* DTO object validation
 * Swagger https://github.com/nestjs/swagger
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
 * https://github.com/pleerock/class-validator

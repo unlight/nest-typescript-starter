@@ -4,7 +4,4 @@ const config = {
     connectionDatabase: process.env.CONNECTION_DATABASE || ':memory:',
 };
 
-// config.connectionType = 'mongodb';
-// config.connectionDatabase = 'nest-typescript-starter';
-
-export = config;
+export = Object.freeze(config);
