@@ -1,4 +1,4 @@
-import { Connection, Repository } from 'typeorm';
+import { Connection } from 'typeorm';
 import { Cat } from './cat.entity';
 
 const catProviders = [

@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import * as bodyParser from 'body-parser';
 import { TransformObjectPipe } from './core/pipes/transform-object.pipe';
 import { HttpExceptionFilter } from './core/filters/http-exception.filter';
-import { RolesGuard } from './core/guards/roles.guard';
+// import { RolesGuard } from './core/guards/roles.guard';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);

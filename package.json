@@ -58,6 +58,7 @@
     "@types/express": "4.0.39",
     "@types/jest": "21.1.8",
     "@types/node": "8.0.53",
+    "@types/yargs": "8.0.2",
     "concurrently": "3.5.1",
     "eslint": "4.11.0",
     "eslint-import-resolver-node": "0.3.1",
@@ -75,6 +76,7 @@
     "nodemon": "1.12.1",
     "ts-jest": "21.2.3",
     "tslint": "5.8.0",
-    "typescript-eslint-parser": "9.0.0"
+    "typescript-eslint-parser": "9.0.0",
+    "yargs": "10.0.3"
   }
 }

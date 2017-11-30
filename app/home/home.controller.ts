@@ -1,13 +1,11 @@
 import { Controller, Get, Res, Req, Body, HttpStatus } from '@nestjs/common';
 import { Response, Request } from 'express';
-import { HomeService } from './home.service';
 
 @Controller('/')
 export class HomeController {
 
     constructor(
-        private readonly homeService: HomeService,
-    ) { }
+    ) { } // eslint-disable-line tslint/config
 
     @Get('/welcome')
     async welcome( @Res() res: Response, @Body() body: any) {

@@ -10,6 +10,7 @@ const databaseProviders = [
             host: 'localhost',
             database: config.connectionDatabase,
             synchronize: false,
+            logging: true,
             entities: [
                 Cat,
             ],
