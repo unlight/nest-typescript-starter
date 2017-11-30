@@ -1,4 +1,4 @@
-import { Entity, Column, ObjectIdColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, ObjectIdColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class Cat {
@@ -9,4 +9,7 @@ export class Cat {
 
     @Column({ length: 250 })
     name: string;
+
+    @UpdateDateColumn()
+    updatedDate: Date;
 }

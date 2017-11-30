@@ -33,6 +33,14 @@ TASKS
 | `npm run eslint:fix`   | Run ESLint in fix mode                            |
 | `npm run lint:w`       | Run all linting commands in watch mode            |
 
+
+SCRIPTS
+---
+Database seed and migrations example:
+```
+npx ts-node -F app/scripts seed migrate
+```
+
 PEOPLE
 ---
 - Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
@@ -40,7 +48,7 @@ PEOPLE
 
 TODO
 ---
-* Migration scripts
+* Generating migrations
 * TypeORM (MySQL, Mongoose)
 * DTO object validation
 * Swagger https://github.com/nestjs/swagger

@@ -10,15 +10,13 @@ interface IScript {
 (async function main() {
     try {
         const context = await NestFactory.createApplicationContext(ScriptsModule);
-        const [name] = yargs.argv._;
+        const names = yargs.argv._;
         const reflector = context.get(Reflector);
         const scriptList: any[] = context.get(ScriptRefList);
-        const scriptRef = scriptList.find(ref => reflector.get(ScriptName, ref) === name);
-        if (!scriptRef) {
-            throw new Error(`Script '${name}' was not found.`);
-        }
-        const script = context.get<IScript>(scriptRef);
-        await script.run();
+        const scripts = scriptList
+            .filter(ref => names.includes(reflector.get(ScriptName, ref)))
+            .map(ref => context.get<IScript>(ref));
+        scripts.reduce((p, script) => p.then(() => script.run()), Promise.resolve());
     } catch (err) {
         console.error(err);
     }

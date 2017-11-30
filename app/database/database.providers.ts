@@ -11,6 +11,7 @@ const databaseProviders = [
             database: config.connectionDatabase,
             synchronize: false,
             logging: true,
+            migrations: [`${__dirname}/migrations/*.ts`],
             entities: [
                 Cat,
             ],

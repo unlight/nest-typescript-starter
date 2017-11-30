@@ -1,19 +1,16 @@
 import { Component, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { Cat } from '../cat/cat.entity';
 import { Name } from './name.decorator';
 
 @Component()
-@Name('seed')
-export class Seed {
+@Name('migrate')
+export class Migrate {
 
     constructor(
         @Inject('DatabaseConnection') private connection: Connection,
     ) { }
 
     async run() {
-        await this.connection.synchronize(true);
-        const catRepository = this.connection.getRepository(Cat);
-        catRepository.insert([{ name: 'Fluffy', updatedDate: new Date() }]);
+        await this.connection.runMigrations();
     }
 }
