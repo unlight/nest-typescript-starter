@@ -11,7 +11,7 @@ export class Cat {
     name: string;
 
     @Column()
-    age: number;
+    birthDate: Date;
 
     @UpdateDateColumn()
     updatedDate: Date;

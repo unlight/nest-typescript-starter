@@ -1,4 +1,4 @@
-import { IsString, MaxLength, IsInt, IsNotEmpty, IsPositive, IsOptional } from 'class-validator';
+import { IsString, MaxLength, IsNotEmpty, IsOptional, IsDateString } from 'class-validator';
 
 export class CreateCatDto {
 
@@ -8,7 +8,6 @@ export class CreateCatDto {
     readonly name: string;
 
     @IsOptional()
-    @IsInt()
-    @IsPositive()
-    readonly age: number;
+    @IsDateString()
+    readonly birthDate: string;
 }
