@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes } from '@nestjs/common';
 import { Request } from 'express';
 import { CatService } from './cat.service';
 import { HttpException } from '@nestjs/core';
@@ -6,10 +6,12 @@ import { CreateCatDto } from './create-cat.dto';
 import { Roles } from '../core/decorators/roles.decorator';
 import { RolesGuard } from '../core/guards/roles.guard';
 import { TransformInterceptor } from '../core/interceptors/transform.interceptor';
+import { ValidationPipe } from '../core/pipes/validation.pipe';
 
 @Controller('/cat')
 @UseGuards(RolesGuard)
 @UseInterceptors(TransformInterceptor)
+@UsePipes(new ValidationPipe())
 export class CatController {
 
     constructor(

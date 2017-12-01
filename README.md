@@ -60,7 +60,6 @@ PEOPLE
 TODO
 ---
 * Generating migrations
-* DTO object validation (cat birthdate should be more than current date)
 * TypeORM (MySQL, Mongoose)
 * Swagger https://github.com/nestjs/swagger
 * GraphQL, https://github.com/adrien2p/nestjs-graphql

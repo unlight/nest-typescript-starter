@@ -7,8 +7,11 @@ export class Cat {
     @ObjectIdColumn()
     id: number;
 
-    @Column({ length: 250 })
+    @Column({ length: 20 })
     name: string;
+
+    @Column()
+    age: number;
 
     @UpdateDateColumn()
     updatedDate: Date;
