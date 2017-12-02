@@ -7,6 +7,7 @@ import { Roles } from '../core/decorators/roles.decorator';
 import { RolesGuard } from '../core/guards/roles.guard';
 import { TransformInterceptor } from '../core/interceptors/transform.interceptor';
 import { ValidationPipe } from '../core/pipes/validation.pipe';
+import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('/cat')
 @UseGuards(RolesGuard)
@@ -24,6 +25,7 @@ export class CatController {
     }
 
     @Post('/')
+    @ApiResponse({ status: 201, description: 'The record has been successfully created.' })
     async createCat( @Req() req: Request, @Body() body: CreateCatDto) {
         return this.catService.create(body);
     }

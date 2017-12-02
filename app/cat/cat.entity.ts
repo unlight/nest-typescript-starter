@@ -10,7 +10,7 @@ export class Cat {
     @Column({ length: 20 })
     name: string;
 
-    @Column()
+    @Column({ type: 'date' })
     birthDate: Date;
 
     @UpdateDateColumn()

@@ -52,6 +52,7 @@ RESOURCES
 * GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
 * Router Module For Nestjs Framework - https://github.com/shekohex/nest-router
 * TypeORM where like expression - https://gitter.im/typeorm/typeorm?at=5a2035af232e79134df08c65
+* Add the most common Express middlewares to your Nest app with one line - https://github.com/wbhob/nest-middlewares
 
 PEOPLE
 ---
@@ -60,8 +61,6 @@ PEOPLE
 
 TODO
 ---
-* Swagger https://github.com/nestjs/swagger
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
-* https://github.com/pleerock/class-validator
 * Generating migrations
 * TypeORM: Mongoose
