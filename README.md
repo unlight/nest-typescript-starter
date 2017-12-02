@@ -44,8 +44,7 @@ npx ts-node -F app/scripts seed migrate
 SETUP ENVIRONMENT (EXAMPLE)
 ---
 ```
-set CONNECTION_TYPE=mongodb
-set CONNECTION_DATABASE=nest-typescript-starter
+set TYPEORM_CONNECTION=mongodb && set TYPEORM_DATABASE=nest-typescript-starter
 ```
 
 RESOURCES

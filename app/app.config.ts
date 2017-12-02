@@ -1,7 +1,7 @@
 const config = {
     port: 3000,
-    connectionType: process.env.CONNECTION_TYPE || 'sqlite',
-    connectionDatabase: process.env.CONNECTION_DATABASE || ':memory:',
+    connectionType: process.env.TYPEORM_CONNECTION || 'sqlite',
+    connectionDatabase: process.env.TYPEORM_DATABASE || ':memory:',
 };
 
 export = Object.freeze(config);

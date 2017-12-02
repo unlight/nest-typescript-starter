@@ -14,6 +14,6 @@ export class Seed {
     async run() {
         await this.connection.synchronize(true);
         const catRepository = this.connection.getRepository(Cat);
-        catRepository.insert([{ name: 'Fluffy', updatedDate: new Date() }]);
+        catRepository.insert([{ name: 'Fluffy', updatedDate: new Date(), birthDate: new Date() }]);
     }
 }
