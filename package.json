@@ -47,11 +47,11 @@
     "mongodb": "2.2.33",
     "redis": "2.8.0",
     "reflect-metadata": "0.1.10",
-    "rxjs": "5.5.2",
+    "rxjs": "5.5.3",
     "sqlite3": "3.1.13",
     "ts-node": "3.3.0",
     "tslib": "1.8.0",
-    "typeorm": "0.1.6",
+    "typeorm": "0.1.7",
     "typescript": "2.6.2"
   },
   "devDependencies": {
@@ -74,7 +74,7 @@
     "gulp-memory-cache": "0.3.0",
     "jest": "21.2.1",
     "nodemon": "1.12.1",
-    "ts-jest": "21.2.3",
+    "ts-jest": "21.2.4",
     "tslint": "5.8.0",
     "typescript-eslint-parser": "9.0.1",
     "yargs": "10.0.3"

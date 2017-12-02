@@ -1,10 +1,11 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { ScriptsModule, ScriptRefList } from './scripts/scripts.module';
 import { MetadataKey as ScriptName } from './scripts/name.decorator';
+import { Arguments } from 'yargs';
 import yargs = require('yargs');
 
-interface IScript {
-    run(): void;
+export interface IScript {
+    run(argv: Arguments): void;
 }
 
 (async function main() {
@@ -16,7 +17,7 @@ interface IScript {
         const scripts = scriptList
             .filter(ref => names.includes(reflector.get(ScriptName, ref)))
             .map(ref => context.get<IScript>(ref));
-        scripts.reduce((p, script) => p.then(() => script.run()), Promise.resolve());
+        scripts.reduce((p, script) => p.then(() => script.run(yargs.argv)), Promise.resolve());
     } catch (err) {
         console.error(err);
     }

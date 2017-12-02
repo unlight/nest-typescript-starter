@@ -3,11 +3,13 @@ import { DatabaseModule } from '../database/database.module';
 import { Seed } from './seed';
 import { Migrate } from './migrate';
 import { Sync } from './sync';
+// import { Migration } from './migration';
 
 const scriptRefList = [
     Seed,
     Migrate,
     Sync,
+    // Migration,
 ];
 
 export const ScriptRefList = 'ScriptRefList';
