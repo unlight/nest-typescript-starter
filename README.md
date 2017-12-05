@@ -44,7 +44,10 @@ npx ts-node -F app/scripts seed migrate
 SETUP ENVIRONMENT (EXAMPLE)
 ---
 ```
-set TYPEORM_CONNECTION=mongodb && set TYPEORM_DATABASE=nest-typescript-starter
+set TYPEORM_CONNECTION=mongodb
+set TYPEORM_DATABASE=nest-typescript-starter
+set TYPEORM_CONNECTION=sqlite
+set TYPEORM_DATABASE=test
 ```
 
 RESOURCES
@@ -53,6 +56,7 @@ RESOURCES
 * Router Module For Nestjs Framework - https://github.com/shekohex/nest-router
 * TypeORM where like expression - https://gitter.im/typeorm/typeorm?at=5a2035af232e79134df08c65
 * Add the most common Express middlewares to your Nest app with one line - https://github.com/wbhob/nest-middlewares
+* Level up your Node.js application with Nest: Angular sugar on the server - http://ng-atl.org/workshops/level-up-your-node-js-application-with-nest-angular-sugar-on-the-server
 
 PEOPLE
 ---
@@ -61,6 +65,8 @@ PEOPLE
 
 TODO
 ---
+* WebSockets
+* Authentication using JSON Web Tokens
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
-* Generating migrations
-* TypeORM: Mongoose
+* TypeORM: Mongoose: Clarify what exactly need todo
+* Generating migrations https://github.com/typeorm/typeorm/issues/1304

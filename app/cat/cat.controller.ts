@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes } from '@nestjs/common';
+import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes, Param, ParseIntPipe } from '@nestjs/common';
 import { Request } from 'express';
 import { CatService } from './cat.service';
 import { HttpException } from '@nestjs/core';
@@ -22,6 +22,11 @@ export class CatController {
     @Get('/browse')
     async cats() {
         return this.catService.findAll();
+    }
+
+    @Get('/get/:id')
+    async cat( @Param('id', new ParseIntPipe()) id) {
+        return { id: id };
     }
 
     @Post('/')
