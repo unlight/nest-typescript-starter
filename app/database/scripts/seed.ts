@@ -1,8 +1,8 @@
 import { Component, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { Cat } from '../cat/cat.entity';
 import { Name } from './name.decorator';
 import { IScript } from '../scripts';
+import { Cat } from '../../cat/cat.entity';
 
 @Component()
 @Name('seed')
