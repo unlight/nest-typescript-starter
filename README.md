@@ -67,6 +67,7 @@ TODO
 ---
 * WebSockets
 * Authentication using JSON Web Tokens
+* Microservices
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
