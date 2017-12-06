@@ -1,5 +1,5 @@
 import { ReflectMetadata } from '@nestjs/common';
 
-export const MetadataKey = 'script:name';
+export const ScriptNameKey = 'script:name';
 
-export const Name = (name: string) => ReflectMetadata(MetadataKey, name);
+export const Name = (name: string) => ReflectMetadata(ScriptNameKey, name);

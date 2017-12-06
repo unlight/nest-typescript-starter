@@ -16,5 +16,6 @@ export class Seed implements IScript {
         await this.connection.synchronize(true);
         const catRepository = this.connection.getRepository(Cat);
         catRepository.insert([{ name: 'Fluffy', updatedDate: new Date(), birthDate: new Date() }]);
+        await this.connection.close();
     }
 }

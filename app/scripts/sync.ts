@@ -13,5 +13,6 @@ export class Sync implements IScript {
 
     async run() {
         await this.connection.synchronize();
+        await this.connection.close();
     }
 }
