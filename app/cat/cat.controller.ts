@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes, Param, ParseIntPipe, UseFilters } from '@nestjs/common';
 import { Request } from 'express';
 import { CatService } from './cat.service';
 import { HttpException } from '@nestjs/core';
@@ -8,11 +8,13 @@ import { RolesGuard } from '../core/guards/roles.guard';
 import { TransformInterceptor } from '../core/interceptors/transform.interceptor';
 import { ValidationPipe } from '../core/pipes/validation.pipe';
 import { ApiResponse } from '@nestjs/swagger';
+import { HttpExceptionFilter } from '../core/filters/http-exception.filter';
 
 @Controller('/cat')
 @UseGuards(RolesGuard)
 @UseInterceptors(TransformInterceptor)
 @UsePipes(new ValidationPipe())
+@UseFilters(new HttpExceptionFilter())
 export class CatController {
 
     constructor(
