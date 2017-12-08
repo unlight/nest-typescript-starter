@@ -3,6 +3,7 @@ import { CatModule } from './cat/cat.module';
 import { CatController } from './cat/cat.controller';
 import { LoggerMiddleware } from './core/middlewares/logger.middleware';
 import { AppController } from './app.controller';
+import { errorMiddleware } from './core/middlewares/error.middleware';
 
 @Module({
     controllers: [AppController],
@@ -17,5 +18,7 @@ export class AppModule implements NestModule {
             { path: '/welcome', method: RequestMethod.ALL },
         );
         consumer.apply(LoggerMiddleware).forRoutes(CatController);
+
+        consumer.apply(errorMiddleware).forRoutes(AppController);
     }
 }
