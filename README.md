@@ -57,6 +57,7 @@ RESOURCES
 * TypeORM where like expression - https://gitter.im/typeorm/typeorm?at=5a2035af232e79134df08c65
 * Add the most common Express middlewares to your Nest app with one line - https://github.com/wbhob/nest-middlewares
 * Level up your Node.js application with Nest: Angular sugar on the server - http://ng-atl.org/workshops/level-up-your-node-js-application-with-nest-angular-sugar-on-the-server
+* New Stack on the Market to beat them all MANT (MongoDB Angular NestJS TypeScript) - https://github.com/vladotesanovic/mant
 
 PEOPLE
 ---

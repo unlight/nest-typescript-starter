@@ -21,10 +21,6 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:unicorn/recommended",
-    ],
     "parser": "typescript-eslint-parser",
     "parserOptions": {
         "ecmaVersion": 2017,
@@ -35,6 +31,12 @@ module.exports = {
         "typescript",
         "import",
         "tslint",
+        "nestjs",
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:unicorn/recommended",
+        "plugin:nestjs/recommended",
     ],
     "rules": {
         "tslint/config": [1, {
