@@ -5,7 +5,7 @@ import { DatabaseModule } from '../database/database.module';
 import { CatController } from './cat.controller';
 
 @Module({
-    modules: [DatabaseModule],
+    imports: [DatabaseModule],
     controllers: [CatController],
     components: [
         ...catProviders,

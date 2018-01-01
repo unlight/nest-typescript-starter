@@ -8,7 +8,7 @@ import { JwtMiddleware } from './core/middlewares/jwt.middleware';
 
 @Module({
     controllers: [AppController],
-    modules: [CatModule],
+    imports: [CatModule],
     components: [
         ConfigService,
     ],

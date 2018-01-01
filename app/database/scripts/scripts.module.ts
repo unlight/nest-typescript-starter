@@ -15,7 +15,7 @@ const scriptRefList = [
 export const ScriptRefList = 'ScriptRefList';
 
 @Module({
-    modules: [DatabaseModule],
+    imports: [DatabaseModule],
     components: [
         ...scriptRefList,
         { provide: ScriptRefList, useValue: scriptRefList },
