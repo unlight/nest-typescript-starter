@@ -13,6 +13,8 @@
     "test": "npm run eslint && npm run tscheck && npm run t",
     "t": "jest",
     "test:w": "jest --watch",
+    "test:r": "jest",
+    "test:d": "node --inspect-brk -r ts-node/register node_modules/jest/bin/jest --testMatch \"<rootDir>/app/**/*.spec.ts\"",
     "tscheck": "echo tscheck... && tsc --noEmit",
     "tscheck:w": "npm run tscheck -- --watch",
     "tsclint": "tsc --noEmit --pretty false --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
@@ -27,7 +29,7 @@
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testMatch": [
-      "**/app/**/*.spec.ts"
+      "<rootDir>/app/**/*.spec.ts"
     ],
     "moduleFileExtensions": [
       "ts",

@@ -19,8 +19,8 @@ TASKS
 | Command                | Description                                       |
 |:-----------------------|:--------------------------------------------------|
 | `npm start`            | Start application                                 |
-| `npm run start:dev`    | Start application in development mode             |
-| `npm run start:debug`  | Start application in debug mode                   |
+| `npm run dev`          | Start application in development mode             |
+| `npm run dev:debug`    | Start application in debug mode                   |
 | `npm test`             | Run all tests                                     |
 | `npm run t`            | Run unit tests                                    |
 | `npm run test:w`       | Run unit tests in watch mode                      |
