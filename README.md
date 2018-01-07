@@ -37,9 +37,9 @@ TASKS
 
 SCRIPTS
 ---
-Database seed and migrations example:
+Database seed example:
 ```
-npx ts-node -F app/scripts seed migrate
+npx ts-node app/database/scripts seed
 ```
 
 SETUP ENVIRONMENT (EXAMPLE)

@@ -5,15 +5,13 @@ import { LoggerMiddleware } from './core/middlewares/logger.middleware';
 import { AppController } from './app.controller';
 import { ConfigService } from './app.config.service';
 import { JwtMiddleware } from './core/middlewares/jwt.middleware';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import config = require('./app.config');
+import { DatabaseModule } from './database/database.module';
 
 @Module({
     controllers: [AppController],
     imports: [
-        // provides: typeorm/Connection, typeorm/EntityManager
-        TypeOrmModule.forRoot(config.connection),
         CatModule,
+        DatabaseModule,
     ],
     components: [
         ConfigService,

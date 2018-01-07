@@ -28,7 +28,7 @@ export class CatController {
 
     @Get('/get/:id')
     async cat( @Param('id', new ParseIntPipe()) id) {
-        return { id: id };
+        return { id };
     }
 
     @Post('/')

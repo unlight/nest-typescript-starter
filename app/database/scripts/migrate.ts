@@ -8,7 +8,7 @@ import { IScript } from '../scripts';
 export class Migrate implements IScript {
 
     constructor(
-        @Inject('DatabaseConnection') private connection: Connection,
+        private connection: Connection,
     ) { }
 
     async run() {

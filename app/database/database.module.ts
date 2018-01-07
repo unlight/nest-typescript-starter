@@ -1,8 +1,17 @@
 import { Module } from '@nestjs/common';
-import { databaseProviders } from './database.providers';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Cat } from '../cat/cat.entity';
+import config = require('../app.config');
 
 @Module({
-    components: [...databaseProviders],
-    exports: [...databaseProviders],
+    imports: [
+        // components: typeorm/Connection, typeorm/EntityManager
+        TypeOrmModule.forRoot({
+            ...config.store,
+            entities: [
+                Cat,
+            ],
+        }),
+    ],
 })
 export class DatabaseModule { }

@@ -11,7 +11,7 @@ import config = require('../../app.config');
 export class Migration implements IScript {
 
     constructor(
-        @Inject('DatabaseConnection') private connection: Connection,
+        private connection: Connection,
     ) { }
 
     async run(argv: Arguments) {

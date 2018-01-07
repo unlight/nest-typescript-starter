@@ -50,7 +50,7 @@ module.exports = {
         "indent": 0,
         "import/newline-after-import": 1,
         "import/no-duplicates": 1,
-        "import/max-dependencies": [1, { "max": 10 }],
+        "import/max-dependencies": [1, { "max": 12 }],
         "import/newline-after-import": 0,
         "quotes": [1, "single", { "allowTemplateLiterals": true }],
         "semi": ["warn", "always"],
