@@ -6,9 +6,9 @@ const databaseProviders = [
     {
         provide: 'DatabaseConnection',
         useFactory: async () => await createConnection({
-            type: config.connectionType as any,
-            host: 'localhost',
-            database: config.connectionDatabase,
+            type: config.connection.type as any,
+            host: config.connection.host,
+            database: config.connection.database,
             synchronize: false,
             logging: true,
             migrations: [`${__dirname}/migrations/*.ts`],
