@@ -5,7 +5,6 @@
 /.vscode
 npm-debug.log
 /quick-start
-/test
 /coverage
 /.nyc_output
 /dist

@@ -7,6 +7,7 @@ STACK
 * ESLint
 * Jest
 * TypeORM
+* Stryker
 
 INSTALLATION
 ---
