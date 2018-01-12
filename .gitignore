@@ -12,3 +12,4 @@ npm-debug.log
 *.log*
 /.stryker-tmp/
 /.testresults
+/app_bin/

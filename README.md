@@ -17,22 +17,23 @@ $ npm install
 
 TASKS
 ---
-| Command                | Description                                       |
-|:-----------------------|:--------------------------------------------------|
-| `npm start`            | Start application                                 |
-| `npm run dev`          | Start application in development mode             |
-| `npm run dev:debug`    | Start application in debug mode                   |
-| `npm test`             | Run all tests                                     |
-| `npm run t`            | Run unit tests                                    |
-| `npm run test:w`       | Run unit tests in watch mode                      |
-| `npm run tscheck`      | Run TypeScript checks                             |
-| `npm run tscheck:w`    | Run TypeScript checks in watch mode               |
-| `npm run tsclint`      | Run TypeScript more stricter checks               |
-| `npm run tsclint:w`    | Run TypeScript more stricter checks in watch mode |
-| `npm run eslint`       | Run ESLint                                        |
-| `npm run eslint:w`     | Run ESLint in watch mode                          |
-| `npm run eslint:fix`   | Run ESLint in fix mode                            |
-| `npm run lint:w`       | Run all linting commands in watch mode            |
+| Command              | Description                                       |
+|:---------------------|:--------------------------------------------------|
+| `npm start`          | Build and start application                       |
+| `npm run dev`        | Start application in development mode             |
+| `npm run dev:d`      | Start application in debug mode (with nodemon)    |
+| `npm run start:d`    | Start application in debug mode (without nodemon) |
+| `npm test`           | Run all tests                                     |
+| `npm run test:r`     | Run unit tests                                    |
+| `npm run test:w`     | Run unit tests in watch mode                      |
+| `npm run tscheck`    | Run TypeScript checks                             |
+| `npm run tscheck:w`  | Run TypeScript checks in watch mode               |
+| `npm run tsclint`    | Run TypeScript more stricter checks               |
+| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode |
+| `npm run eslint`     | Run ESLint                                        |
+| `npm run eslint:w`   | Run ESLint in watch mode                          |
+| `npm run eslint:fix` | Run ESLint in fix mode                            |
+| `npm run lint:w`     | Run all linting commands in watch mode            |
 
 
 SCRIPTS
