@@ -1,6 +1,5 @@
-/// <reference types="node" />
 import * as fs from 'fs';
-const gulp = require('gulp');
+import gulp = require('gulp');
 const g = require('gulp-load-plugins')();
 
 function sourceLint() {

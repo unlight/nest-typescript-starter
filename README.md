@@ -17,23 +17,24 @@ $ npm install
 
 TASKS
 ---
-| Command              | Description                                       |
-|:---------------------|:--------------------------------------------------|
-| `npm start`          | Build and start application                       |
-| `npm run dev`        | Start application in development mode             |
-| `npm run dev:d`      | Start application in debug mode (with nodemon)    |
-| `npm run start:d`    | Start application in debug mode (without nodemon) |
-| `npm test`           | Run all tests                                     |
-| `npm run test:r`     | Run unit tests                                    |
-| `npm run test:w`     | Run unit tests in watch mode                      |
-| `npm run tscheck`    | Run TypeScript checks                             |
-| `npm run tscheck:w`  | Run TypeScript checks in watch mode               |
-| `npm run tsclint`    | Run TypeScript more stricter checks               |
-| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode |
-| `npm run eslint`     | Run ESLint                                        |
-| `npm run eslint:w`   | Run ESLint in watch mode                          |
-| `npm run eslint:fix` | Run ESLint in fix mode                            |
-| `npm run lint:w`     | Run all linting commands in watch mode            |
+| Command               | Description                                       |
+|:----------------------|:--------------------------------------------------|
+| `npm start`           | Build and start application                       |
+| `npm run dev`         | Start application in development mode             |
+| `npm run dev:d`       | Start application in debug mode (with nodemon)    |
+| `npm run start:d`     | Start application in debug mode (without nodemon) |
+| `npm test`            | Run all tests                                     |
+| `npm run test:r`      | Run unit tests                                    |
+| `npm run test:w`      | Run unit tests in watch mode                      |
+| `npm run tscheck`     | Run TypeScript checks                             |
+| `npm run tscheck:w`   | Run TypeScript checks in watch mode               |
+| `npm run tsclint`     | Run TypeScript more stricter checks               |
+| `npm run tsclint:w`   | Run TypeScript more stricter checks in watch mode |
+| `npm run eslint`      | Run ESLint                                        |
+| `npm run eslint:w`    | Run ESLint in watch mode                          |
+| `npm run eslint:fix`  | Run ESLint in fix mode                            |
+| `npm run lint:w`      | Run all linting commands in watch mode            |
+| `npm run stryker:run` | Run mutation tests                                |
 
 
 SCRIPTS
@@ -60,6 +61,7 @@ RESOURCES
 * Add the most common Express middlewares to your Nest app with one line - https://github.com/wbhob/nest-middlewares
 * Level up your Node.js application with Nest: Angular sugar on the server - http://ng-atl.org/workshops/level-up-your-node-js-application-with-nest-angular-sugar-on-the-server
 * New Stack on the Market to beat them all MANT (MongoDB Angular NestJS TypeScript) - https://github.com/vladotesanovic/mant
+* Microservices example - https://github.com/james7272/nestjs-hybrid-example
 
 PEOPLE
 ---
@@ -70,7 +72,7 @@ TODO
 ---
 * WebSockets
 * Authentication using JSON Web Tokens
-* Microservices
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
+* https://github.com/nestjs/mongoose
