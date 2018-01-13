@@ -1,9 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UseInterceptors } from '@nestjs/common';
 import { MessagePattern, Client, ClientProxy, Transport } from '@nestjs/microservices';
+import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
 
 @Controller()
+// @UseInterceptors(LoggingInterceptor)
 export class Service1Controller {
-    @Client({transport: Transport.TCP, port: 43210})
+
+    @Client({ transport: Transport.TCP, port: 43210 })
     client: ClientProxy;
 
     @MessagePattern('service1')
