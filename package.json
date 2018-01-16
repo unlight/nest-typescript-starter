@@ -52,7 +52,7 @@
     "@nestjs/common": "4.5.9",
     "@nestjs/core": "4.5.10",
     "@nestjs/microservices": "4.5.8",
-    "@nestjs/swagger": "1.1.3",
+    "@nestjs/swagger": "1.1.4",
     "@nestjs/testing": "4.5.5",
     "@nestjs/typeorm": "2.0.0",
     "@nestjs/websockets": "4.5.8",
@@ -91,9 +91,9 @@
     "gulp-ignore": "2.0.2",
     "gulp-load-plugins": "1.5.0",
     "gulp-memory-cache": "0.3.0",
-    "jest": "22.0.4",
-    "jest-cli": "22.0.4",
-    "jest-runtime": "22.0.4",
+    "jest": "22.1.1",
+    "jest-cli": "22.1.1",
+    "jest-runtime": "22.1.1",
     "nodemon": "1.14.11",
     "stryker": "0.18.0",
     "stryker-api": "0.12.0",
@@ -103,6 +103,6 @@
     "supertest": "3.0.0",
     "ts-jest": "22.0.1",
     "tslint": "5.9.1",
-    "typescript-eslint-parser": "11.0.0"
+    "typescript-eslint-parser": "12.0.0"
   }
 }
