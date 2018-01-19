@@ -55,6 +55,7 @@ set TYPEORM_DATABASE=test
 
 RESOURCES
 ---
+* https://github.com/nestjs/nest/tree/master/examples
 * GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
 * Router Module For Nestjs Framework - https://github.com/shekohex/nest-router
 * TypeORM where like expression - https://gitter.im/typeorm/typeorm?at=5a2035af232e79134df08c65
@@ -70,7 +71,6 @@ PEOPLE
 
 TODO
 ---
-* WebSockets
 * Authentication using JSON Web Tokens
 * GraphQL, https://github.com/adrien2p/nestjs-graphql
 * TypeORM: Mongoose: Clarify what exactly need todo
