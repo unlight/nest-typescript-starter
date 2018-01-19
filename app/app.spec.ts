@@ -4,7 +4,7 @@ import { Test } from '@nestjs/testing';
 import { AppModule } from './app.module';
 import { INestApplication } from '@nestjs/common';
 
-describe('App test', () => {
+describe('App integration test', () => {
 
     let app: INestApplication;
     let server: express.Express;
