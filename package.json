@@ -17,7 +17,7 @@
     "tscheck:w": "npm run tscheck -- --watch",
     "tsclint": "tsc --noEmit --pretty false --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
     "tsclint:w": "npm run tsclint -- --watch",
-    "eslint": "eslint --ext ts app",
+    "eslint": "gulp eslint",
     "eslint:fix": "eslint app --ext \"ts\" --fix",
     "eslint:w": "gulp eslint:w",
     "lint:w": "concurrently -- \"npm run tsclint:w\" \"npm run eslint:w\"",
