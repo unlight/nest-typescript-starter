@@ -13,7 +13,6 @@ export class PostResolver {
 
     @Query('posts')
     async getPosts() {
-        console.log(1);
         return await this.postsService.findAll();
     }
 
@@ -24,7 +23,6 @@ export class PostResolver {
 
     @ResolveProperty('author')
     async getAuthor(author: Author) {
-        console.log("getAuthor");
         const { id } = author;
         return await this.authorsService.findOneById(id);
     }

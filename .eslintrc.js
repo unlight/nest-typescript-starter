@@ -14,6 +14,7 @@ const tslintRules = Object.assign({}, tslintRulesRecommended, {
     "no-var-requires": false,
     "semicolon": false,
     "no-empty": false,
+    "interface-over-type-literal": false,
 });
 
 module.exports = {

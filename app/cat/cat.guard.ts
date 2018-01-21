@@ -11,7 +11,7 @@ export class CatGuard implements CanActivate {
 
     canActivate(req: Request, context: ExecutionContext): boolean {
         const { handler } = context;
-        const access: Function = this.reflector.get<any>('access', handler);
+        const access = this.reflector.get<any>('access', handler);
         if (!access) {
             return true;
         }
