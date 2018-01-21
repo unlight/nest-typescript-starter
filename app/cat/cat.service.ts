@@ -11,6 +11,10 @@ export class CatService {
         @InjectRepository(Cat) private readonly catRepository: Repository<Cat>,
     ) { }
 
+    async findOneById(id: number) {
+        return this.catRepository.findOneById(id);
+    }
+
     async findAll(): Promise<Cat[]> {
         return await this.catRepository.find();
     }

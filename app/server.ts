@@ -6,6 +6,9 @@ import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filte
 // import { RolesGuard } from './core/guards/roles.guard';
 import config = require('./app.config');
 
+// TODO: For dev only.
+import 'loud-rejection/register';
+
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     app.use(bodyParser.json());

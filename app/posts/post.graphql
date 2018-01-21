@@ -1,0 +1,14 @@
+type Post {
+  id: Int!
+  title: String
+  author: Author
+  votes: Int
+}
+
+type Query {
+  posts: [Post]
+}
+
+type Mutation {
+  upvotePost(postId: Int!): Post
+}

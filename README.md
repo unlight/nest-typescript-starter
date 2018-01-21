@@ -63,6 +63,11 @@ RESOURCES
 * Level up your Node.js application with Nest: Angular sugar on the server - http://ng-atl.org/workshops/level-up-your-node-js-application-with-nest-angular-sugar-on-the-server
 * New Stack on the Market to beat them all MANT (MongoDB Angular NestJS TypeScript) - https://github.com/vladotesanovic/mant
 * Microservices example - https://github.com/james7272/nestjs-hybrid-example
+* GraphQL
+  - https://github.com/kamilkisiela/nest-graphql-apollo
+  - https://github.com/iamclaytonray/nest-graphql-mongodb
+  - https://github.com/adrien2p/nestjs-graphql
+  - https://github.com/graphql/graphql-js/issues/19
 
 PEOPLE
 ---
@@ -72,7 +77,7 @@ PEOPLE
 TODO
 ---
 * Authentication using JSON Web Tokens
-* GraphQL, https://github.com/adrien2p/nestjs-graphql
+* https://github.com/nestjs/graphql
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose

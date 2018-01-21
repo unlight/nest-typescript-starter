@@ -6,12 +6,14 @@ import { AppController } from './app.controller';
 import { ConfigService } from './app.config.service';
 import { JwtMiddleware } from './core/middlewares/jwt.middleware';
 import { DatabaseModule } from './database/database.module';
+import { GraphQLApiModule } from './graphql-api.module';
 
 @Module({
     controllers: [AppController],
     imports: [
         CatModule,
         DatabaseModule,
+        GraphQLApiModule,
     ],
     components: [
         ConfigService,
