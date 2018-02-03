@@ -63,21 +63,23 @@ RESOURCES
 * Level up your Node.js application with Nest: Angular sugar on the server - http://ng-atl.org/workshops/level-up-your-node-js-application-with-nest-angular-sugar-on-the-server
 * New Stack on the Market to beat them all MANT (MongoDB Angular NestJS TypeScript) - https://github.com/vladotesanovic/mant
 * Microservices example - https://github.com/james7272/nestjs-hybrid-example
-* GraphQL
-  - https://github.com/kamilkisiela/nest-graphql-apollo
-  - https://github.com/iamclaytonray/nest-graphql-mongodb
-  - https://github.com/adrien2p/nestjs-graphql
-  - https://github.com/graphql/graphql-js/issues/19
-
-PEOPLE
----
-- Original Author - [Kamil Myśliwiec](http://kamilmysliwiec.com)
-- Website - [http://nestjs.com](http://nestjs.com/)
+* nest-graphql-apollo - https://github.com/kamilkisiela/nest-graphql-apollo
+* nest-graphql-mongodb - https://github.com/iamclaytonray/nest-graphql-mongodb
+* nestjs-graphql - https://github.com/adrien2p/nestjs-graphql
+* graphql-js/issues/19 - https://github.com/graphql/graphql-js/issues/19
+* graph-type-orm-nest-example - https://github.com/partyka95/graph-type-orm-nest-example
+* nest-mailer - https://github.com/partyka95/nest-mailer
+* ngrx-nest - https://github.com/derekkite/ngrx-nest
+* Simple application demonstrating the basic usage of permissions - https://github.com/rucken/core-nestjs
+* Nest + Sequelize + jwt - https://github.com/adrien2p/nestjs-sequelize-jwt
+* Awesome Nest - https://github.com/juliandavidmr/awesome-nest
+* Learn the nestjs framework in 30 days - https://github.com/m24927605/Nestjs30Days
+* A simple web application - https://github.com/chanlito/simple-todos
+* A collection of useful modules and opinionated to use with Nest framework - https://github.com/chanlito/nestjs-extensions
 
 TODO
 ---
 * Authentication using JSON Web Tokens
-* https://github.com/nestjs/graphql
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
