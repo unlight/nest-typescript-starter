@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
+  "engines": {
+    "node": ">=8 <10"
+  },
   "scripts": {
     "start": "tsc && node app_bin/server",
     "start:d": "node -r ts-node/register --inspect app/server",
