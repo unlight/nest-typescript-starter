@@ -48,6 +48,7 @@ module.exports = {
         }],
         "no-undef": 0,
         "no-unused-vars": 0,
+        "no-dupe-class-members": 0,
         "no-console": 0,
         "no-debugger": 1,
         "indent": 0,
