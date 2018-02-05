@@ -1,6 +1,6 @@
 const config = {
     port: 3000,
-    store: {
+    typeorm: {
         type: (process.env.TYPEORM_CONNECTION || 'sqlite') as any,
         host: 'localhost',
         database: process.env.TYPEORM_DATABASE || ':memory:',

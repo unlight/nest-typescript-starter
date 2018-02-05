@@ -5,9 +5,9 @@ import config = require('../app.config');
 
 @Module({
     imports: [
-        // components: typeorm/Connection, typeorm/EntityManager
+        // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot({
-            ...config.store,
+            ...config.typeorm,
             entities: [
                 Cat,
             ],
