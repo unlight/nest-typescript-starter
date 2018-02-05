@@ -3,13 +3,12 @@ import { AppModule } from './app.module';
 import * as bodyParser from 'body-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filter';
+import { config } from './app.config';
 // import { RolesGuard } from './core/guards/roles.guard';
-import config = require('./app.config');
 
-// TODO: For dev only.
 import 'loud-rejection/register';
 
-async function bootstrap() {
+(async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     app.use(bodyParser.json());
     // app.useGlobalFilters(new UnauthorizedErrorFilter());
@@ -22,8 +21,5 @@ async function bootstrap() {
         .build();
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/api', app, document);
-
-    await app.listen(config.port);
-}
-
-bootstrap();
+    await app.listen(config.get('port'));
+})();

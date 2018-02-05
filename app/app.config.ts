@@ -1,14 +1,47 @@
-const config = {
-    port: 3000,
-    typeorm: {
-        type: (process.env.TYPEORM_CONNECTION || 'sqlite') as any,
-        host: 'localhost',
-        database: process.env.TYPEORM_DATABASE || ':memory:',
-        synchronize: false,
-        logging: true,
+import * as convict from 'convict';
+
+const schema: convict.Schema = {
+    environment: {
+        doc: 'The applicaton environment.',
+        format: ['production', 'development', 'test'],
+        default: 'development',
+        env: 'NODE_ENV',
     },
-    databaseMigrations: 'app/database/migrations',
-    secret: 'secret',
+    port: {
+        format: 'port',
+        default: 3000,
+        arg: 'port',
+    },
+    typeorm: {
+        type: {
+            default: 'sqlite',
+            env: 'TYPEORM_CONNECTION',
+        },
+        host: {
+            default: 'localhost',
+        },
+        database: {
+            default: ':memory:',
+            env: 'TYPEORM_DATABASE',
+            arg: 'typeorm_database',
+        },
+        synchronize: {
+            default: false,
+            format: Boolean,
+        },
+        logging: {
+            default: true,
+            format: Boolean,
+        },
+    },
+    databaseMigrations: {
+        default: 'app/database/migrations',
+    },
+    secret: {
+        default: 'secret',
+    },
 };
 
-export = Object.freeze(config);
+export const config = convict(schema).validate();
+
+export type Config = Record<keyof typeof schema, any>;

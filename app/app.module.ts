@@ -3,10 +3,10 @@ import { CatModule } from './cat/cat.module';
 import { CatController } from './cat/cat.controller';
 import { LoggerMiddleware } from './core/middlewares/logger.middleware';
 import { AppController } from './app.controller';
-import { ConfigService } from './app.config.service';
 import { JwtMiddleware } from './core/middlewares/jwt.middleware';
 import { DatabaseModule } from './database/database.module';
 import { GraphQLApiModule } from './graphql-api.module';
+import { ConfigService } from './app.config.service';
 
 @Module({
     controllers: [AppController],
@@ -16,9 +16,6 @@ import { GraphQLApiModule } from './graphql-api.module';
         GraphQLApiModule,
     ],
     components: [
-        ConfigService,
-    ],
-    exports: [
         ConfigService,
     ],
 })

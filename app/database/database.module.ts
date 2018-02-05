@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common';
+import { Module, DynamicModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Cat } from '../cat/cat.entity';
-import config = require('../app.config');
+import { config } from '../app.config';
 
 @Module({
     imports: [
         // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot({
-            ...config.typeorm,
+            ...config.get('typeorm'),
             entities: [
                 Cat,
             ],

@@ -3,7 +3,6 @@ import { Connection, QueryBuilder } from 'typeorm';
 import { MigrationGenerateCommand } from 'typeorm/commands/MigrationGenerateCommand';
 import { IScript } from '../scripts';
 import { Arguments } from 'yargs';
-import config = require('../../app.config');
 
 @Component()
 export class Migration implements IScript {
@@ -14,7 +13,7 @@ export class Migration implements IScript {
 
     async run(argv: Arguments) {
         const command = new MigrationGenerateCommand();
-        const options = { ...argv, dir: config.databaseMigrations };
+        // const options = { ...argv, dir: config.databaseMigrations };
         // await command.handler(options);
     }
 }
