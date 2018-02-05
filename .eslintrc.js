@@ -15,6 +15,7 @@ const tslintRules = Object.assign({}, tslintRulesRecommended, {
     "semicolon": false,
     "no-empty": false,
     "interface-over-type-literal": false,
+    "no-debugger": false,
 });
 
 module.exports = {
@@ -48,6 +49,7 @@ module.exports = {
         "no-undef": 0,
         "no-unused-vars": 0,
         "no-console": 0,
+        "no-debugger": 1,
         "indent": 0,
         "import/newline-after-import": 1,
         "import/no-duplicates": 1,

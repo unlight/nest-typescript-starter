@@ -1,11 +1,9 @@
 import { Component, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { Name } from './name.decorator';
 import { IScript } from '../scripts';
 import { Cat } from '../../cat/cat.entity';
 
 @Component()
-@Name('seed')
 export class Seed implements IScript {
 
     constructor(
@@ -19,3 +17,5 @@ export class Seed implements IScript {
         await this.connection.close();
     }
 }
+
+export default Seed;

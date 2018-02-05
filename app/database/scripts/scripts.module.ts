@@ -12,15 +12,12 @@ const scriptRefList = [
     // Migration,
 ];
 
-export const ScriptRefList = 'ScriptRefList';
-
 @Module({
     imports: [
         DatabaseModule,
     ],
     components: [
         ...scriptRefList,
-        { provide: ScriptRefList, useValue: scriptRefList },
     ],
 })
 export class ScriptsModule { }

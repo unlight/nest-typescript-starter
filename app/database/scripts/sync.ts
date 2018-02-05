@@ -1,10 +1,8 @@
 import { Component, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { Name } from './name.decorator';
 import { IScript } from '../scripts';
 
 @Component()
-@Name('sync')
 export class Sync implements IScript {
 
     constructor(
@@ -16,3 +14,5 @@ export class Sync implements IScript {
         await this.connection.close();
     }
 }
+
+export default Sync;
