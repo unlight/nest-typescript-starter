@@ -52,7 +52,6 @@ module.exports = {
         "no-console": 0,
         "no-debugger": 1,
         "indent": 0,
-        "import/newline-after-import": 1,
         "import/no-duplicates": 1,
         "import/max-dependencies": [1, { "max": 12 }],
         "import/newline-after-import": 0,
