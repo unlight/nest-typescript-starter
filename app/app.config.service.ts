@@ -10,6 +10,8 @@ export class ConfigService {
 
     get(): AppConfig;
 
+    get<T = any>(key: string);
+
     get<T = any>(key?: string, defaultValue?) {
         if (key === undefined) {
             return this.config;
