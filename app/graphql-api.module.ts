@@ -12,6 +12,7 @@ import { PostResolver } from './posts/post.resolver';
     components: [AuthorResolver, PostResolver],
 })
 export class GraphQLApiModule {
+
     constructor(private readonly graphQLFactory: GraphQLFactory) { }
 
     configure(consumer: MiddlewaresConsumer) {

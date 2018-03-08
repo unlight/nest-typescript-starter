@@ -9,6 +9,10 @@ module.exports = function(config) {
         reporter: ['html', 'clear-text', 'progress'],
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
+        jest: {
+            project: 'default',
+            config: require('./jest.config'),
+        },
         mutate: [
             'app/**/cat.controller.ts',
         ],
