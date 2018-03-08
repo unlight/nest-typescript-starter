@@ -1,5 +1,3 @@
-require('hot-module-replacement')({ ignore: /node_modues/ });
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as bodyParser from 'body-parser';
@@ -24,13 +22,6 @@ async function main() {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/api', app, document);
     await app.listen(config.get('port'));
-    if (module.hot) {
-        module.hot.accept('./app.module', () => {
-            app.close();
-            main();
-        });
-    }
-
 }
 
 main();

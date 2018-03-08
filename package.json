@@ -12,7 +12,6 @@
     "dev:d": "node-dev --no-deps -r ts-node/register --inspect app/server.ts",
     "dev": "node-dev --no-deps -r ts-node/register app/server.ts",
     "test": "npm run eslint && npm run tscheck && npm run test:r",
-    "t": "jest",
     "test:w": "jest --watch",
     "test:r": "jest",
     "test:d": "node --inspect-brk -r ts-node/register node_modules/jest/bin/jest --testMatch \"<rootDir>/app/**/*.spec.ts\"",
@@ -25,29 +24,6 @@
     "eslint:w": "gulp eslint:w",
     "lint:w": "concurrently -- \"npm run tsclint:w\" \"npm run eslint:w\"",
     "stryker:run": "stryker run"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "collectCoverage": false,
-    "coverageDirectory": ".testresults",
-    "coverageReporters": [
-      "lcov"
-    ],
-    "collectCoverageFrom": [
-      "app/**/*.ts",
-      "!app/**/*.spec.ts",
-      "!app/**/*.ispec.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/app/**/*.spec.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
   },
   "dependencies": {
     "@nestjs/common": "4.5.9",
