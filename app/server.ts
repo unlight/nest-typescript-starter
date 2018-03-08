@@ -8,7 +8,7 @@ import { config } from './app.config';
 
 import 'loud-rejection/register';
 
-(async function bootstrap() {
+async function main() {
     const app = await NestFactory.create(AppModule);
     app.use(bodyParser.json());
     // app.useGlobalFilters(new UnauthorizedErrorFilter());
@@ -22,4 +22,6 @@ import 'loud-rejection/register';
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/api', app, document);
     await app.listen(config.get('port'));
-})();
+}
+
+main();

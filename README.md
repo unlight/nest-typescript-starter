@@ -76,6 +76,8 @@ RESOURCES
 * Learn the nestjs framework in 30 days - https://github.com/m24927605/Nestjs30Days
 * A simple web application - https://github.com/chanlito/simple-todos
 * A collection of useful modules and opinionated to use with Nest framework - https://github.com/chanlito/nestjs-extensions
+* A simple application demonstrating the basic usage of permissions - https://github.com/rucken/core-nestjs
+* Opinionated Framework built on top of NestJS and TypeORM - https://github.com/mentos1386/lynx
 
 TODO
 ---

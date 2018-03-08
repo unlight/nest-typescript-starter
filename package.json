@@ -24,40 +24,18 @@
     "eslint:fix": "eslint app --ext \"ts\" --fix",
     "eslint:w": "gulp eslint:w",
     "lint:w": "concurrently -- \"npm run tsclint:w\" \"npm run eslint:w\"",
-    "stryker:run": "stryker run"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "collectCoverage": false,
-    "coverageDirectory": ".testresults",
-    "coverageReporters": [
-      "lcov"
-    ],
-    "collectCoverageFrom": [
-      "app/**/*.ts",
-      "!app/**/*.spec.ts",
-      "!app/**/*.ispec.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/app/**/*.spec.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
+    "test:m": "stryker run",
+    "dev:update": "updtr --out --save exact --to latest --test \"npm test && npm run test:m\""
   },
   "dependencies": {
     "@nestjs/common": "4.5.9",
     "@nestjs/core": "4.5.10",
     "@nestjs/graphql": "2.0.0",
-    "@nestjs/microservices": "4.5.8",
+    "@nestjs/microservices": "4.6.5",
     "@nestjs/swagger": "1.1.4",
-    "@nestjs/testing": "4.5.5",
+    "@nestjs/testing": "4.6.1",
     "@nestjs/typeorm": "2.0.0",
-    "@nestjs/websockets": "4.5.8",
+    "@nestjs/websockets": "4.6.5",
     "@types/convict": "4.1.1",
     "apollo-server-express": "1.3.2",
     "body-parser": "1.18.2",
@@ -66,29 +44,29 @@
     "convict": "4.0.2",
     "express-jwt": "5.3.0",
     "graphql": "0.11.7",
-    "graphql-tools": "2.18.0",
-    "mongodb": "3.0.2",
+    "graphql-tools": "2.21.0",
+    "mongodb": "3.0.4",
     "redis": "2.8.0",
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "sqlite3": "3.1.13",
     "ts-node": "4.1.0",
     "tslib": "1.9.0",
-    "typeorm": "0.1.12",
-    "typescript": "2.6.2"
+    "typeorm": "0.1.16",
+    "typescript": "2.7.2"
   },
   "devDependencies": {
     "@types/express": "4.11.1",
-    "@types/graphql": "0.12.3",
+    "@types/graphql": "0.12.4",
     "@types/gulp": "4.0.5",
-    "@types/jest": "22.1.1",
-    "@types/node": "9.4.0",
+    "@types/jest": "22.2.0",
+    "@types/node": "9.4.6",
     "@types/supertest": "2.0.4",
-    "@types/yargs": "10.0.1",
+    "@types/yargs": "10.0.2",
     "concurrently": "3.5.1",
-    "eslint": "4.17.0",
+    "eslint": "4.18.2",
     "eslint-import-resolver-node": "0.3.2",
-    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-import": "2.9.0",
     "eslint-plugin-nestjs": "1.2.2",
     "eslint-plugin-tslint": "2.1.0",
     "eslint-plugin-typescript": "0.8.1",
@@ -99,19 +77,18 @@
     "gulp-ignore": "2.0.2",
     "gulp-load-plugins": "1.5.0",
     "gulp-memory-cache": "0.3.0",
-    "jest": "22.1.4",
-    "jest-cli": "22.1.4",
-    "jest-runtime": "22.1.4",
+    "jest": "22.4.2",
     "loud-rejection": "1.6.0",
     "node-dev": "3.1.3",
-    "stryker": "0.18.2",
-    "stryker-api": "0.12.0",
-    "stryker-html-reporter": "0.11.5",
+    "stryker": "0.19.3",
+    "stryker-api": "0.13.0",
+    "stryker-html-reporter": "0.12.1",
     "stryker-jest-runner": "0.3.0",
-    "stryker-typescript": "0.8.3",
+    "stryker-typescript": "0.9.1",
     "supertest": "3.0.0",
-    "ts-jest": "22.0.3",
+    "ts-jest": "22.4.1",
     "tslint": "5.9.1",
-    "typescript-eslint-parser": "12.0.0"
+    "typescript-eslint-parser": "12.0.0",
+    "updtr": "2.0.0"
   }
 }
