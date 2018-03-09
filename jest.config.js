@@ -1,11 +1,13 @@
 module.exports = {
+    "testEnvironment": "node",
     "transform": {
         "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "collectCoverage": false,
     "coverageDirectory": ".testresults",
     "coverageReporters": [
-        "lcov"
+        "lcov",
+        "text",
     ],
     "collectCoverageFrom": [
         "app/**/*.ts",
@@ -17,7 +19,6 @@ module.exports = {
     ],
     "moduleFileExtensions": [
         "ts",
-        "tsx",
         "js"
     ]
 };
