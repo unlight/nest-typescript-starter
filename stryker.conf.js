@@ -21,5 +21,6 @@ module.exports = function(config) {
         htmlReporter: {
             baseDir: '.testresults/mutation'
         },
+        // logLevel: 'debug',
     });
 };
