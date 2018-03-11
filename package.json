@@ -86,7 +86,7 @@
     "stryker": "0.19.3",
     "stryker-api": "0.13.0",
     "stryker-html-reporter": "0.12.1",
-    "stryker-jest-runner": "0.3.0",
+    "stryker-jest-runner": "0.5.1",
     "stryker-typescript": "0.9.1",
     "supertest": "3.0.0",
     "ts-jest": "22.4.1",
