@@ -33,9 +33,9 @@ const schema: convict.Schema = {
             default: true,
             format: Boolean,
         },
-    },
-    databaseMigrations: {
-        default: 'app/database/migrations',
+        migrations: {
+            default: [`app/database/migrations/*.ts`],
+        },
     },
     secret: {
         default: 'secret',

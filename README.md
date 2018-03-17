@@ -34,7 +34,7 @@ TASKS
 | `npm run eslint:w`    | Run ESLint in watch mode                          |
 | `npm run eslint:fix`  | Run ESLint in fix mode                            |
 | `npm run lint:w`      | Run all linting commands in watch mode            |
-| `npm run stryker:run` | Run mutation tests                                |
+| `npm run test:m`      | Run mutation tests                                |
 
 
 SCRIPTS
@@ -86,3 +86,7 @@ TODO
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
 * https://github.com/mozilla/node-convict
+
+DEBUG
+---
+node --inspect -r ts-node/register app/database/scripts migrate
