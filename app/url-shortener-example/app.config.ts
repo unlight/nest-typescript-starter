@@ -14,16 +14,13 @@ const schema: convict.Schema = {
     },
     typeorm: {
         type: {
-            default: 'sqlite',
-            env: 'TYPEORM_CONNECTION',
-            arg: 'typeorm_connection',
+            default: 'mongodb',
         },
         host: {
             default: 'localhost',
         },
         database: {
-            default: ':memory:',
-            env: 'TYPEORM_DATABASE',
+            default: 'url-shortener',
             arg: 'typeorm_database',
         },
         synchronize: {

@@ -86,6 +86,7 @@ TODO
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
 * https://github.com/mozilla/node-convict
+* Health endpoint
 
 DEBUG
 ---

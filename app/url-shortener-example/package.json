@@ -1,0 +1,17 @@
+{
+  "name": "url-shortener-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node-dev --no-deps -r ts-node/register main.ts",
+    "dev:d": "node-dev --no-deps -r ts-node/register --inspect main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  }
+}

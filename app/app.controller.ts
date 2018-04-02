@@ -2,6 +2,7 @@ import { Get, Controller, Res, Body, HttpStatus, Req, UseFilters, All, UseInterc
 import { Response } from 'express';
 import { User } from './core/decorators/user.decorator';
 import { TransformInterceptor } from './core/interceptors/transform.interceptor';
+import { Observable } from 'rxjs';
 
 @Controller()
 @UseInterceptors(TransformInterceptor)
@@ -12,14 +13,19 @@ export class AppController {
         return 'Hello World!';
     }
 
-    @Get('/welcome')
+    @Get('welcome')
     async welcome( @Res() res: Response, @Body() body: any) {
         res.status(HttpStatus.OK).json(['Hello world!']);
     }
 
-    @Get('/jwt')
+    @Get('jwt')
     @UseInterceptors(TransformInterceptor)
     async jwt(@Req() req, @User() user ) {
         return req.user === user;
+    }
+
+    @Get('obs')
+    obs() {
+        return Observable.of('obs');
     }
 }
