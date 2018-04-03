@@ -4,11 +4,13 @@ import { Entity, ObjectIdColumn, Column, PrimaryGeneratedColumn } from 'typeorm'
 export class Url {
 
     @ObjectIdColumn()
-    @PrimaryGeneratedColumn()
-    id: number;
+    _id: number;
 
     @Column({ type: 'text' })
     url: string;
+
+    @Column({ type: 'text' })
+    hash: string;
 
     @Column({ type: 'date' })
     dateInserted: Date;

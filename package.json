@@ -53,8 +53,8 @@
     "sqlite3": "4.0.0",
     "ts-node": "5.0.1",
     "tslib": "1.9.0",
-    "typeorm": "0.2.0-alpha.42",
-    "typescript": "2.8.1"
+    "typescript": "2.7.2",
+    "typeorm": "0.2.0-alpha.42"
   },
   "devDependencies": {
     "@types/express": "4.11.1",

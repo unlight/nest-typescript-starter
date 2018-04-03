@@ -10,11 +10,10 @@ import { Url } from './url/url.entity';
         TypeOrmModule.forRoot({
             ...config.get('typeorm'),
             entities: ['./**/*.entity.ts'],
+            subscribers: ['./**/*.subscriber.ts'],
         }),
         UrlModule,
     ],
     controllers: [AppController],
 })
-export class AppModule implements NestModule {
-
-}
+export class AppModule implements NestModule { }

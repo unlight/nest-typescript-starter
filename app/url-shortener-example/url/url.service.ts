@@ -1,4 +1,4 @@
-import { Component } from '@nestjs/common';
+import { Component, Inject } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Url } from './url.entity';
 import { Repository, EntityManager } from 'typeorm';
@@ -7,9 +7,8 @@ import { Repository, EntityManager } from 'typeorm';
 export class UrlService {
 
     constructor(
-        private entityManager: EntityManager,
         @InjectRepository(Url) private readonly urlRepository: Repository<Url>,
-
+        @Inject('converter') private readonly converter: Function,
     ) {
     }
 
@@ -19,5 +18,10 @@ export class UrlService {
 
     getAll() {
         return this.urlRepository.find();
+    }
+
+    save(url: Url) {
+
+        return this.urlRepository.save(url);
     }
 }
