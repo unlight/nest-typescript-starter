@@ -8,20 +8,14 @@ export class UrlService {
 
     constructor(
         @InjectRepository(Url) private readonly urlRepository: Repository<Url>,
-        @Inject('converter') private readonly converter: Function,
-    ) {
+    ) { }
+
+    async create(url: string) {
+        const entity = await this.urlRepository.create({ url });
+        return this.urlRepository.save(entity);
     }
 
-    getById(id: string) {
-        return this.urlRepository.findOne(id);
-    }
-
-    getAll() {
-        return this.urlRepository.find();
-    }
-
-    save(url: Url) {
-
-        return this.urlRepository.save(url);
+    getById(id: number) {
+        return this.urlRepository.findOne({ _id: id });
     }
 }

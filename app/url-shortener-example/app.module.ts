@@ -16,4 +16,4 @@ import { Url } from './url/url.entity';
     ],
     controllers: [AppController],
 })
-export class AppModule implements NestModule { }
+export class AppModule { }

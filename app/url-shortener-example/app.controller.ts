@@ -13,20 +13,6 @@ export class AppController {
 
     @Get('health')
     health() {
-        return 'unknown';
-    }
-
-    @Get('test')
-    async test() {
-        // debugger;
-        const driver: MongoDriver = this.connection.driver as any;
-        const repo = this.connection.getMongoRepository(Url);
-        debugger;
-        const url = Object.assign(new Url, { url: 'http://palanka.com' });
-        const seq1 = await repo.save(url);
-        // const seq2 = new Sequence();
-        // seq2.entity = 'sequence';
-        // await repo.save(seq2);
-        // const result = await repo.findOneAndUpdate({}, { $inc: { id: 1 } });
+        return {'unknown': 1};
     }
 }
