@@ -10,7 +10,7 @@
     "start": "tsc && node app_bin/server",
     "start:d": "node -r ts-node/register/transpile-only --inspect app/server",
     "dev:d": "node-dev --no-deps -r ts-node/register/transpile-only --inspect app/server.ts",
-    "dev": "node-dev --no-deps -r ts-node/register/transpile-only app/server.ts",
+    "dev": "ts-node-dev --no-deps --transpileOnly app/server.ts",
     "test": "npm run eslint && npm run tscheck && npm run test:r",
     "t": "jest",
     "test:w": "jest --watch",
@@ -91,6 +91,7 @@
     "stryker-typescript": "0.11.0",
     "supertest": "3.0.0",
     "ts-jest": "22.4.5",
+    "ts-node-dev": "1.0.0-pre.21",
     "tslint": "5.10.0",
     "typescript-eslint-parser": "15.0.0",
     "updtr": "2.0.0"
