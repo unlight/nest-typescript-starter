@@ -78,6 +78,7 @@ RESOURCES
 * A collection of useful modules and opinionated to use with Nest framework - https://github.com/chanlito/nestjs-extensions
 * A simple application demonstrating the basic usage of permissions - https://github.com/rucken/core-nestjs
 * Opinionated Framework built on top of NestJS and TypeORM - https://github.com/mentos1386/lynx
+* This is a Bull module for Nest - https://github.com/fwoelffel/nest-bull
 
 TODO
 ---

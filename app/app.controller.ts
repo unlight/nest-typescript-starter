@@ -2,7 +2,7 @@ import { Get, Controller, Res, Body, HttpStatus, Req, UseFilters, All, UseInterc
 import { Response } from 'express';
 import { User } from './core/decorators/user.decorator';
 import { TransformInterceptor } from './core/interceptors/transform.interceptor';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Controller()
 @UseInterceptors(TransformInterceptor)
@@ -26,6 +26,6 @@ export class AppController {
 
     @Get('obs')
     obs() {
-        return Observable.of('obs');
+        return of('obs');
     }
 }

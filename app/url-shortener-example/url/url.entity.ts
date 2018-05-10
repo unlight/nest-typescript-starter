@@ -1,5 +1,4 @@
 import { Entity, ObjectIdColumn, Column, BeforeInsert } from 'typeorm';
-import { use, MixinDecorator, classes } from '../lib/mixin';
 import { HistoryBehaviour} from '../common/history.behaviour';
 
 @Entity()
