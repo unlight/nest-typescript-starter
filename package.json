@@ -11,6 +11,10 @@
     "start:d": "node -r ts-node/register/transpile-only --inspect app/server",
     "dev:d": "node-dev --no-deps -r ts-node/register/transpile-only --inspect app/server.ts",
     "dev": "ts-node-dev --no-deps --transpileOnly app/server.ts",
+    "dev:w": "echo cannot show stderr && concurrently -r \"npm run webpack\" \"node app_bin/server.js\"",
+    "webpack": "webpack",
+    "dev:s": "node app_bin/server",
+    "_dev:s": "ts-node-dev --no-deps --transpileOnly app_bin/server",
     "test": "npm run eslint && npm run tscheck && npm run test:r",
     "t": "jest",
     "test:w": "jest --watch",
@@ -64,6 +68,8 @@
     "@types/jest": "22.2.3",
     "@types/node": "10.0.6",
     "@types/supertest": "2.0.4",
+    "@types/webpack": "4.1.5",
+    "@types/webpack-env": "1.13.6",
     "@types/yargs": "11.0.0",
     "concurrently": "3.5.1",
     "eslint": "4.19.1",
@@ -91,9 +97,14 @@
     "stryker-typescript": "0.11.0",
     "supertest": "3.0.0",
     "ts-jest": "22.4.5",
+    "ts-loader": "4.3.0",
     "ts-node-dev": "1.0.0-pre.21",
     "tslint": "5.10.0",
     "typescript-eslint-parser": "15.0.0",
-    "updtr": "2.0.0"
+    "updtr": "2.0.0",
+    "webpack": "4.8.1",
+    "webpack-cli": "2.1.3",
+    "webpack-loader-helper": "1.0.0",
+    "webpack-node-externals": "1.7.2"
   }
 }

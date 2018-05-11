@@ -4,6 +4,7 @@ import * as bodyParser from 'body-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filter';
 import { config } from './app.config';
+import { getConnection } from 'typeorm';
 // import { RolesGuard } from './core/guards/roles.guard';
 
 import 'loud-rejection/register';
@@ -22,6 +23,17 @@ async function main() {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/api', app, document);
     await app.listen(config.get('port'));
+
+    if (module.hot) {
+        const connection = getConnection();
+        if (connection.isConnected) {
+            await connection.close();
+        }
+        module.hot.accept();
+        module.hot.dispose(async () => {
+            app.close();
+        });
+    }
 }
 
 main();
