@@ -1,10 +1,10 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Cat } from './cat.entity';
 import { CreateCatDto } from './create-cat.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 
-@Component()
+@Injectable()
 export class CatService {
 
     constructor(

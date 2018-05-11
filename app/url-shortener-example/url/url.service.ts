@@ -1,9 +1,9 @@
-import { Component, Inject } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Url } from './url.entity';
 import { Repository, EntityManager, DeepPartial } from 'typeorm';
 
-@Component()
+@Injectable()
 export class UrlService {
 
     constructor(

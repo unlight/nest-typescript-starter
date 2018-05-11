@@ -1,9 +1,9 @@
-import { Middleware, NestMiddleware, ExpressMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware, ExpressMiddleware } from '@nestjs/common';
 import { ServerRequest } from 'http';
 import { ConfigService } from '../../app.config.service';
 const jwt = require('express-jwt');
 
-@Middleware()
+@Injectable()
 export class JwtMiddleware implements NestMiddleware {
 
     constructor(

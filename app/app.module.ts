@@ -15,7 +15,7 @@ import { ConfigService } from './app.config.service';
         DatabaseModule,
         AppGraphQLModule,
     ],
-    components: [
+    providers: [
         ConfigService,
     ],
 })

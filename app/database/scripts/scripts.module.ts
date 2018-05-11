@@ -16,7 +16,7 @@ const scriptRefList = [
     imports: [
         DatabaseModule,
     ],
-    components: [
+    providers: [
         ...scriptRefList,
     ],
 })

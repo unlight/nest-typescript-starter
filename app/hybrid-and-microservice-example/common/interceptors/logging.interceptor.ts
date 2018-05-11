@@ -1,8 +1,8 @@
 import { tap } from 'rxjs/operators';
-import { Interceptor, NestInterceptor, ExecutionContext } from '@nestjs/common';
+import { Injectable, NestInterceptor, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
 
-@Interceptor()
+@Injectable()
 export class LoggingInterceptor implements NestInterceptor {
     intercept(
         dataOrRequest,

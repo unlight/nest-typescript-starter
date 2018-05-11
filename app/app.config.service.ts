@@ -1,8 +1,8 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as convict from 'convict';
 import { config, Config } from './app.config';
 
-@Component()
+@Injectable()
 export class ConfigService {
 
     private config: convict.Config<Config> = config; // eslint-disable-line nestjs/use-dependency-injection

@@ -9,7 +9,7 @@ import { PostResolver } from './posts/post.resolver';
 
 @Module({
     imports: [GraphQLModule, AuthorsModule, PostsModule],
-    components: [AuthorResolver, PostResolver],
+    providers: [AuthorResolver, PostResolver],
 })
 export class AppGraphQLModule {
 

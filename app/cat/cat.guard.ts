@@ -1,8 +1,8 @@
-import { Guard, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Request } from 'express';
 import { Reflector } from '@nestjs/core';
 
-@Guard()
+@Injectable()
 export class CatGuard implements CanActivate {
 
     constructor(

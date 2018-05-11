@@ -1,9 +1,9 @@
-import { Component, Inject } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
 import { IScript } from '../scripts';
 import { Cat } from '../../cat/cat.entity';
 
-@Component()
+@Injectable()
 export class Seed implements IScript {
 
     constructor(
