@@ -1,8 +1,9 @@
 module.exports = function(config) {
     config.set({
         files: [
-            { pattern: 'app/**/*.graphql', included: false, mutated: false },
-            'node_modules/ts-jest/**/*.js'
+            'app/**/*.ts',
+            'app/**/*.graphql',
+            // 'node_modules/ts-jest/**/*.js'
         ],
         testRunner: 'jest',
         mutator: 'typescript',

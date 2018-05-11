@@ -1,6 +1,6 @@
 import * as convict from 'convict';
 
-const schema: convict.Schema = {
+const schema: convict.Schema<any> = {
     environment: {
         doc: 'The applicaton environment.',
         format: ['production', 'development', 'test'],
