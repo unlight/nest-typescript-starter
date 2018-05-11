@@ -12,7 +12,7 @@ export class CatService {
     ) { }
 
     async findOneById(id: number) {
-        return this.catRepository.findOneById(id);
+        return this.catRepository.findOne(id);
     }
 
     async findAll(): Promise<Cat[]> {

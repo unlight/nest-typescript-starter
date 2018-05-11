@@ -34,7 +34,7 @@ TASKS
 | `npm run eslint:w`    | Run ESLint in watch mode                          |
 | `npm run eslint:fix`  | Run ESLint in fix mode                            |
 | `npm run lint:w`      | Run all linting commands in watch mode            |
-| `npm run stryker:run` | Run mutation tests                                |
+| `npm run test:m`      | Run mutation tests                                |
 
 
 SCRIPTS
@@ -78,6 +78,7 @@ RESOURCES
 * A collection of useful modules and opinionated to use with Nest framework - https://github.com/chanlito/nestjs-extensions
 * A simple application demonstrating the basic usage of permissions - https://github.com/rucken/core-nestjs
 * Opinionated Framework built on top of NestJS and TypeORM - https://github.com/mentos1386/lynx
+* This is a Bull module for Nest - https://github.com/fwoelffel/nest-bull
 
 TODO
 ---
@@ -86,3 +87,8 @@ TODO
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
 * https://github.com/mozilla/node-convict
+* Health endpoint
+
+DEBUG
+---
+node --inspect -r ts-node/register app/database/scripts migrate

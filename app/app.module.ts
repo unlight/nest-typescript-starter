@@ -5,7 +5,7 @@ import { LoggerMiddleware } from './core/middlewares/logger.middleware';
 import { AppController } from './app.controller';
 import { JwtMiddleware } from './core/middlewares/jwt.middleware';
 import { DatabaseModule } from './database/database.module';
-import { GraphQLApiModule } from './graphql-api.module';
+import { AppGraphQLModule } from './app.graphql.module';
 import { ConfigService } from './app.config.service';
 
 @Module({
@@ -13,7 +13,7 @@ import { ConfigService } from './app.config.service';
     imports: [
         CatModule,
         DatabaseModule,
-        GraphQLApiModule,
+        AppGraphQLModule,
     ],
     components: [
         ConfigService,

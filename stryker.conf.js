@@ -1,11 +1,13 @@
 module.exports = function(config) {
     config.set({
         files: [
-            { pattern: 'app/**/*.graphql', included: false, mutated: false },
+            'app/**/*.ts',
+            'app/**/*.graphql',
+            // 'node_modules/ts-jest/**/*.js'
         ],
         testRunner: 'jest',
         mutator: 'typescript',
-        transpilers: ['typescript'],
+        transpilers: [],
         reporter: ['html', 'clear-text', 'progress'],
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
@@ -17,5 +19,6 @@ module.exports = function(config) {
         htmlReporter: {
             baseDir: '.testresults/mutation'
         },
+        // logLevel: 'trace'
     });
 };

@@ -1,7 +1,6 @@
-import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes, Param, ParseIntPipe, UseFilters, Put } from '@nestjs/common';
+import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptors, UsePipes, Param, ParseIntPipe, UseFilters, Put, HttpException } from '@nestjs/common';
 import { Request } from 'express';
 import { CatService } from './cat.service';
-import { HttpException } from '@nestjs/core';
 import { CreateCatDto } from './create-cat.dto';
 import { Roles } from '../core/decorators/roles.decorator';
 import { RolesGuard } from '../core/guards/roles.guard';
