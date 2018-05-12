@@ -25,11 +25,15 @@ async function main() {
     SwaggerModule.setup('/api', app, document);
     await app.listen(config.get('port'));
 
-    // Hello microservice
-    const service = await NestFactory.create(HelloMicroserviceModule);
-    const microservice = service.connectMicroservice({ transport: Transport.TCP, port: 43210 });
-    await service.startAllMicroservicesAsync();
-    await service.listen(config.get('port') + 1);
+    // Hello microservice with http server (hybrid application)
+    // const service = await NestFactory.create(HelloMicroserviceModule);
+    // const microservice = service.connectMicroservice({ transport: Transport.TCP, port: 43210 });
+    // await service.startAllMicroservicesAsync();
+    // await service.listen(config.get('port') + 1);
+
+    // Microservice without http server
+    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, port: 43210 });
+    service.listen(undefined as any);
 }
 
 main();
