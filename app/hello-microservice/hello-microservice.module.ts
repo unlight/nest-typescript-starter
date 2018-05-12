@@ -6,4 +6,4 @@ import { Service2Module} from './service2/service2.module';
 @Module({
     imports: [HelloModule, Service1Module, Service2Module],
 })
-export class ApplicationModule {}
+export class HelloMicroserviceModule {}

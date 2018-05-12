@@ -79,6 +79,7 @@ RESOURCES
 * A simple application demonstrating the basic usage of permissions - https://github.com/rucken/core-nestjs
 * Opinionated Framework built on top of NestJS and TypeORM - https://github.com/mentos1386/lynx
 * This is a Bull module for Nest - https://github.com/fwoelffel/nest-bull
+* Hybrid apps have embedded microservices - https://github.com/james7272/nestjs-hybrid-example/
 
 TODO
 ---
