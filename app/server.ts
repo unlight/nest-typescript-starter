@@ -44,6 +44,7 @@ async function main() {
         module.hot.accept();
         module.hot.dispose(async () => {
             app.close();
+            service.close();
         });
     }
 }
