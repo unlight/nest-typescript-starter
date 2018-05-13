@@ -6,6 +6,7 @@ import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filte
 import { config } from './app.config';
 import { HelloMicroserviceModule } from './hello-microservice/hello-microservice.module';
 import { Transport } from '@nestjs/microservices';
+import { getConnection } from 'typeorm';
 // import { RolesGuard } from './core/guards/roles.guard';
 
 import 'loud-rejection/register';
@@ -34,6 +35,17 @@ async function main() {
     // Microservice without http server
     const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, options: { port: 43210 } });
     service.listen(undefined as any);
+
+    if (module.hot) {
+        const connection = getConnection();
+        if (connection.isConnected) {
+            await connection.close();
+        }
+        module.hot.accept();
+        module.hot.dispose(async () => {
+            app.close();
+        });
+    }
 }
 
 main();
