@@ -4,6 +4,8 @@ import * as bodyParser from 'body-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filter';
 import { config } from './app.config';
+import { HelloMicroserviceModule } from './hello-microservice/hello-microservice.module';
+import { Transport } from '@nestjs/microservices';
 // import { RolesGuard } from './core/guards/roles.guard';
 
 import 'loud-rejection/register';
@@ -22,6 +24,16 @@ async function main() {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('/api', app, document);
     await app.listen(config.get('port'));
+
+    // Hello microservice with http server (hybrid application)
+    // const service = await NestFactory.create(HelloMicroserviceModule);
+    // const microservice = service.connectMicroservice({ transport: Transport.TCP, port: 43210 });
+    // await service.startAllMicroservicesAsync();
+    // await service.listen(config.get('port') + 1);
+
+    // Microservice without http server
+    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, port: 43210 });
+    service.listen(undefined as any);
 }
 
 main();

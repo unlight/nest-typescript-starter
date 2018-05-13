@@ -10,7 +10,7 @@ export class AppController {
 
     @Get()
     root(): string {
-        return 'Hello World!1';
+        return 'Hello World!';
     }
 
     @Get('welcome')

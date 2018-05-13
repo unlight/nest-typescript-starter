@@ -7,6 +7,7 @@ import { JwtMiddleware } from './core/middlewares/jwt.middleware';
 import { DatabaseModule } from './database/database.module';
 import { AppGraphQLModule } from './app.graphql.module';
 import { ConfigService } from './app.config.service';
+import { config } from './app.config';
 
 @Module({
     controllers: [AppController],
@@ -16,7 +17,7 @@ import { ConfigService } from './app.config.service';
         AppGraphQLModule,
     ],
     providers: [
-        ConfigService,
+        { provide: ConfigService, useFactory: () => new ConfigService(config) },
     ],
 })
 export class AppModule implements NestModule {
