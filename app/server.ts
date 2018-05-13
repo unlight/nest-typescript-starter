@@ -32,7 +32,7 @@ async function main() {
     // await service.listen(config.get('port') + 1);
 
     // Microservice without http server
-    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, port: 43210 });
+    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, options: { port: 43210 } });
     service.listen(undefined as any);
 }
 

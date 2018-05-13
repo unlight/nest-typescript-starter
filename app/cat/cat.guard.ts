@@ -9,13 +9,14 @@ export class CatGuard implements CanActivate {
         private readonly reflector: Reflector,
     ) { }
 
-    canActivate(req: Request, context: ExecutionContext): boolean {
-        const { handler } = context;
+    canActivate(context: ExecutionContext): boolean {
+        const handler = context.getHandler();
+
         const access = this.reflector.get<any>('access', handler);
         if (!access) {
             return true;
         }
-        const user = (req as any).user;
-        return access({ user });
+        const req = context.switchToHttp().getRequest();
+        return access({ user: req.user });
     }
 }

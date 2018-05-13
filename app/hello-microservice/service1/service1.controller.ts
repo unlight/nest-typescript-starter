@@ -6,7 +6,7 @@ import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
 // @UseInterceptors(LoggingInterceptor)
 export class Service1Controller {
 
-    @Client({ transport: Transport.TCP, port: 43210 })
+    @Client({ transport: Transport.TCP, options: { port: 43210 } })
     client: ClientProxy;
 
     @MessagePattern('service1')

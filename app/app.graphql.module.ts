@@ -1,4 +1,4 @@
-import { Module, MiddlewaresConsumer, NestModule, RequestMethod } from '@nestjs/common';
+import { Module, MiddlewareConsumer, NestModule, RequestMethod } from '@nestjs/common';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import { GraphQLFactory, GraphQLModule } from '@nestjs/graphql';
 
@@ -17,10 +17,10 @@ export class AppGraphQLModule {
         private readonly graphQLFactory: GraphQLFactory,
     ) { }
 
-    configure(consumer: MiddlewaresConsumer) {
+    configure(consumer: MiddlewareConsumer) {
         const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.graphql');
         const schema = this.graphQLFactory.createSchema({ typeDefs });
-        consumer.apply(graphiqlExpress({ endpointURL: '/graphql' })).forRoutes({ path: '/graphiql', method: RequestMethod.GET });
-        consumer.apply(graphqlExpress(req => ({ schema, rootValue: req }))).forRoutes({ path: '/graphql', method: RequestMethod.ALL });
+        consumer.apply(graphiqlExpress({ endpointURL: '/graphql' })).forRoutes('/graphiql');
+        consumer.apply(graphqlExpress(req => ({ schema, rootValue: req }))).forRoutes('/graphql');
     }
 }
