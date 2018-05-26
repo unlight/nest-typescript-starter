@@ -83,6 +83,7 @@ RESOURCES
 
 TODO
 ---
+* Migrations, Entity globs and hmr issues
 * Authentication using JSON Web Tokens
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304

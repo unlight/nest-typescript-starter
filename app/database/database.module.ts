@@ -7,6 +7,7 @@ import { config } from '../app.config';
     imports: [
         // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot({
+            keepConnectionAlive: true,
             ...config.get('typeorm'),
             entities: [
                 Cat,
