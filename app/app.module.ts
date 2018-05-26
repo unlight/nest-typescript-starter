@@ -17,7 +17,7 @@ import { config } from './app.config';
         AppGraphQLModule,
     ],
     providers: [
-        { provide: ConfigService, useFactory: () => new ConfigService(config) },
+        { provide: ConfigService, useValue: new ConfigService(config) },
     ],
 })
 export class AppModule implements NestModule {
