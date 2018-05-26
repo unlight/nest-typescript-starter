@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as bodyParser from 'body-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { UnauthorizedErrorFilter } from './core/filters/unauthorized-error.filter';
 import { config } from './app.config';
 import { HelloMicroserviceModule } from './hello-microservice/hello-microservice.module';
 import { Transport } from '@nestjs/microservices';
@@ -32,8 +31,16 @@ async function main() {
     // await service.listen(config.get('port') + 1);
 
     // Microservice without http server
-    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, port: 43210 });
+    const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, options: { port: 43210 } });
     service.listen(undefined as any);
+
+    if (module.hot) {
+        module.hot.accept();
+        module.hot.dispose(async () => {
+            app.close();
+            service.close();
+        });
+    }
 }
 
 main();

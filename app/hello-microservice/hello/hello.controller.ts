@@ -3,7 +3,7 @@ import { Transport, Client, ClientProxy } from '@nestjs/microservices';
 
 @Controller('hello')
 export class HelloController {
-    @Client({transport: Transport.TCP, port: 43210})
+    @Client({ transport: Transport.TCP, options: { port: 43210 } })
     client: ClientProxy;
 
     @Get()

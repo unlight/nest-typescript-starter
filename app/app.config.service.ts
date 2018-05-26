@@ -1,8 +1,8 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as convict from 'convict';
 import { Config } from './app.config';
 
-@Component()
+@Injectable()
 export class ConfigService {
 
     constructor(

@@ -11,7 +11,7 @@ import { Cat } from './cat.entity';
     controllers: [
         CatController,
     ],
-    components: [
+    providers: [
         CatService,
     ],
 })

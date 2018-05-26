@@ -1,9 +1,9 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { find, filter } from 'lodash';
 
 import { Post } from './types';
 
-@Component()
+@Injectable()
 export class PostsService {
     private readonly posts: Post[] = [
         { id: 1, authorId: 1, title: 'Introduction to GraphQL', votes: 2 },

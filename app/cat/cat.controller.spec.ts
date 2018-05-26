@@ -10,7 +10,7 @@ describe('CatsController', () => {
     beforeEach(async () => {
         const module = await Test.createTestingModule({
             controllers: [CatController],
-            components: [
+            providers: [
                 CatService,
                 { provide: 'CatRepository', useValue: null },
             ],

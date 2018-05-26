@@ -1,9 +1,9 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { find, filter } from 'lodash';
 
 import { Author } from './types';
 
-@Component()
+@Injectable()
 export class AuthorsService {
   private readonly authors: Author[] = [
     { id: 1, firstName: 'Tom', lastName: 'Coleman' },

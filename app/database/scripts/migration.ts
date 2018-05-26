@@ -1,10 +1,10 @@
-import { Component, Inject } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { Connection, QueryBuilder } from 'typeorm';
 import { MigrationGenerateCommand } from 'typeorm/commands/MigrationGenerateCommand';
 import { IScript } from '../scripts';
 import { Arguments } from 'yargs';
 
-@Component()
+@Injectable()
 export class Migration implements IScript {
 
     constructor(
