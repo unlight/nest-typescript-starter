@@ -1,9 +1,8 @@
 module.exports = function(config) {
     config.set({
         files: [
-            'app/**/*.ts',
-            'app/**/*.graphql',
-            // 'node_modules/ts-jest/**/*.js'
+            'src/**/*.ts',
+            'src/**/*.graphql',
         ],
         testRunner: 'jest',
         mutator: 'typescript',
@@ -12,7 +11,7 @@ module.exports = function(config) {
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
         mutate: [
-            'app/**/cat.controller.ts',
+            'src/**/cat.controller.ts',
         ],
         timeoutMs: 10 * 1000,
         // timeoutFactor: 2,

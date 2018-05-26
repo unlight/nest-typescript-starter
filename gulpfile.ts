@@ -19,7 +19,7 @@ function specLint() {
 }
 
 gulp.task('eslint', () => {
-    return gulp.src('app/**/*.ts', { since: g.memoryCache.lastMtime('source') })
+    return gulp.src('src/**/*.ts', { since: g.memoryCache.lastMtime('source') })
         .pipe(g.memoryCache('source'))
         .pipe(g.ignore.exclude('*.d.ts'))
         .pipe(g.if('*.spec.ts', specLint(), sourceLint()))
@@ -27,7 +27,7 @@ gulp.task('eslint', () => {
 });
 
 gulp.task('eslint:w', (done) => {
-    const w = gulp.watch('app/**/*.ts', { ignoreInitial: false }, gulp.series('eslint'));
+    const w = gulp.watch('src/**/*.ts', { ignoreInitial: false }, gulp.series('eslint'));
     w.on('change', g.memoryCache.update('source'));
     process.on('SIGINT', () => {
         w.close();

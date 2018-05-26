@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 const pollInterval = 1000;
 
 module.exports = {
-    entry: [`webpack/hot/poll?${pollInterval}`, './app/server.ts'],
+    entry: [`webpack/hot/poll?${pollInterval}`, './src/server.ts'],
     watch: true,
     target: 'node',
     devtool: false,

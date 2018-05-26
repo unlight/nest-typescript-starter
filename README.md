@@ -41,7 +41,7 @@ SCRIPTS
 ---
 Database seed example:
 ```
-npx ts-node app/database/scripts seed
+npx ts-node src/database/scripts seed
 ```
 
 SETUP ENVIRONMENT (EXAMPLE)
@@ -93,4 +93,4 @@ TODO
 
 DEBUG
 ---
-node --inspect -r ts-node/register app/database/scripts migrate
+node --inspect -r ts-node/register src/database/scripts migrate

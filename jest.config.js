@@ -1,24 +1,24 @@
 module.exports = {
-    "testEnvironment": "node",
-    "transform": {
-        "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    'testEnvironment': 'node',
+    'transform': {
+        '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js'
     },
-    "collectCoverage": false,
-    "coverageDirectory": ".testresults",
-    "coverageReporters": [
-        "lcov",
-        "text",
+    'collectCoverage': false,
+    'coverageDirectory': '.testresults',
+    'coverageReporters': [
+        'lcov',
+        'text',
     ],
-    "collectCoverageFrom": [
-        "app/**/*.ts",
-        "!app/**/*.spec.ts",
-        "!app/**/*.ispec.ts"
+    'collectCoverageFrom': [
+        'src/**/*.ts',
+        '!src/**/*.spec.ts',
+        '!src/**/*.ispec.ts'
     ],
-    "testMatch": [
-        "<rootDir>/app/**/*.spec.ts"
+    'testMatch': [
+        '<rootDir>/src/**/*.spec.ts'
     ],
-    "moduleFileExtensions": [
-        "ts",
-        "js"
+    'moduleFileExtensions': [
+        'ts',
+        'js'
     ]
 };
