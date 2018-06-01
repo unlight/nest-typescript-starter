@@ -37,7 +37,7 @@
     "@nestjs/core": "5.0.1",
     "@nestjs/graphql": "3.0.0",
     "@nestjs/microservices": "5.0.1",
-    "@nestjs/swagger": "2.0.0",
+    "@nestjs/swagger": "2.0.2",
     "@nestjs/testing": "5.0.1",
     "@nestjs/typeorm": "5.0.0",
     "@nestjs/websockets": "5.0.1",
@@ -58,7 +58,7 @@
     "rxjs-compat": "6.2.0",
     "sqlite3": "4.0.0",
     "ts-node": "6.0.5",
-    "tslib": "1.9.1",
+    "tslib": "1.9.2",
     "typeorm": "0.2.6",
     "typescript": "2.8.3"
   },
