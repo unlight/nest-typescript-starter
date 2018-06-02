@@ -2,6 +2,7 @@ import { Module, DynamicModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Cat } from '../cat/cat.entity';
 import { config } from '../app.config';
+import { entityList } from '../entity.context';
 
 @Module({
     imports: [
@@ -10,7 +11,7 @@ import { config } from '../app.config';
             keepConnectionAlive: true,
             ...config.get('typeorm'),
             entities: [
-                Cat,
+                ...entityList(),
             ],
         }),
     ],

@@ -1,5 +1,6 @@
-import * as fs from 'fs';
+import { writeFileSync, mkdirSync } from 'fs';
 import gulp = require('gulp');
+import rimraf = require('rimraf');
 const g = require('gulp-load-plugins')();
 
 function sourceLint() {
