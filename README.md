@@ -17,24 +17,23 @@ $ npm install
 
 TASKS
 ---
-| Command               | Description                                       |
-|:----------------------|:--------------------------------------------------|
-| `npm start`           | Build and start application                       |
-| `npm run dev`         | Start application in development mode             |
-| `npm run dev:d`       | Start application in debug mode (with nodemon)    |
-| `npm run start:d`     | Start application in debug mode (without nodemon) |
-| `npm test`            | Run all tests                                     |
-| `npm run test:r`      | Run unit tests                                    |
-| `npm run test:w`      | Run unit tests in watch mode                      |
-| `npm run tscheck`     | Run TypeScript checks                             |
-| `npm run tscheck:w`   | Run TypeScript checks in watch mode               |
-| `npm run tsclint`     | Run TypeScript more stricter checks               |
-| `npm run tsclint:w`   | Run TypeScript more stricter checks in watch mode |
-| `npm run eslint`      | Run ESLint                                        |
-| `npm run eslint:w`    | Run ESLint in watch mode                          |
-| `npm run eslint:fix`  | Run ESLint in fix mode                            |
-| `npm run lint:w`      | Run all linting commands in watch mode            |
-| `npm run test:m`      | Run mutation tests                                |
+| Command              | Description                                              |
+|:---------------------|:---------------------------------------------------------|
+| `npm start`          | Build and start application                              |
+| `npm run dev:w`      | Start application in development mode with HMR (webpack) |
+| `npm run dev:d`      | Start application in debug mode (with nodemon)           |
+| `npm test`           | Run all tests                                            |
+| `npm run test:r`     | Run unit tests                                           |
+| `npm run test:w`     | Run unit tests in watch mode                             |
+| `npm run tscheck`    | Run TypeScript checks                                    |
+| `npm run tscheck:w`  | Run TypeScript checks in watch mode                      |
+| `npm run tsclint`    | Run TypeScript more stricter checks                      |
+| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode        |
+| `npm run eslint`     | Run ESLint                                               |
+| `npm run eslint:w`   | Run ESLint in watch mode                                 |
+| `npm run eslint:fix` | Run ESLint in fix mode                                   |
+| `npm run lint:w`     | Run all linting commands in watch mode                   |
+| `npm run test:m`     | Run mutation tests                                       |
 
 
 SCRIPTS
@@ -83,7 +82,6 @@ RESOURCES
 
 TODO
 ---
-* Migrations, Entity globs and hmr issues
 * Authentication using JSON Web Tokens
 * TypeORM: Mongoose: Clarify what exactly need todo
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
@@ -92,4 +90,4 @@ TODO
 
 DEBUG
 ---
-node --inspect -r ts-node/register src/database/scripts migrate
+node --inspect -r ts-node/register/transpile-only src/database/scripts migrate
