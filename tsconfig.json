@@ -1,22 +1,22 @@
 {
-    "compilerOptions": {
-        "target": "es2017",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "importHelpers": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "declaration": false,
-        "inlineSourceMap": true,
-        "skipLibCheck": true,
-        "strictNullChecks": true,
-        "outDir": "app_bin",
-        "isolatedModules": true,
-        "lib": [
-            "es2017"
-        ]
-    },
-    "include": [
-        "src/**/*.ts"
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "outDir": "app_bin",
+    "isolatedModules": true,
+    "lib": [
+      "es2017"
     ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }

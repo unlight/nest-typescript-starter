@@ -20,6 +20,7 @@ TASKS
 | Command              | Description                                              |
 |:---------------------|:---------------------------------------------------------|
 | `npm start`          | Build and start application                              |
+| `npm run dev`        | Start application in development mode                    |
 | `npm run dev:w`      | Start application in development mode with HMR (webpack) |
 | `npm run dev:d`      | Start application in debug mode (with nodemon)           |
 | `npm test`           | Run all tests                                            |

@@ -1,14 +1,15 @@
 import webpack = require('webpack');
+import { Configuration } from 'webpack';
 import path = require('path');
 import { loader } from 'webpack-loader-helper';
 const nodeExternals = require('webpack-node-externals');
 const pollInterval = 1000;
 
-module.exports = (options: any) => {
+module.exports = (options: any): Configuration => {
     return {
         entry: [`webpack/hot/poll?${pollInterval}`, './src/server.ts'],
         target: 'node',
-        devtool: false,
+        devtool: 'cheap-module-source-map',
         output: {
             path: `${__dirname}/app_bin`,
             filename: 'server.js',
@@ -36,6 +37,7 @@ module.exports = (options: any) => {
             new webpack.EnvironmentPlugin({
                 NODE_ENV: 'development',
             }),
+            new webpack.BannerPlugin({ banner: 'require("source-map-support").install();', raw: true, entryOnly: false }),
         ],
     };
 };
