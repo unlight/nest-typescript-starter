@@ -80,6 +80,8 @@ RESOURCES
 * Opinionated Framework built on top of NestJS and TypeORM - https://github.com/mentos1386/lynx
 * This is a Bull module for Nest - https://github.com/fwoelffel/nest-bull
 * Hybrid apps have embedded microservices - https://github.com/james7272/nestjs-hybrid-example/
+* I-know-nest repository - https://github.com/cojack/i-know-nest
+* A Bull module for Nest framework - https://github.com/fwoelffel/nest-bull
 
 TODO
 ---
