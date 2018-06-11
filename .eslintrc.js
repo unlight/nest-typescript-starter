@@ -58,6 +58,9 @@ module.exports = {
         }],
         'tsc/config': [1, {
             configFile: 'tsconfig.json',
+            compilerOptions: {
+                strictFunctionTypes: true,
+            }
         }],
         'no-undef': 0,
         'no-unused-vars': 0,

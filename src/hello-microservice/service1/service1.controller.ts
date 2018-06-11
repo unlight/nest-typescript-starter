@@ -7,7 +7,7 @@ import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
 export class Service1Controller {
 
     @Client({ transport: Transport.TCP, options: { port: 43210 } })
-    client: ClientProxy;
+    client: NonNullable<ClientProxy>;
 
     @MessagePattern('service1')
     async doit(data: string) {

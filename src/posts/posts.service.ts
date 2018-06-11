@@ -20,12 +20,12 @@ export class PostsService {
         return filter(this.posts, { authorId });
     }
 
-    findOneById(id) {
+    findOneById(id: any) {
         return find(this.posts, { id });
     }
 
-    upvoteById(id): Post {
-        const post = this.findOneById(id);
+    upvoteById(id: any): Post {
+        const post = this.findOneById(id) as Post;
         if (!post) {
             throw new Error(`Couldn't find post with id ${id}`);
         }

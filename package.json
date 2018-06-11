@@ -67,6 +67,7 @@
     "@types/graphql": "0.13.1",
     "@types/gulp": "4.0.5",
     "@types/jest": "23.0.1",
+    "@types/lodash": "4.14.109",
     "@types/node": "10.3.2",
     "@types/rimraf": "2.0.2",
     "@types/supertest": "2.0.4",
