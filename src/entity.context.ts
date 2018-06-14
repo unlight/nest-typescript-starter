@@ -1,6 +1,6 @@
 import { config } from './app.config';
 
-export function entityList(): string[] | Function[] {
+export function entityList(): Array<string | (() => void)> {
     // TODO: use config https://github.com/stryker-mutator/stryker-jest-runner/issues/50
     if (process.env.NODE_ENV === 'development') {
         const entityContext = require.context('.', true, /\.entity\.[tj]s$/);

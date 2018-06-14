@@ -15,6 +15,7 @@ function specLint() {
             'prefer-const': 0,
             'import/no-duplicates': 0,
             'import/max-dependencies': 0,
+            'tsc/config': 0,
         }
     });
 }

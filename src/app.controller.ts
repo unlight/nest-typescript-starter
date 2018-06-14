@@ -1,5 +1,5 @@
 import { Get, Controller, Res, Body, HttpStatus, Req, UseFilters, All, UseInterceptors } from '@nestjs/common';
-import { Response } from 'express';
+import { Response, Request } from 'express';
 import { User } from './core/decorators/user.decorator';
 import { TransformInterceptor } from './core/interceptors/transform.interceptor';
 import { of } from 'rxjs';
@@ -20,7 +20,7 @@ export class AppController {
 
     @Get('jwt')
     @UseInterceptors(TransformInterceptor)
-    async jwt(@Req() req, @User() user ) {
+    async jwt(@Req() req: any, @User() user: any) {
         return req.user === user;
     }
 

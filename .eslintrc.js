@@ -44,7 +44,7 @@ module.exports = {
         'import',
         'tslint',
         'nestjs',
-        'tsc',
+        // 'tsc',
     ],
     'extends': [
         'eslint:recommended',
@@ -56,12 +56,12 @@ module.exports = {
             rules: tslintConfigRules,
             rulesDirectory: tslintConfigRulesDirectory,
         }],
-        'tsc/config': [1, {
-            configFile: 'tsconfig.json',
-            compilerOptions: {
-                strictFunctionTypes: true,
-            }
-        }],
+        // 'tsc/config': [1, {
+        //     configFile: `${__dirname}/tsconfig.json`,
+        //     compilerOptions: {
+        //         strictNullChecks: true,
+        //     }
+        // }],
         'no-undef': 0,
         'no-unused-vars': 0,
         'no-dupe-class-members': 0,

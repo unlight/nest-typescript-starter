@@ -14,7 +14,7 @@ export class Example1512078647013 implements MigrationInterface {
         await catRepository.update({ id: cat.id }, { name: 'Fluffy' });
     }
 
-    public async down(queryRunner: QueryRunner): Promise<any> {
+    public async down(queryRunner: QueryRunner): Promise<any> { // eslint-disable-line tslint/config
     }
 
 }
