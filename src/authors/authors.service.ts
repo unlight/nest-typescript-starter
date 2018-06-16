@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { find, filter } from 'lodash';
+import { find } from 'lodash';
 
 import { Author } from './types';
 

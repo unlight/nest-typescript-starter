@@ -25,13 +25,17 @@ const tslintConfigRules = Object.assign({},
         'typedef': false,
         'newline-before-return': false,
         'no-require-imports': false,
+        // Wait new eslint-plugin-tslint
+        // 'no-unused-variable': false,
+        // 'restrict-plus-operands': true
     });
 
 module.exports = {
     'root': true,
     'env': {
         'es6': true,
-        'node': true
+        'node': true,
+        'jest/globals': true,
     },
     'parser': 'typescript-eslint-parser',
     'parserOptions': {
@@ -44,17 +48,20 @@ module.exports = {
         'import',
         'tslint',
         'nestjs',
+        'jest',
         // 'tsc',
     ],
     'extends': [
         'eslint:recommended',
         'plugin:unicorn/recommended',
         'plugin:nestjs/recommended',
+        'plugin:jest/recommended',
     ],
     'rules': {
         'tslint/config': [1, {
             rules: tslintConfigRules,
             rulesDirectory: tslintConfigRulesDirectory,
+            // configFile: `${__dirname}/tsconfig.json`,
         }],
         // 'tsc/config': [1, {
         //     configFile: `${__dirname}/tsconfig.json`,
@@ -68,10 +75,10 @@ module.exports = {
         'no-console': 0,
         'no-debugger': 1,
         'indent': 0,
+        'quotes': [1, 'single', { 'allowTemplateLiterals': true }],
+        'semi': [1, 'always'],
         'import/no-duplicates': 1,
         'import/max-dependencies': [1, { 'max': 12 }],
         'import/newline-after-import': 0,
-        'quotes': [1, 'single', { 'allowTemplateLiterals': true }],
-        'semi': [1, 'always'],
     }
 };
