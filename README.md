@@ -90,6 +90,7 @@ TODO
 * Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
 * Health endpoint
+* https://github.com/AssemblyScript/assemblyscript
 
 DEBUG
 ---

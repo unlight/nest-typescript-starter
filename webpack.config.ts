@@ -5,7 +5,22 @@ import { loader } from 'webpack-loader-helper';
 const nodeExternals = require('webpack-node-externals');
 const pollInterval = 1000;
 
-module.exports = (options: any): Configuration => {
+const defaultOptions = {
+    test: false,
+    coverage: false,
+    prod: process.argv.indexOf('--mode=production') !== -1 || process.argv.indexOf('--env.prod') !== -1,
+    get dev(): boolean {
+        return !this.prod;
+    },
+    get mode() {
+        return this.prod ? 'production' : 'development';
+    }
+};
+
+type ConfigOptions = Partial<Record<keyof typeof defaultOptions, any>>;
+
+module.exports = (options: ConfigOptions = {}): Configuration => {
+    options = { ...defaultOptions, ...options };
     return {
         entry: [`webpack/hot/poll?${pollInterval}`, './src/server.ts'],
         target: 'node',
