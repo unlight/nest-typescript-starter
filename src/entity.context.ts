@@ -1,8 +1,7 @@
 import { config } from './app.config';
 
 export function entityList(): Array<string | (() => void)> {
-    // TODO: use config https://github.com/stryker-mutator/stryker-jest-runner/issues/50
-    if (process.env.NODE_ENV === 'development') {
+    if (config.get('environment') === 'development') {
         const entityContext = require.context('.', true, /\.entity\.[tj]s$/);
         return entityContext.keys().map(id => {
             const entityModule = entityContext(id);

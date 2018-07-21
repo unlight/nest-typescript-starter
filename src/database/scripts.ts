@@ -8,7 +8,7 @@ export interface IScript {
     run(argv: Arguments): Promise<void>;
 }
 
-(async function main() {
+async function main() {
     try {
         const context = await NestFactory.createApplicationContext(ScriptsModule);
         const names: string[] = yargs.argv._;
@@ -26,4 +26,6 @@ export interface IScript {
     } catch (err) {
         throw err;
     }
-})();
+}
+
+main();

@@ -87,11 +87,12 @@ TODO
 ---
 * Authentication using JSON Web Tokens
 * TypeORM: Mongoose: Clarify what exactly need todo
-* Generating migrations https://github.com/typeorm/typeorm/issues/1304
 * https://github.com/nestjs/mongoose
 * Health endpoint
 * https://github.com/AssemblyScript/assemblyscript
 
 DEBUG
 ---
-node --inspect -r ts-node/register/transpile-only src/database/scripts migrate
+```
+node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate
+```
