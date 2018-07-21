@@ -8,7 +8,6 @@ import { TransformInterceptor } from '../core/interceptors/transform.interceptor
 import { ValidationPipe } from '../core/pipes/validation.pipe';
 import { ApiResponse } from '@nestjs/swagger';
 import { HttpExceptionFilter } from '../core/filters/http-exception.filter';
-import { Access } from '../core/decorators/access';
 import { User } from '../core/decorators/user.decorator'; // eslint-disable-line import/max-dependencies
 
 @Controller('/cat')

@@ -23,7 +23,7 @@
     "test:d": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --testMatch \"<rootDir>/src/**/*.spec.ts\"",
     "tscheck": "echo tscheck... && tsc --noEmit",
     "tscheck:w": "npm run tscheck -- --watch",
-    "tsclint": "tsc --noEmit --pretty false --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
+    "tsclint": "tsc --noEmit --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
     "tsclint:w": "npm run tsclint -- --watch",
     "eslint": "gulp eslint",
     "eslint:fix": "eslint app --ext \"ts\" --fix",
