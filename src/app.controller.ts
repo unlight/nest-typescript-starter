@@ -1,7 +1,7 @@
 import { Get, Controller, Res, Body, HttpStatus, Req, UseInterceptors } from '@nestjs/common';
 import { Response } from 'express';
-import { User } from './core/decorators/user.decorator';
-import { TransformInterceptor } from './core/interceptors/transform.interceptor';
+import { User } from './common/decorators/user.decorator';
+import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { of } from 'rxjs';
 
 @Controller()

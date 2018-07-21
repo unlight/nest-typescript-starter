@@ -82,6 +82,8 @@ RESOURCES
 * Hybrid apps have embedded microservices - https://github.com/james7272/nestjs-hybrid-example/
 * I-know-nest repository - https://github.com/cojack/i-know-nest
 * A Bull module for Nest framework - https://github.com/fwoelffel/nest-bull
+* https://github.com/caiya/graphql-nestjs-typeorm
+* Scaffold quickly your next TypeScript API with this opinionated NestJS template crafted for Docker environments - https://github.com/Saluki/nestjs-template
 
 TODO
 ---
