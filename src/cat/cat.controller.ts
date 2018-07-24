@@ -2,13 +2,13 @@ import { Controller, Get, Req, Body, HttpStatus, Post, UseGuards, UseInterceptor
 import { Request } from 'express';
 import { CatService } from './cat.service';
 import { CreateCatDto } from './create-cat.dto';
-import { Roles } from '../common/decorators/roles.decorator';
-import { RolesGuard } from '../common/guards/roles.guard';
-import { TransformInterceptor } from '../common/interceptors/transform.interceptor';
-import { ValidationPipe } from '../common/pipes/validation.pipe';
+import { Roles } from '../common/roles.decorator';
+import { RolesGuard } from '../common/roles.guard';
+import { TransformInterceptor } from '../common/transform.interceptor';
+import { ValidationPipe } from '../common/validation.pipe';
 import { ApiResponse } from '@nestjs/swagger';
-import { HttpExceptionFilter } from '../common/filters/http-exception.filter';
-import { User } from '../common/decorators/user.decorator'; // eslint-disable-line import/max-dependencies
+import { HttpExceptionFilter } from '../common/http-exception.filter';
+import { User } from '../common/user.decorator'; // eslint-disable-line import/max-dependencies
 
 @Controller('/cat')
 @UseGuards(RolesGuard)

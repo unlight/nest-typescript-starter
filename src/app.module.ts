@@ -1,9 +1,9 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { CatModule } from './cat/cat.module';
 import { CatController } from './cat/cat.controller';
-import { LoggerMiddleware } from './common/middlewares/logger.middleware';
+import { LoggerMiddleware } from './common/logger.middleware';
 import { AppController } from './app.controller';
-import { JwtMiddleware } from './common/middlewares/jwt.middleware';
+import { JwtMiddleware } from './common/jwt.middleware';
 import { DatabaseModule } from './database/database.module';
 import { AppGraphQLModule } from './app.graphql.module';
 import { ConfigService } from './app.config.service';

@@ -1,6 +1,6 @@
 import { Injectable, NestMiddleware, MiddlewareFunction } from '@nestjs/common';
 import { ServerRequest } from 'http';
-import { ConfigService } from '../../app.config.service';
+import { ConfigService } from '../app.config.service';
 const jwt = require('express-jwt');
 
 @Injectable()
