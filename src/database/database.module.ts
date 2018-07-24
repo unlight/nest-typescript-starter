@@ -10,9 +10,8 @@ import { entityList } from '../entity.context';
         TypeOrmModule.forRoot({
             keepConnectionAlive: true,
             ...config.get('typeorm'),
-            entities: [
-                ...entityList(),
-            ],
+            migrations: [`src/database/migrations/*.{ts,js}`],
+            entities: ['**/*.entity.{ts,js}'],
         }),
     ],
 })

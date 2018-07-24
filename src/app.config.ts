@@ -2,10 +2,16 @@ import * as convict from 'convict';
 
 const schema: convict.Schema<any> = {
     environment: {
-        doc: 'The applicaton environment.',
+        doc: 'The applicaton environment',
         format: ['production', 'development', 'test'],
         default: 'development',
         env: 'NODE_ENV',
+    },
+    runner: {
+        doc: 'The application runner',
+        format: ['node', 'webpack'],
+        arg: 'runner',
+        default: process.env.NODE_RUNNER || 'node',
     },
     port: {
         format: 'port',
@@ -33,10 +39,7 @@ const schema: convict.Schema<any> = {
         logging: {
             default: true,
             format: Boolean,
-        },
-        migrations: {
-            default: [`src/database/migrations/*.{ts,js}`],
-        },
+        }
     },
     secret: {
         default: 'secret',

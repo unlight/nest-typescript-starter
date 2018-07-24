@@ -50,6 +50,7 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
             new webpack.EnvironmentPlugin({
+                NODE_RUNNER: 'webpack',
                 NODE_ENV: 'development',
             }),
             new webpack.BannerPlugin({ banner: 'require("source-map-support").install();', raw: true, entryOnly: false }),
