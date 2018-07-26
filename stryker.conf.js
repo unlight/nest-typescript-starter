@@ -1,5 +1,6 @@
 module.exports = function(config) {
     config.set({
+        maxConcurrentTestRunners: 2,
         files: [
             'src/**/*.ts',
             'src/**/*.graphql',
