@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { CatModule } from './cat/cat.module';
 import { AppGraphQLModule } from './app.graphql.module';
 import { config } from '../config';
-import { entityList } from './entity.context';
 import { ConfigService } from './config.service';
 import { LoggerMiddleware } from '../components/logger.middleware';
 import { CatController } from './cat/cat.controller';
