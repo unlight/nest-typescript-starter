@@ -7,6 +7,7 @@ const tslintConfigRules = Object.assign({},
     // require('tslint-clean-code/recommended_ruleset').rules,
     {
         'member-access': false,
+        'member-ordering': false,
         'ordered-imports': false,
         'quotemark': false,
         'no-var-keyword': false,

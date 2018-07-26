@@ -6,10 +6,8 @@ import { Config } from '../config';
 export class ConfigService {
 
     constructor(
-        private config: convict.Config<Config>
+        private readonly config: Config,
     ) { }
 
-    get<T = any>(key: string): T {
-        return this.config.get(key);
-    }
+    readonly get: Config['get'] = this.config.get;
 }

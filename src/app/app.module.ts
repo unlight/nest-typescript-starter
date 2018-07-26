@@ -16,7 +16,7 @@ import { CatController } from './cat/cat.controller';
         // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot({
             keepConnectionAlive: true,
-            ...config.get('typeorm'),
+            ...config.get<any>('typeorm'),
         }),
     ],
     providers: [

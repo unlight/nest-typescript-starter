@@ -9,7 +9,7 @@ import { Arguments } from 'yargs';
 @Module({
     imports: [
         TypeOrmModule.forRoot({
-            ...config.get('typeorm'),
+            ...config.get<any>('typeorm'),
             migrations: [`src/migrations/*.{ts,js}`],
             entities: ['src/app/**/*.entity.{ts,js}'],
         }),

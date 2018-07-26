@@ -1,6 +1,6 @@
 import * as convict from 'convict';
 
-const schema: convict.Schema<any> = {
+const schema = {
     environment: {
         doc: 'The applicaton environment',
         format: ['production', 'development', 'test', 'webpack_development'],
@@ -40,12 +40,15 @@ const schema: convict.Schema<any> = {
             default: ['src/app/**/*.entity.{ts,js}'],
         },
     },
-    secret: {
+    secretOrPrivateKey: {
         default: 'secret',
     },
 };
 
 export const config = convict(schema).validate();
+
+// export type Config = Record<keyof typeof schema, any>;
+export type Config = typeof config;
 
 if (config.get('environment') === 'webpack_development') {
     const entityContext = require.context('.', true, /\.entity\.ts$/);
@@ -55,5 +58,3 @@ if (config.get('environment') === 'webpack_development') {
         return entity;
     }));
 }
-
-export type Config = Record<keyof typeof schema, any>;
