@@ -3,19 +3,15 @@ import * as convict from 'convict';
 const schema: convict.Schema<any> = {
     environment: {
         doc: 'The applicaton environment',
-        format: ['production', 'development', 'test'],
+        format: ['production', 'development', 'test', 'webpack_development'],
         default: 'development',
         env: 'NODE_ENV',
-    },
-    runner: {
-        doc: 'The application runner',
-        format: ['node', 'webpack'],
-        arg: 'runner',
-        default: 'node',
+        arg: 'node_env'
     },
     port: {
         format: 'port',
         default: 3000,
+        env: 'PORT',
         arg: 'port',
     },
     typeorm: {
@@ -39,7 +35,10 @@ const schema: convict.Schema<any> = {
         logging: {
             default: true,
             format: Boolean,
-        }
+        },
+        entities: {
+            default: ['src/app/**/*.entity.{ts,js}'],
+        },
     },
     secret: {
         default: 'secret',
@@ -47,5 +46,14 @@ const schema: convict.Schema<any> = {
 };
 
 export const config = convict(schema).validate();
+
+if (config.get('environment') === 'webpack_development') {
+    const entityContext = require.context('.', true, /\.entity\.ts$/);
+    config.set('typeorm.entities', entityContext.keys().map(id => {
+        const entityModule = entityContext(id);
+        const [entity] = Object.values(entityModule);
+        return entity;
+    }));
+}
 
 export type Config = Record<keyof typeof schema, any>;
