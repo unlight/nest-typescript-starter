@@ -1,11 +1,11 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import * as bodyParser from 'body-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { config } from './app.config';
 import { HelloMicroserviceModule } from './hello-microservice/hello-microservice.module';
 import { Transport } from '@nestjs/microservices';
-// import { RolesGuard } from './core/guards/roles.guard';
+import { AppModule } from './app/app.module';
+import { config } from './config';
+// import { RolesGuard } from './components/roles.guard';
 
 import 'loud-rejection/register';
 

@@ -20,7 +20,6 @@ TASKS
 | Command              | Description                                              |
 |:---------------------|:---------------------------------------------------------|
 | `npm start`          | Build and start application                              |
-| `npm run dev`        | Start application in development mode                    |
 | `npm run dev:w`      | Start application in development mode with HMR (webpack) |
 | `npm run dev:d`      | Start application in debug mode (with nodemon)           |
 | `npm test`           | Run all tests                                            |
@@ -41,7 +40,7 @@ SCRIPTS
 ---
 Database seed example:
 ```
-npx ts-node src/database/scripts seed
+npx ts-node src/scripts seed
 ```
 
 SETUP ENVIRONMENT (EXAMPLE)
@@ -84,10 +83,11 @@ RESOURCES
 * A Bull module for Nest framework - https://github.com/fwoelffel/nest-bull
 * https://github.com/caiya/graphql-nestjs-typeorm
 * Scaffold quickly your next TypeScript API with this opinionated NestJS template crafted for Docker environments - https://github.com/Saluki/nestjs-template
+* Authentication and Authorization example for Nest.js TypeScript Framework - https://github.com/neoteric-eu/nestjs-auth
 
 TODO
 ---
-* Authentication using JSON Web Tokens
+* Authentication using JSON Web Tokens - https://github.com/nestjs/jwt
 * TypeORM: Mongoose: Clarify what exactly need todo
 * https://github.com/nestjs/mongoose
 * Health endpoint

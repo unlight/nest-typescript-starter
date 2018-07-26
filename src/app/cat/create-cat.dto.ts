@@ -1,6 +1,6 @@
 import { IsString, MaxLength, IsNotEmpty, IsOptional, IsDateString, IsDate, Validate, IsISO8601 } from 'class-validator';
 import { ApiModelProperty, ApiModelPropertyOptional } from '@nestjs/swagger';
-import { CustomTextLength } from './validators/custom-text-length';
+import { CustomTextLength } from './custom-text-length.validator';
 
 export class CreateCatDto {
 

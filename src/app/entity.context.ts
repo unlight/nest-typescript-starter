@@ -1,4 +1,4 @@
-import { config } from './app.config';
+import { config } from '../config';
 
 export function entityList(): Array<string | (() => void)> {
     if (config.get('runner') === 'webpack') {
@@ -9,6 +9,6 @@ export function entityList(): Array<string | (() => void)> {
             return entity;
         });
     } else {
-        return ['**/*.entity.{ts,js}'];
+        return ['src/app/**/*.entity.{ts,js}'];
     }
 }

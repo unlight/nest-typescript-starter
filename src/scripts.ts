@@ -1,12 +1,8 @@
 import { NestFactory, Reflector } from '@nestjs/core';
-import { ScriptsModule } from './scripts/scripts.module';
+import { ScriptsModule, IScript } from './scripts/scripts.module';
 import { Arguments } from 'yargs';
 import yargs = require('yargs');
 import 'loud-rejection/register';
-
-export interface IScript {
-    run(argv: Arguments): Promise<void>;
-}
 
 async function main() {
     try {

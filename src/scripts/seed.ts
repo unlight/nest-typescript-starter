@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { IScript } from '../scripts';
-import { Cat } from '../../cat/cat.entity';
+import { IScript } from './scripts.module';
+import { Cat } from '../app/cat/cat.entity';
 
 @Injectable()
 export class Seed implements IScript {

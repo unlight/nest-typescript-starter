@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { IScript } from '../scripts';
+import { IScript } from './scripts.module';
 
 @Injectable()
 export class Migrate implements IScript {

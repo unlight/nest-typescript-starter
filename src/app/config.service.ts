@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as convict from 'convict';
-import { Config } from './app.config';
+import { Config } from '../config';
 
 @Injectable()
 export class ConfigService {

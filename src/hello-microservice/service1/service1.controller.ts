@@ -1,6 +1,6 @@
 import { Controller, UseInterceptors } from '@nestjs/common';
 import { MessagePattern, Client, ClientProxy, Transport } from '@nestjs/microservices';
-import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
+import { LoggingInterceptor } from '../../components/logging.interceptor';
 
 @Controller()
 // @UseInterceptors(LoggingInterceptor)

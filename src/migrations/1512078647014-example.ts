@@ -1,5 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { Cat } from '../../cat/cat.entity';
+import { Cat } from '../app/cat/cat.entity';
 
 export class Example1512078647013 implements MigrationInterface {
 
