@@ -9,7 +9,7 @@
   "scripts": {
     "start": "tsc && npm run app:bin",
     "dev:d": "node-dev --no-deps -r ts-node/register/transpile-only --inspect src/server.ts",
-    "dev": "run-p \"webpack -- --watch\" app:bin",
+    "dev": "run-p \"webpack -- --watch\" \"app:bin -- --runner=webpack\"",
     "dev:2": "ts-node-dev --no-deps --transpileOnly src/server.ts",
     "predev": "rimraf app_bin",
     "webpack": "webpack",

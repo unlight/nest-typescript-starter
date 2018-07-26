@@ -11,7 +11,7 @@ const schema: convict.Schema<any> = {
         doc: 'The application runner',
         format: ['node', 'webpack'],
         arg: 'runner',
-        default: process.env.NODE_RUNNER || 'node',
+        default: 'node',
     },
     port: {
         format: 'port',
