@@ -26,7 +26,6 @@ import { CatController } from './cat/cat.controller';
 export class AppModule implements NestModule {
 
     configure(consumer: MiddlewareConsumer): void {
-        consumer.apply(LoggerMiddleware).forRoutes('/welcome');
         consumer.apply(LoggerMiddleware).forRoutes(CatController);
     }
 }

@@ -20,7 +20,7 @@ TASKS
 | Command              | Description                                              |
 |:---------------------|:---------------------------------------------------------|
 | `npm start`          | Build and start application                              |
-| `npm run dev:w`      | Start application in development mode with HMR (webpack) |
+| `npm run dev`        | Start application in development mode with HMR (webpack) |
 | `npm run dev:d`      | Start application in debug mode (with nodemon)           |
 | `npm test`           | Run all tests                                            |
 | `npm run test:r`     | Run unit tests                                           |
@@ -35,6 +35,16 @@ TASKS
 | `npm run lint:w`     | Run all linting commands in watch mode                   |
 | `npm run test:m`     | Run mutation tests                                       |
 
+FOLDER STRUCTURE
+---
+| Folder           | Description                                                                                  |
+|:-----------------|:---------------------------------------------------------------------------------------------|
+| `src/config.ts`  | Configuration file                                                                           |
+| `src/server.ts`  | Main file, starts server                                                                     |
+| `src/app`        | Application files: controllers, services, entities, etc. grouped by feature                  |
+| `src/components` | Shared components: helpers, decorators, pipes, transformers, interceptors, middlewares, etc. |
+| `src/scripts`    | Scripts which runs from cli to support database, cronjob, etc.                               |
+| `src/migrations` | TypeORM migrations                                                                           |
 
 SCRIPTS
 ---
@@ -87,7 +97,6 @@ RESOURCES
 
 TODO
 ---
-* Authentication using JSON Web Tokens - https://github.com/nestjs/jwt
 * TypeORM: Mongoose: Clarify what exactly need todo
 * https://github.com/nestjs/mongoose
 * Health endpoint
