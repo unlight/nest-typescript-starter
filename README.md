@@ -17,27 +17,25 @@ $ npm install
 
 TASKS
 ---
-| Command              | Description                                              |
-|:---------------------|:---------------------------------------------------------|
-| `npm start`          | Build and start application                              |
-| `npm run dev`        | Start application in development mode with HMR (webpack) |
-| `npm run dev:d`      | Start application in debug mode (with nodemon)           |
-| `npm test`           | Run all tests                                            |
-| `npm run test:r`     | Run unit tests                                           |
-| `npm run test:w`     | Run unit tests in watch mode                             |
-| `npm run tscheck`    | Run TypeScript checks                                    |
-| `npm run tscheck:w`  | Run TypeScript checks in watch mode                      |
-| `npm run tsclint`    | Run TypeScript more stricter checks                      |
-| `npm run tsclint:w`  | Run TypeScript more stricter checks in watch mode        |
-| `npm run eslint`     | Run ESLint                                               |
-| `npm run eslint:w`   | Run ESLint in watch mode                                 |
-| `npm run eslint:fix` | Run ESLint in fix mode                                   |
-| `npm run lint:w`     | Run all linting commands in watch mode                   |
-| `npm run test:m`     | Run mutation tests                                       |
+| Command                 | Description                                              |
+|:------------------------|:---------------------------------------------------------|
+| `npm start`             | Build and start application                              |
+| `npm run dev`           | Start application in development mode with HMR (webpack) |
+| `npm run dev:n:inspect` | Start application in debug mode (node-dev)               |
+| `npm run dev:w:inspect` | Start application in debug mode (webpack)                |
+| `npm test`              | Run all tests                                            |
+| `npm run test:r`        | Run unit tests                                           |
+| `npm run test:w`        | Run unit tests in watch mode                             |
+| `npm run tscheck:w`     | Run TypeScript checks in watch mode                      |
+| `npm run tsclint:w`     | Run TypeScript more stricter checks in watch mode        |
+| `npm run eslint:w`      | Run ESLint in watch mode                                 |
+| `npm run eslint:fix`    | Run ESLint in fix mode                                   |
+| `npm run lint:w`        | Run all linting commands in watch mode                   |
+| `npm run test:m`        | Run mutation tests                                       |
 
 FOLDER STRUCTURE
 ---
-| Folder           | Description                                                                                  |
+| Folder/file      | Description                                                                                  |
 |:-----------------|:---------------------------------------------------------------------------------------------|
 | `src/config.ts`  | Configuration file                                                                           |
 | `src/server.ts`  | Main file, starts server                                                                     |
@@ -61,6 +59,25 @@ set TYPEORM_DATABASE=nest-typescript-starter
 set TYPEORM_CONNECTION=sqlite
 set TYPEORM_DATABASE=test
 ```
+
+DEVELOPMENT
+---
+* `npm run dev:w:inspect -- --env.devtool=inline-cheap-source-map` Debug with webpack and HMR (show srouces as transformed code)
+* `node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate`
+
+WEBPACK DEVTOOL SETTING (HMR)
+---
+| Value                            | Valid stacktrace | Source updates | Breakpoints | Rebuild | Quality          |
+|:---------------------------------|:-----------------|:---------------|:------------|:--------|:-----------------|
+| `cheap-eval-source-map`          | No               | Yes            | No          | ++      | transformed code |
+| `cheap-module-source-map`        | Yes              | Yes            | Yes         | -       | original source  |
+| `inline-cheap-module-source-map` | Yes              | Yes            | Yes         | -       | original source  |
+| `inline-cheap-source-map`        | No               | Yes            | Yes         | o       | transformed code |
+| `cheap-source-map`               | No               | Yes            | Yes         | o       | transformed code |
+| `inline-source-map`              | Yes              | Yes            | Yes         | --      | original source  |
+| `eval-source-map`                | ?                | ?              | ?           | +       | original source  |
+| `source-map`                     | Yes              | Yes            | Yes         | --      | original source  |
+
 
 RESOURCES
 ---
@@ -101,9 +118,3 @@ TODO
 * https://github.com/nestjs/mongoose
 * Health endpoint
 * https://github.com/AssemblyScript/assemblyscript
-
-DEBUG
----
-```
-node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate
-```

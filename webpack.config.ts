@@ -1,3 +1,4 @@
+/* eslint-disable no-console, import/max-dependencies, tslint/config */
 import webpack = require('webpack');
 import { Configuration } from 'webpack';
 import path = require('path');
@@ -14,22 +15,26 @@ const defaultOptions = {
     },
     get mode() {
         return this.prod ? 'production' : 'development';
-    }
+    },
+    devtool: 'inline-cheap-module-source-map',
 };
 
 type ConfigOptions = Partial<Record<keyof typeof defaultOptions, any>>;
 
 module.exports = (options: ConfigOptions = {}): Configuration => {
     options = { ...defaultOptions, ...options };
+    for (const [key, value] of Object['entries'](options)) {
+        (value === true) ? process.stdout.write(`${key} `) : (process.stdout.write(value ? `${key}:${value} ` : ''));
+    }
     return {
         entry: [`webpack/hot/poll?${pollInterval}`, './src/server.ts'],
         target: 'node',
-        devtool: 'cheap-module-source-map',
+        devtool: options.devtool,
         output: {
             path: `${__dirname}/app_bin`,
             filename: 'server.js',
         },
-        mode: 'development',
+        mode: options.mode,
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
         },
