@@ -14,8 +14,8 @@ import { TransformInterceptor } from '../../components/transform.interceptor';
 @UseGuards(RolesGuard)
 // @UseGuards(CatGuard)
 @UseInterceptors(TransformInterceptor)
-@UsePipes(new ValidationPipe())
-@UseFilters(new HttpExceptionFilter())
+@UsePipes(ValidationPipe)
+@UseFilters(HttpExceptionFilter)
 export class CatController {
 
     constructor(

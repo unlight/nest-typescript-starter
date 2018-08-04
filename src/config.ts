@@ -3,16 +3,26 @@ import * as convict from 'convict';
 const schema = {
     environment: {
         doc: 'The applicaton environment',
-        format: ['production', 'development', 'test', 'webpack_development'],
+        format: ['production', 'development', 'test'],
         default: 'development',
         env: 'NODE_ENV',
-        arg: 'node_env'
+        arg: 'node_env',
+    },
+    program: {
+        doc: 'The program which runs code',
+        format: ['node', 'tsnode', 'webpack'],
+        default: 'node',
+        env: 'PROGRAM',
+        arg: 'program',
     },
     port: {
         format: 'port',
         default: 3000,
         env: 'PORT',
         arg: 'port',
+    },
+    secretOrPrivateKey: {
+        default: 'secret',
     },
     typeorm: {
         type: {
@@ -40,9 +50,6 @@ const schema = {
             default: ['src/app/**/*.entity.{ts,js}'],
         },
     },
-    secretOrPrivateKey: {
-        default: 'secret',
-    },
 };
 
 export const config = convict(schema).validate();
@@ -50,7 +57,9 @@ export const config = convict(schema).validate();
 // export type Config = Record<keyof typeof schema, any>;
 export type Config = typeof config;
 
-if (config.get('environment') === 'webpack_development') {
+console.log("config.get('program')", config.get('program'));
+
+if (config.get('program') === 'webpack') {
     const entityContext = require.context('.', true, /\.entity\.ts$/);
     config.set('typeorm.entities', entityContext.keys().map(id => {
         const entityModule = entityContext(id);

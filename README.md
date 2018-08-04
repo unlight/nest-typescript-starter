@@ -117,4 +117,3 @@ TODO
 * TypeORM: Mongoose: Clarify what exactly need todo
 * https://github.com/nestjs/mongoose
 * Health endpoint
-* https://github.com/AssemblyScript/assemblyscript
