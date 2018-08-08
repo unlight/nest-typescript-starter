@@ -111,6 +111,7 @@ RESOURCES
 * https://github.com/caiya/graphql-nestjs-typeorm
 * Scaffold quickly your next TypeScript API with this opinionated NestJS template crafted for Docker environments - https://github.com/Saluki/nestjs-template
 * Authentication and Authorization example for Nest.js TypeScript Framework - https://github.com/neoteric-eu/nestjs-auth
+* Another example of chiny app - https://github.com/notadd/notadd
 
 TODO
 ---
