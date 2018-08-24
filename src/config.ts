@@ -57,8 +57,6 @@ export const config = convict(schema).validate();
 // export type Config = Record<keyof typeof schema, any>;
 export type Config = typeof config;
 
-console.log("config.get('program')", config.get('program'));
-
 if (config.get('program') === 'webpack') {
     const entityContext = require.context('.', true, /\.entity\.ts$/);
     config.set('typeorm.entities', entityContext.keys().map(id => {
