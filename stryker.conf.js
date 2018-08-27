@@ -8,13 +8,13 @@ module.exports = function(config) {
         testRunner: 'jest',
         mutator: 'typescript',
         transpilers: [],
-        reporter: ['html', 'clear-text', 'progress'],
+        reporters: ['html', 'clear-text', 'progress'],
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
         mutate: [
             'src/**/cat.controller.ts',
         ],
-        timeoutMs: 10 * 1000,
+        timeoutMS: 10 * 1000,
         // timeoutFactor: 2,
         htmlReporter: {
             baseDir: '.testresults/mutation'

@@ -19,8 +19,8 @@ async function main() {
             throw new TypeError(`Cannot create instance of ${Module.name}`);
         }
         await script.run(yargs.argv);
-    } catch (err) {
-        throw err;
+    } catch (error) {
+        throw error;
     }
 }
 

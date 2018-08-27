@@ -13,18 +13,18 @@ export class PostResolver {
 
     @Query('posts')
     async getPosts() {
-        return await this.postsService.findAll();
+        return this.postsService.findAll();
     }
 
     @Mutation('upvotePost')
     async upvotePost(obj, { postId }) {
-        return await this.postsService.upvoteById(postId);
+        return this.postsService.upvoteById(postId);
     }
 
     @ResolveProperty('author')
     async getAuthor(author: Author) {
         // Good place to use dataLoader here.
         const { id } = author;
-        return await this.authorsService.findOneById(id);
+        return this.authorsService.findOneById(id);
     }
 }

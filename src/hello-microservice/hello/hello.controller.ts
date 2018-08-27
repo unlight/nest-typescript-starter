@@ -8,7 +8,7 @@ export class HelloController {
 
     @Get()
     async hello() {
-        const reply = await this.client.send('service1', 'hello world').toPromise();
+        const reply: string = await this.client.send('service1', 'hello world').toPromise();
         return 'Hello world! ' + reply;
     }
 }

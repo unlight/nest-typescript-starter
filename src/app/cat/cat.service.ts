@@ -16,7 +16,7 @@ export class CatService {
     }
 
     async findAll(): Promise<Cat[]> {
-        return await this.catRepository.find();
+        return this.catRepository.find();
     }
 
     async create(createCatDto: CreateCatDto) {

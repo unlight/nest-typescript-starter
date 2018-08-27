@@ -16,7 +16,7 @@ export class AuthorResolver {
     async getAuthor(obj, { id }, _, resolveInfo: GraphQLResolveInfo) {
         // A way to get requested fields from query.
         // const [authorFields] = resolveInfo.fieldNodes.map(f => f.selectionSet!.selections.map((selection: FieldNode) => selection.name.value));
-        return await this.authorsService.findOneById(id);
+        return this.authorsService.findOneById(id);
     }
 
     @ResolveProperty('posts')
@@ -24,6 +24,6 @@ export class AuthorResolver {
         // A way to get requested fields from query.
         // const [postFields] = resolveInfo.fieldNodes.map(f => f.selectionSet!.selections.map((selection: FieldNode) => selection.name.value));
         const { id } = author;
-        return await this.postsService.findAllByAuthor(id);
+        return this.postsService.findAllByAuthor(id);
     }
 }

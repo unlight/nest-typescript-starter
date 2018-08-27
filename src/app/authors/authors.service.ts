@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { find } from 'lodash';
-
 import { Author } from './types';
 
 @Injectable()
@@ -12,6 +10,6 @@ export class AuthorsService {
     ];
 
     findOneById(id: number): Author | undefined {
-        return find(this.authors, { id });
+        return this.authors.find(author => author.id === id);
     }
 }

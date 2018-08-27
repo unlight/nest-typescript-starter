@@ -12,7 +12,6 @@ import { TransformInterceptor } from '../../components/transform.interceptor';
 
 @Controller('/cat')
 @UseGuards(RolesGuard)
-// @UseGuards(CatGuard)
 @UseInterceptors(TransformInterceptor)
 @UsePipes(ValidationPipe)
 @UseFilters(HttpExceptionFilter)
@@ -28,19 +27,19 @@ export class CatController {
     }
 
     @Get('/get/:id')
-    async cat( @Param('id', new ParseIntPipe()) id) {
+    async cat(@Param('id', new ParseIntPipe()) id) {
         return { id };
     }
 
     @Post('/')
     @ApiResponse({ status: 201, description: 'The record has been successfully created.' })
-    async createCat( @Req() req: Request, @Body() body: CreateCatDto) {
+    async createCat(@Req() req: Request, @Body() body: CreateCatDto) {
         return this.catService.create(body);
     }
 
     @Get('/admin')
     @Roles('admin')
-    async admin( @Req() req: Request) {
+    async admin(@Req() req: Request) {
         return 'ok';
     }
 
@@ -50,7 +49,7 @@ export class CatController {
     }
 
     @Put('/:id')
-    async update(@Param('id') id, @User() user) {
+    async update(@Param('id') id: number, @User() user) {
         const cat = await this.catService.findOneById(id);
         // (global as any).checkPermission(user, 'cat.update', cat);
     }
