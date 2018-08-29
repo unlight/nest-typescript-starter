@@ -9,6 +9,6 @@ export class HelloController {
     @Get()
     async hello() {
         const reply: string = await this.client.send('service1', 'hello world').toPromise();
-        return 'Hello world! ' + reply;
+        return `Hello world! ${reply}`;
     }
 }
