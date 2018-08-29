@@ -1,4 +1,5 @@
 import { writeFileSync, mkdirSync } from 'fs';
+import { resolve } from 'path';
 import gulp = require('gulp');
 const g = require('gulp-load-plugins')();
 
@@ -30,6 +31,7 @@ gulp.task('eslint', () => {
 gulp.task('eslint:w', (done) => {
     const w = gulp.watch('src/**/*.ts', { ignoreInitial: false }, gulp.series('eslint'));
     w.on('change', g.memoryCache.update('source'));
+    w.on('unlink', file => g.memoryCache.forget('source', file, file => resolve(file)));
     process.on('SIGINT', () => {
         w.close();
         done();
