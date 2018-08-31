@@ -1,30 +1,35 @@
 import { Query, Mutation, Resolver, ResolveProperty } from '@nestjs/graphql';
-
 import { PostsService } from './posts.service';
 import { AuthorsService } from '../authors/authors.service';
 import { Author } from '../authors/types';
+import { GraphQLResolveInfo } from 'graphql';
+import { Inject } from '@nestjs/common';
+import DataLoader = require('dataloader');
 
 @Resolver('Post')
 export class PostResolver {
     constructor(
         private readonly postsService: PostsService,
         private readonly authorsService: AuthorsService,
+        @Inject('AuthorDataLoader') private authorDataLoader: DataLoader<number, Author>,
     ) { }
 
     @Query('posts')
-    async getPosts() {
+    async getPosts(req, { id }, _, resolveInfo: GraphQLResolveInfo) {
+        // A way to get requested fields from query.
+        // const [authorFields] = resolveInfo.fieldNodes.map(f => f.selectionSet!.selections.map((selection: FieldNode) => selection.name.value));
         return this.postsService.findAll();
     }
 
     @Mutation('upvotePost')
-    async upvotePost(obj, { postId }) {
+    async upvotePost(req, { postId }) {
         return this.postsService.upvoteById(postId);
     }
 
     @ResolveProperty('author')
     async getAuthor(author: Author) {
-        // Good place to use dataLoader here.
         const { id } = author;
-        return this.authorsService.findOneById(id);
+        return this.authorDataLoader.load(id);
+        // return this.authorsService.findOneById(id);
     }
 }

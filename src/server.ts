@@ -33,6 +33,7 @@ async function main() {
     // Microservice without http server
     const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, options: { port: 43210 } });
     service.listen(undefined as any);
+    console.log('service.listen'); // todo: send notification to system
 
     if (module.hot) {
         module.hot.accept();

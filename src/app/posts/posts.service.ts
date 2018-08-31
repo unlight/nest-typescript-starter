@@ -11,8 +11,8 @@ export class PostsService {
         { id: 4, authorId: 3, title: 'Launchpad is Cool', votes: 7 },
     ];
 
-    upvoteById(id: number): Post {
-        const post = <Post>this.findOneById(id);
+    async upvoteById(id: number): Promise<Post> {
+        const post = await this.findOneById(id);
         if (post == null) {
             throw new Error(`Couldn't find post with id ${id}`);
         }
@@ -20,15 +20,19 @@ export class PostsService {
         return post;
     }
 
-    findOneById(id: number) {
+    async findOneById(id: number) {
         return this.posts.find(post => post.id === id);
     }
 
-    findAll(): Post[] {
+    async findManyById(ids: number[]) {
+        return this.posts.filter(post => ids.includes(post.id));
+    }
+
+    async findAll() {
         return this.posts;
     }
 
-    findAllByAuthor(authorId: number): Post[] {
+    async findAllByAuthor(authorId: number) {
         return this.posts.filter(post => post.authorId === authorId);
     }
 

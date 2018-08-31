@@ -13,7 +13,7 @@ export class AuthorResolver {
     ) { }
 
     @Query('author')
-    async getAuthor(obj, { id }, _, resolveInfo: GraphQLResolveInfo) {
+    async getAuthor(req, { id }, _, resolveInfo: GraphQLResolveInfo) {
         // A way to get requested fields from query.
         // const [authorFields] = resolveInfo.fieldNodes.map(f => f.selectionSet!.selections.map((selection: FieldNode) => selection.name.value));
         return this.authorsService.findOneById(id);
