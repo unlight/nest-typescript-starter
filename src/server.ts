@@ -5,8 +5,7 @@ import { HelloMicroserviceModule } from './hello-microservice/hello-microservice
 import { Transport } from '@nestjs/microservices';
 import { AppModule } from './app/app.module';
 import { config } from './config';
-// import { RolesGuard } from './components/roles.guard';
-
+import notifier = require('node-notifier');
 import 'loud-rejection/register';
 
 async function main() {
@@ -33,8 +32,9 @@ async function main() {
     // Microservice without http server
     const service = await NestFactory.createMicroservice(HelloMicroserviceModule, { transport: Transport.TCP, options: { port: 43210 } });
     service.listen(undefined as any);
-    console.log('service.listen'); // todo: send notification to system
-
+    if (config.get('environment') === 'development') {
+        notifier.notify({ message: 'Restarted', sound: false });
+    }
     if (module.hot) {
         module.hot.accept();
         module.hot.dispose(async () => {

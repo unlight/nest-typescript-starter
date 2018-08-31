@@ -3,9 +3,10 @@ import webpack = require('webpack');
 import { Configuration } from 'webpack';
 import path = require('path');
 import { loader } from 'webpack-loader-helper';
-const nodeExternals = require('webpack-node-externals');
-const pollInterval = 1000;
+import WebpackNotifierPlugin = require('webpack-notifier');
+import nodeExternals = require('webpack-node-externals');
 
+const pollInterval = 1000;
 const defaultOptions = {
     test: false,
     coverage: false,
@@ -59,6 +60,7 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
                 NODE_ENV: 'development',
             }),
             new webpack.BannerPlugin({ banner: 'require("source-map-support").install();', raw: true, entryOnly: false }),
+            new WebpackNotifierPlugin({ excludeWarnings: true, sound: false }),
         ],
     };
 };
