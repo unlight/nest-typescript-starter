@@ -35,7 +35,7 @@ async function main() {
     if (config.get('environment') === 'development') {
         notifier.notify({ message: 'Restarted', sound: false });
     }
-    if (module.hot) {
+    if (module.hot != null) {
         module.hot.accept();
         module.hot.dispose(async () => {
             app.close();
