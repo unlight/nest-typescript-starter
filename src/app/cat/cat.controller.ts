@@ -21,7 +21,7 @@ export class CatController {
         private readonly catService: CatService,
     ) { }
 
-    @Get('/browse')
+    @Get('/')
     async cats() {
         return this.catService.findAll();
     }

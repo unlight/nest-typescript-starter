@@ -11,7 +11,6 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "outDir": "app_bin",
-    "isolatedModules": true,
     "lib": [
       "es2017"
     ]
