@@ -4,7 +4,7 @@ module.exports = {
         '^.+\\.tsx?$': 'ts-jest'
     },
     'collectCoverage': false,
-    'coverageDirectory': '.testresults',
+    'coverageDirectory': '~testresults',
     'coverageReporters': [
         'lcov',
         'text',
