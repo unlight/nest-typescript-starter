@@ -6,7 +6,6 @@ import { config } from '../../config';
     imports: [
         JwtModule.register({ secretOrPrivateKey: config.get('secretOrPrivateKey') }),
     ],
-    providers: [
-    ],
+    providers: [],
 })
 export class AuthModule { }

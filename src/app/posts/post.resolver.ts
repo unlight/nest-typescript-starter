@@ -1,4 +1,4 @@
-import { Query, Mutation, Resolver, ResolveProperty } from '@nestjs/graphql';
+import { Query, Mutation, Resolver, ResolveProperty, Args } from '@nestjs/graphql';
 import { PostsService } from './posts.service';
 import { Author } from '../authors/types';
 import { GraphQLResolveInfo } from 'graphql';
@@ -20,7 +20,7 @@ export class PostResolver {
     }
 
     @Mutation('upvotePost')
-    async upvotePost(req, { postId }) {
+    async upvotePost(@Args('postId') postId: number) {
         return this.postsService.upvoteById(postId);
     }
 
