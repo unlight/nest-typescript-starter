@@ -1,7 +1,7 @@
 module.exports = {
     'testEnvironment': 'node',
     'transform': {
-        '^.+\\.tsx?$': '<rootDir>/node_modules/ts-jest/preprocessor.js'
+        '^.+\\.tsx?$': 'ts-jest'
     },
     'collectCoverage': false,
     'coverageDirectory': '.testresults',
