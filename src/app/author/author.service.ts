@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Author } from './types';
 
 @Injectable()
-export class AuthorsService {
+export class AuthorService {
     private readonly authors: Author[] = [
         { id: 1, firstName: 'Tom', lastName: 'Coleman' },
         { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },

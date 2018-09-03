@@ -10,7 +10,7 @@ import { HttpExceptionFilter } from '../../components/http-exception.filter';
 import { User } from '../../components/user.decorator';
 import { TransformInterceptor } from '../../components/transform.interceptor';
 
-@Controller('/cat')
+@Controller('/cats')
 @UseGuards(RolesGuard)
 @UseInterceptors(TransformInterceptor)
 @UsePipes(ValidationPipe)

@@ -7,15 +7,15 @@ import { ConfigService } from './config.service';
 import { LoggerMiddleware } from '../components/logger.middleware';
 import { CatController } from './cat/cat.controller';
 import { GraphQLModule } from '@nestjs/graphql';
-import { PostsModule } from './posts/posts.module';
-import { AuthorsModule } from './authors/authors.module';
+import { PostModule } from './post/post.module';
+import { AuthorModule } from './author/author.module';
 
 @Module({
     controllers: [AppController],
     imports: [
         CatModule,
-        PostsModule,
-        AuthorsModule,
+        PostModule,
+        AuthorModule,
         GraphQLModule.forRoot({
             typePaths: ['./**/*.graphql'],
         }),

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Post } from './types';
 
 @Injectable()
-export class PostsService {
+export class PostService {
 
     private readonly posts: Post[] = [
         { id: 1, authorId: 1, title: 'Introduction to GraphQL', votes: 2 },

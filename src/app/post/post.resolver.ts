@@ -1,6 +1,6 @@
 import { Query, Mutation, Resolver, ResolveProperty, Args } from '@nestjs/graphql';
-import { PostsService } from './posts.service';
-import { Author } from '../authors/types';
+import { PostService } from './post.service';
+import { Author } from '../author/types';
 import { GraphQLResolveInfo } from 'graphql';
 import { Inject } from '@nestjs/common';
 import DataLoader = require('dataloader');
@@ -8,7 +8,7 @@ import DataLoader = require('dataloader');
 @Resolver('Post')
 export class PostResolver {
     constructor(
-        private readonly postsService: PostsService,
+        private readonly postsService: PostService,
         @Inject('AuthorDataLoader') private authorDataLoader: DataLoader<number, Author>,
     ) { }
 

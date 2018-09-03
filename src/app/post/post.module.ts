@@ -1,19 +1,19 @@
 import { Module, forwardRef } from '@nestjs/common';
-import { PostsService } from './posts.service';
+import { PostService } from './post.service';
 import { PostResolver } from './post.resolver';
-import { AuthorsModule } from '../authors/authors.module';
+import { AuthorModule } from '../author/author.module';
 
 @Module({
     imports: [
-        forwardRef(() => AuthorsModule),
+        forwardRef(() => AuthorModule),
     ],
     providers: [
-        PostsService,
+        PostService,
         PostResolver,
     ],
     exports: [
-        PostsService,
+        PostService,
         PostResolver,
     ],
 })
-export class PostsModule { }
+export class PostModule { }

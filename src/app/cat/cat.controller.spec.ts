@@ -2,7 +2,7 @@ import { CatController } from './cat.controller';
 import { CatService } from './cat.service';
 import { Test } from '@nestjs/testing';
 
-describe('CatsController', () => {
+describe('CatController', () => {
 
     let catController: CatController;
     let catService: CatService;
