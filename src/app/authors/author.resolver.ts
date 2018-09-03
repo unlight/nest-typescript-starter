@@ -1,9 +1,8 @@
-import { Query, Resolver, ResolveProperty } from '@nestjs/graphql';
-
+import { Query, Resolver, ResolveProperty, Args } from '@nestjs/graphql';
 import { AuthorsService } from './authors.service';
 import { PostsService } from '../posts/posts.service';
-
 import { GraphQLResolveInfo, FieldNode } from 'graphql';
+import { ParseIntPipe } from '@nestjs/common';
 
 @Resolver('Author')
 export class AuthorResolver {
@@ -13,10 +12,10 @@ export class AuthorResolver {
     ) { }
 
     @Query('author')
-    async getAuthor(req, { id }, _, resolveInfo: GraphQLResolveInfo) {
+    async findOneById(@Args('id', ParseIntPipe) id: number) {
         // A way to get requested fields from query.
         // const [authorFields] = resolveInfo.fieldNodes.map(f => f.selectionSet!.selections.map((selection: FieldNode) => selection.name.value));
-        return this.authorsService.findOneById(id);
+        return await this.authorsService.findOneById(id);
     }
 
     @ResolveProperty('posts')
