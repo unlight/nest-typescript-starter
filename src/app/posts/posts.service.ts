@@ -24,7 +24,7 @@ export class PostsService {
         return this.posts.find(post => post.id === id);
     }
 
-    async findManyById(ids: number[]) {
+    async findManyByIds(ids: number[]) {
         return this.posts.filter(post => ids.includes(post.id));
     }
 
