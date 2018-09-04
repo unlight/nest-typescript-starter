@@ -23,7 +23,7 @@ test('CatController', async t => {
     let catService = module.get<CatService>(CatService);
     let catController = module.get<CatController>(CatController);
 
-    await t.test('findAll should return an array', async t => {
+    t.test('findAll should return an array', async t => {
         const result: Cat[] = [{ id: 1} as Cat];
         mock.catRepository.find = async () => result;
         t.equal(await catController.cats(), result);

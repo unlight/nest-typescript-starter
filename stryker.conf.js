@@ -4,11 +4,14 @@ module.exports = function(config) {
         files: [
             'src/**/*.ts',
             'src/**/*.graphql',
+            'package.json',
         ],
-        testRunner: 'jest',
+        testRunner: 'command',
+        commandRunner: { command: 'npm run test:r' },
         mutator: 'typescript',
         transpilers: [],
         reporters: ['html', 'clear-text', 'progress'],
+        packageManager: 'npm',
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
         mutate: [
@@ -17,7 +20,7 @@ module.exports = function(config) {
         timeoutMS: 10 * 1000,
         // timeoutFactor: 2,
         htmlReporter: {
-            baseDir: '.testresults/mutation'
+            baseDir: '~testresults/mutation'
         },
         // logLevel: 'trace'
     });
