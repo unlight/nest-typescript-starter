@@ -64,12 +64,18 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
         ],
     };
     if (options.test) {
+        const WebpackShellPlugin = require('webpack-shell-plugin');
         config.entry = './src/spec.module.ts';
         config.output!.filename = 'spec.module.js';
         config.plugins = [
+            new webpack.BannerPlugin({ banner: 'require("source-map-support").install();', raw: true, entryOnly: false }),
             new webpack.EnvironmentPlugin({
                 PROGRAM: 'webpack',
                 NODE_ENV: 'test',
+            }),
+            new WebpackShellPlugin({
+                dev: false,
+                onBuildEnd: ['node app_bin/spec.module.js --program=webpack'],
             }),
         ];
     }
