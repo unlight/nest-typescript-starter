@@ -3,6 +3,7 @@ import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { AppModule } from './app.module';
 import { HTTP_SERVER_REF } from '@nestjs/core';
+// import { test } from 'zora';
 import test = require('zora');
 import mock = require('universal-mock');
 
@@ -20,11 +21,11 @@ test('App integration test', async t => {
     let app = module.createNestApplication(server);
     await app.init();
 
-    await t.test(`/GET root`, async () => {
-        return request(app.getHttpServer())
+    await t.test(`/GET root`, async t => {
+        const { body } = await request(app.getHttpServer())
             .get('/')
-            .expect(200)
-            .expect('{"data":"Hello World!"}');
+            .expect(200);
+        t.deepEqual(body, { data: 'Hello World!' });
     });
 
     await app.close();

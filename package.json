@@ -23,6 +23,7 @@
     "test:r": "jest --runInBand --verbose",
     "test:z": "node app_bin/spec.module.js --program=webpack",
     "test:zz": "webpack --env.test --watch",
+    "test:zzz": "nyc tape src/**/*.spec.ts",
     "test:cov": "npm run test:r -- --collectCoverage",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --testMatch \"<rootDir>/src/**/*.spec.ts\"",
     "tscheck": "echo tscheck... && tsc --noEmit",
@@ -35,6 +36,29 @@
     "lint:w": "run-p tsclint:w eslint:w",
     "test:m": "stryker run",
     "dev:update": "updtr --out --save exact --to latest --test \"npm test && npm run test:m\""
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register/transpile-only"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "report-dir": "~testresults",
+    "sourceMap": true,
+    "instrument": true
   },
   "dependencies": {
     "@nestjs/common": "5.3.2",
@@ -103,6 +127,7 @@
     "node-dev": "3.1.3",
     "node-notifier": "5.2.1",
     "npm-run-all": "4.1.3",
+    "nyc": "13.0.1",
     "rimraf": "2.6.2",
     "source-map-support": "0.5.9",
     "stryker": "0.29.1",
@@ -111,6 +136,7 @@
     "stryker-jest-runner": "1.2.0",
     "stryker-typescript": "0.13.2",
     "supertest": "3.1.0",
+    "tape": "4.9.1",
     "ts-jest": "23.1.4",
     "ts-loader": "5.0.0",
     "ts-node-dev": "1.0.0-pre.26",
