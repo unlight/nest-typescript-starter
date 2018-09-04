@@ -27,7 +27,7 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
     for (const [key, value] of Object['entries'](options)) {
         (value === true) ? process.stdout.write(`${key} `) : (process.stdout.write(value ? `${key}:${value} ` : ''));
     }
-    return {
+    const config: Configuration = {
         entry: [`webpack/hot/poll?${pollInterval}`, './src/server.ts'],
         target: 'node',
         devtool: options.devtool,
@@ -63,4 +63,9 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
             new WebpackNotifierPlugin({ excludeWarnings: true, sound: false }),
         ],
     };
+    if (options.test) {
+        config.entry = './src/spec.module.ts';
+        config.output!.filename = 'spec.module.js';
+    }
+    return config;
 };
