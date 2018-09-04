@@ -18,7 +18,7 @@
     "app:bin": "just-wait -t 45 -p \"app_bin/server.js\" && node app_bin/server.js",
     "app:bin:inspect": "just-wait -p \"app_bin/server.js\" && node --inspect app_bin/server.js",
     "test": "npm run eslint && npm run tscheck && npm run test:cov",
-    "test:r": "tape -r ts-node/register/transpile-only src/**/*.spec.ts | node node_modules/tap-bail/bin/tap-bail.js",
+    "test:r": "tape -r ts-node/register/transpile-only src/**/*.spec.ts | npx tap-bail",
     "test:rw": "node app_bin/spec.module.js --program=webpack",
     "test:w": "webpack --env.test --watch",
     "test:cov": "nyc tape src/**/*.spec.ts",
