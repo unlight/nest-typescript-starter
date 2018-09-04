@@ -1,31 +1,30 @@
 import { CatController } from './cat.controller';
 import { CatService } from './cat.service';
 import { Test } from '@nestjs/testing';
+import { Cat } from './cat.entity';
+import test = require('zora');
+import mock = require('universal-mock');
 
-describe('CatController', () => {
+test('CatController', async t => {
 
-    let catController: CatController;
-    let catService: CatService;
+    mock.catRepository = {
+        find: () => null,
+    };
 
-    beforeEach(async () => {
-        const module = await Test.createTestingModule({
-            controllers: [CatController],
-            providers: [
-                CatService,
-                { provide: 'CatRepository', useValue: null },
-            ],
-        }).compile();
+    const module = await Test.createTestingModule({
+        controllers: [CatController],
+        providers: [
+            CatService,
+            { provide: 'CatRepository', useValue: mock.catRepository },
+        ],
+    }).compile();
 
-        catService = module.get<CatService>(CatService);
-        catController = module.get<CatController>(CatController);
-    });
+    let catService = module.get<CatService>(CatService);
+    let catController = module.get<CatController>(CatController);
 
-    describe('findAll', () => {
-
-        it('should return an array', async () => {
-            const result = ['test'];
-            jest.spyOn(catService, 'findAll').mockImplementation(() => result);
-            expect(await catController.cats()).toBe(result);
-        });
+    await t.test('findAll should return an array', async t => {
+        const result: Cat[] = [{ id: 1, name: 'Fluffy', birthDate: new Date(), updatedDate: new Date() }];
+        mock.catRepository.find = async () => result;
+        t.equal(await catController.cats(), result);
     });
 });

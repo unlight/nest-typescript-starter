@@ -21,6 +21,7 @@
     "t": "jest",
     "test:w": "jest --runInBand --watch",
     "test:r": "jest --runInBand --verbose",
+    "test:z": "node -r ts-node/register/transpile-only",
     "test:cov": "npm run test:r -- --collectCoverage",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --testMatch \"<rootDir>/src/**/*.spec.ts\"",
     "tscheck": "echo tscheck... && tsc --noEmit",
@@ -117,11 +118,13 @@
     "tslint-microsoft-contrib": "5.2.1",
     "tslint-sonarts": "1.7.0",
     "typescript-eslint-parser": "18.0.0",
+    "universal-mock": "1.1.0",
     "updtr": "2.0.0",
     "webpack": "4.17.2",
     "webpack-cli": "3.1.0",
     "webpack-loader-helper": "1.0.0",
     "webpack-node-externals": "1.7.2",
-    "webpack-notifier": "1.6.0"
+    "webpack-notifier": "1.6.0",
+    "zora": "2.0.1"
   }
 }
