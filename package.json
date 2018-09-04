@@ -21,7 +21,7 @@
     "test:r": "tape -r ts-node/register/transpile-only src/**/*.spec.ts | npx tap-bail",
     "test:rw": "node app_bin/spec.module.js --program=webpack",
     "test:w": "webpack --env.test --watch",
-    "test:cov": "nyc tape src/**/*.spec.ts",
+    "test:cov": "nyc tape src/**/*.spec.ts | npx tap-bail",
     "test:m": "stryker run",
     "tscheck": "echo tscheck... && tsc --noEmit",
     "tscheck:w": "npm run tscheck -- --watch",
