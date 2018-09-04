@@ -66,6 +66,12 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
     if (options.test) {
         config.entry = './src/spec.module.ts';
         config.output!.filename = 'spec.module.js';
+        config.plugins = [
+            new webpack.EnvironmentPlugin({
+                PROGRAM: 'webpack',
+                NODE_ENV: 'test',
+            }),
+        ];
     }
     return config;
 };

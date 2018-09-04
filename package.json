@@ -21,7 +21,7 @@
     "t": "jest",
     "test:w": "jest --runInBand --watch",
     "test:r": "jest --runInBand --verbose",
-    "test:z": "node -r ts-node/register/transpile-only app_bin/server.js --program=webpack",
+    "test:z": "node -r ts-node/register/transpile-only app_bin/spec.module.js --program=webpack",
     "test:cov": "npm run test:r -- --collectCoverage",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --testMatch \"<rootDir>/src/**/*.spec.ts\"",
     "tscheck": "echo tscheck... && tsc --noEmit",
