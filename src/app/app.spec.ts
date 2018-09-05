@@ -1,38 +1,40 @@
 import * as express from 'express';
 import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
-import { createSpyObj } from 'jest-createspyobj';
 import { AppModule } from './app.module';
 import { HTTP_SERVER_REF } from '@nestjs/core';
+import { INestApplication } from '@nestjs/common';
+import mock = require('universal-mock');
+import assert = require('assert');
 
-describe('App integration test', () => {
+describe('App integration test', async () => {
 
+    let server = express();
     let app: INestApplication;
-    let server: express.Express;
+    mock.httpServer = {
+        getInstance: () => server,
+    }
 
-    beforeAll(async () => {
-        server = express();
-        const httpServer: { [k: string]: jest.Mock<any> } = createSpyObj('httpServer', ['getInstance', 'use']);
-        httpServer.getInstance.mockImplementation(() => server);
+    before(async () => {
         const module = await Test.createTestingModule({
             imports: [AppModule],
         })
-            .overrideProvider(HTTP_SERVER_REF).useValue(httpServer)
+            .overrideProvider(HTTP_SERVER_REF).useValue(mock.httpServer)
             .compile();
+        server = express();
         app = module.createNestApplication(server);
         await app.init();
     });
 
-    afterAll(async () => {
+    after(async () => {
         await app.close();
     });
 
-    it(`/GET root`, () => {
-        return request(app.getHttpServer())
+    it(`/GET root`, async () => {
+        const { body } = await request(app.getHttpServer())
             .get('/')
-            .expect(200)
-            .expect('{"data":"Hello World!"}');
+            .expect(200);
+        assert.deepEqual(body, { data: 'Hello World!' });
     });
 
 });
