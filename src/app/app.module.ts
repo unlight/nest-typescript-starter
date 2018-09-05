@@ -21,7 +21,7 @@ import { AuthorModule } from './author/author.module';
         }),
         // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot({
-            keepConnectionAlive: true,
+            keepConnectionAlive: false, // todo: set true for development/production and false for test
             ...config.get<any>('typeorm'),
         }),
     ],

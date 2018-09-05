@@ -9,19 +9,19 @@ import assert = require('assert');
 
 describe('App integration test', async () => {
 
-    let server = express();
+    let server: express.Express;
     let app: INestApplication;
     mock.httpServer = {
         getInstance: () => server,
     }
 
     before(async () => {
+        server = express();
         const module = await Test.createTestingModule({
             imports: [AppModule],
         })
             .overrideProvider(HTTP_SERVER_REF).useValue(mock.httpServer)
             .compile();
-        server = express();
         app = module.createNestApplication(server);
         await app.init();
     });
