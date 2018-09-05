@@ -5,7 +5,7 @@ STACK
 ---
 * TypeScript
 * ESLint
-* Jest
+* Mocha
 * TypeORM
 * Stryker
 

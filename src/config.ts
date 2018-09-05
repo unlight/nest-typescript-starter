@@ -25,6 +25,9 @@ const schema = {
         default: 'secret',
     },
     typeorm: {
+        keepConnectionAlive: {
+            default: true,
+        },
         type: {
             default: 'sqlite',
             env: 'TYPEORM_CONNECTION',
@@ -64,4 +67,8 @@ if (config.get('program') === 'webpack') {
         const [entity] = Object.values(entityModule);
         return entity;
     }));
+}
+
+if (config.get('environment') === 'test') {
+    config.set('typeorm.keepConnectionAlive', false);
 }

@@ -20,10 +20,7 @@ import { AuthorModule } from './author/author.module';
             typePaths: ['./**/*.graphql'],
         }),
         // provides: typeorm/Connection, typeorm/EntityManager
-        TypeOrmModule.forRoot({
-            keepConnectionAlive: true,
-            ...config.get<any>('typeorm'),
-        }),
+        TypeOrmModule.forRoot(config.get<any>('typeorm')),
     ],
     providers: [
         { provide: ConfigService, useValue: new ConfigService(config) },

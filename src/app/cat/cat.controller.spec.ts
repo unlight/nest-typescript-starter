@@ -1,31 +1,33 @@
 import { CatController } from './cat.controller';
 import { CatService } from './cat.service';
 import { Test } from '@nestjs/testing';
+import { Cat } from './cat.entity';
+import mock = require('universal-mock');
+import assert = require('assert');
 
 describe('CatController', () => {
 
-    let catController: CatController;
     let catService: CatService;
+    let catController: CatController;
+    mock.catRepository = {
+        find: () => null,
+    };
 
-    beforeEach(async () => {
+    before(async () => {
         const module = await Test.createTestingModule({
             controllers: [CatController],
             providers: [
                 CatService,
-                { provide: 'CatRepository', useValue: null },
+                { provide: 'CatRepository', useValue: mock.catRepository },
             ],
         }).compile();
-
         catService = module.get<CatService>(CatService);
         catController = module.get<CatController>(CatController);
     });
 
-    describe('findAll', () => {
-
-        it('should return an array', async () => {
-            const result = ['test'];
-            jest.spyOn(catService, 'findAll').mockImplementation(() => result);
-            expect(await catController.cats()).toBe(result);
-        });
+    it('findAll should return an array', async () => {
+        const result: Cat[] = [{ id: 1 } as Cat];
+        mock.catRepository.find = async () => result;
+        assert(await catController.cats() === result);
     });
 });
