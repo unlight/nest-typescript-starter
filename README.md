@@ -21,8 +21,8 @@ TASKS
 |:------------------------|:---------------------------------------------------------|
 | `npm start`             | Build and start application                              |
 | `npm run dev`           | Start application in development mode with HMR (webpack) |
-| `npm run dev:n:inspect` | Start application in debug mode (node-dev)               |
-| `npm run dev:w:inspect` | Start application in debug mode (webpack)                |
+| `npm run dev:nd`        | Start application in debug mode (node-dev)               |
+| `npm run dev:wd`        | Start application in debug mode (webpack)                |
 | `npm test`              | Run all tests                                            |
 | `npm run test:r`        | Run unit tests                                           |
 | `npm run test:w`        | Run unit tests in watch mode                             |
