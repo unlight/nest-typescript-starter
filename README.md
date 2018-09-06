@@ -62,7 +62,7 @@ set TYPEORM_DATABASE=test
 
 DEVELOPMENT
 ---
-* `npm run dev:w:inspect -- --env.devtool=inline-cheap-source-map` Debug with webpack and HMR (show srouces as transformed code)
+* `npm run dev:wd -- --env.devtool=inline-cheap-source-map` Debug with webpack and HMR (show srouces as transformed code)
 * `node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate`
 
 WEBPACK DEVTOOL SETTING (HMR)
