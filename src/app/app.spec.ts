@@ -13,7 +13,7 @@ describe('App integration test', async () => {
     let app: INestApplication;
     mock.httpServer = {
         getInstance: () => server,
-    }
+    };
 
     before(async () => {
         server = express();

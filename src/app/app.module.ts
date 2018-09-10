@@ -18,6 +18,9 @@ import { AuthorModule } from './author/author.module';
         AuthorModule,
         GraphQLModule.forRoot({
             typePaths: ['./**/*.graphql'],
+            resolverValidationOptions: {
+                requireResolversForResolveType: false,
+            },
         }),
         // provides: typeorm/Connection, typeorm/EntityManager
         TypeOrmModule.forRoot(config.get<any>('typeorm')),

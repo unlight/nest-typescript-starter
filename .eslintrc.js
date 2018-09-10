@@ -21,7 +21,7 @@ module.exports = {
         'typescript',
         'import',
         'wix-editor',
-        'tslint2',
+        'tslint',
     ],
     'rules': {
         'no-undef': 0,
@@ -101,7 +101,7 @@ module.exports = {
         'no-confusing-arrow': [1, {'allowParens': true}],
         'prefer-const': 1,
         'prefer-destructuring': 1,
-        'tslint2/config': [1, {
+        'tslint/config': [1, {
             configFile: 'tsconfig.json',
             rulesDirectory: [
                 'node_modules/tslint/lib/rules',
