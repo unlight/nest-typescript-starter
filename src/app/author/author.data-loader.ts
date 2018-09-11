@@ -6,6 +6,6 @@ export const AuthorDataLoader = {
     provide: 'AuthorDataLoader',
     inject: [PostService],
     useFactory: (postService: PostService) => {
-        return new DataLoader<number, Post>(ids => postService.findManyByIds(ids));
+        return new DataLoader<number, Post>(async ids => postService.findManyByIds(ids));
     }
 };

@@ -1,14 +1,15 @@
-import { ExceptionFilter, Catch } from '@nestjs/common';
+import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
 const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
 
 @Catch(UnauthorizedError)
-export class UnauthorizedErrorFilter implements ExceptionFilter {
+export class UnauthorizedErrorFilter implements ExceptionFilter<any> {
 
-    catch(err: any, response) {
-        const status = err.status;
+    catch(exception: any, host: ArgumentsHost) {
+        const response = host.switchToHttp().getResponse();
+        const { status } = exception;
         response.status(status).json({
             statusCode: status,
-            message: err.message,
+            message: exception.message,
         });
     }
 }

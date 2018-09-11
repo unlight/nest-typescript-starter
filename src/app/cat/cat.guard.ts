@@ -12,7 +12,7 @@ export class CatGuard implements CanActivate {
     canActivate(context: ExecutionContext): boolean {
         const handler = context.getHandler();
 
-        const access = this.reflector.get<any>('access', handler);
+        const access = this.reflector.get<Function>('access', handler);
         if (!access) {
             return true;
         }
