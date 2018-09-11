@@ -3,23 +3,6 @@ import { resolve } from 'path';
 import gulp = require('gulp');
 const g = require('gulp-load-plugins')();
 
-function sourceLint() {
-    return g.eslint();
-}
-
-function specLint() {
-    return g.eslint({
-        rules: {
-            'jasmine/no-spec-dupes': 0,
-            'lodash/import-scope': 0,
-            'prefer-const': 0,
-            'import/no-duplicates': 0,
-            'import/max-dependencies': 0,
-            'tsc/config': 0,
-        }
-    });
-}
-
 gulp.task('eslint', () => {
     return gulp.src('src/**/*.ts', { since: g.memoryCache.lastMtime('source') })
         .pipe(g.memoryCache('source'))
@@ -37,3 +20,29 @@ gulp.task('eslint:w', (done) => {
         done();
     });
 });
+
+function sourceLint() {
+    return g.eslint();
+}
+
+function specLint() {
+    const eslintrc = require('./.eslintrc.js');
+    const [severity, tslintConfig] = eslintrc.rules['tslint/config'];
+    return g.eslint({
+        rules: {
+            'jasmine/no-spec-dupes': 0,
+            'lodash/import-scope': 0,
+            'prefer-const': 0,
+            'import/no-duplicates': 0,
+            'import/max-dependencies': 0,
+            'tsc/config': 0,
+            'tslint/config': [0, {
+                ...tslintConfig,
+                rules: {
+                    ...tslintConfig.rules,
+                    'no-implicit-dependencies': false,
+                }
+            }],
+        }
+    });
+}

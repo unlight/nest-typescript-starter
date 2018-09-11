@@ -115,8 +115,11 @@ module.exports = {
                 require('tslint-microsoft-contrib/recommended_ruleset').rules,
                 require('tslint-sonarts/tslint-sonarts.json').rules,
                 {
+                    'variable-name': false,
                     'import-name': false,
+                    'min-class-cohesion': false,
                     'no-commented-out-code': false,
+                    'no-commented-code': false,
                     'no-unnecessary-class': false,
                     'no-unsafe-any': false,
                     'typedef': false,
