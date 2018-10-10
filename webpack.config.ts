@@ -5,6 +5,7 @@ import path = require('path');
 import { loader } from 'webpack-loader-helper';
 import WebpackNotifierPlugin = require('webpack-notifier');
 import nodeExternals = require('webpack-node-externals');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pollInterval = 1000;
 const defaultOptions = {
@@ -38,6 +39,9 @@ module.exports = (options: ConfigOptions = {}): Configuration => {
         mode: options.mode,
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
+            plugins: [
+                new TsconfigPathsPlugin({}),
+            ],
         },
         externals: [
             nodeExternals({ whitelist: [`webpack/hot/poll?${pollInterval}`] }),
