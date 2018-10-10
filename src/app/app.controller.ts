@@ -1,6 +1,6 @@
 import { Get, Controller, Res, Body, HttpStatus, Req, UseInterceptors } from '@nestjs/common';
 import { Response } from 'express';
-import { TransformInterceptor } from '../components/transform.interceptor';
+import { TransformInterceptor } from '~components/transform.interceptor';
 
 @Controller()
 @UseInterceptors(TransformInterceptor)

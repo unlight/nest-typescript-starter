@@ -13,7 +13,13 @@
     "outDir": "app_bin",
     "lib": [
       "es2017"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~components/*": [
+        "src/components/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts"

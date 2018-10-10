@@ -113,7 +113,7 @@ RESOURCES
 * Authentication and Authorization example for Nest.js TypeScript Framework - https://github.com/neoteric-eu/nestjs-auth
 * Another example of chiny app - https://github.com/notadd/notadd
 * Another example of nest - https://github.com/bojidaryovchev/nest-angular
-
+* Blog made with nestJS - https://github.com/bashleigh/nestjs-blog
 TODO
 ---
 * TypeORM: Mongoose: Clarify what exactly need todo
