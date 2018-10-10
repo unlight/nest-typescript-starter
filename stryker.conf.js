@@ -16,7 +16,7 @@ module.exports = function(config) {
             // opts: 'path/to/mocha.opts',
             // ui: 'bdd',
             timeout: 8000,
-            require: ['ts-node/register/transpile-only'],
+            require: ['ts-node/register/transpile-only', 'tsconfig-paths/register'],
             asyncOnly: false,
         },
         packageManager: 'npm',
