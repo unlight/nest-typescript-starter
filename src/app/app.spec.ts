@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { HTTP_SERVER_REF } from '@nestjs/core';
 import { INestApplication } from '@nestjs/common';
 import mock = require('universal-mock');
-import assert = require('assert');
+import * as expect from 'expect';
 
 describe('App integration test', async () => {
 
@@ -34,7 +34,7 @@ describe('App integration test', async () => {
         const { body } = await request(app.getHttpServer())
             .get('/')
             .expect(200);
-        assert.deepEqual(body, { data: 'Hello World!' });
+        expect(body).toEqual({ data: 'Hello World!' });
     });
 
 });
