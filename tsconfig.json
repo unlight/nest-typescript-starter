@@ -12,7 +12,7 @@
     "strictNullChecks": true,
     "outDir": "app_bin",
     "lib": [
-      "esnext"
+      "es2017"
     ],
     "baseUrl": ".",
     "paths": {
