@@ -1,22 +1,19 @@
 [![Nest Logo](http://kamilmysliwiec.com/public/nest-logo.png)](http://nestjs.com/)
 The [Nest](https://github.com/unlight/nest-typescript-starter) framework starter repository. 
 
-STACK
----
+## STACK
 * TypeScript
 * ESLint
 * Mocha
 * TypeORM
 * Stryker
 
-INSTALLATION
----
+## INSTALLATION
 ```
 $ npm install
 ```
 
-TASKS
----
+## TASKS
 | Command                 | Description                                              |
 |:------------------------|:---------------------------------------------------------|
 | `npm start`             | Build and start application                              |
@@ -33,8 +30,7 @@ TASKS
 | `npm run lint:w`        | Run all linting commands in watch mode                   |
 | `npm run test:m`        | Run mutation tests                                       |
 
-FOLDER STRUCTURE
----
+## FOLDER STRUCTURE
 | Folder/file      | Description                                                                                  |
 |:-----------------|:---------------------------------------------------------------------------------------------|
 | `src/config.ts`  | Configuration file                                                                           |
@@ -44,15 +40,13 @@ FOLDER STRUCTURE
 | `src/scripts`    | Scripts which runs from cli to support database, cronjob, etc.                               |
 | `src/migrations` | TypeORM migrations                                                                           |
 
-SCRIPTS
----
+## SCRIPTS
 Database seed example:
 ```
 npx ts-node src/scripts seed
 ```
 
-SETUP ENVIRONMENT (EXAMPLE)
----
+## SETUP ENVIRONMENT (EXAMPLE)
 ```
 set TYPEORM_CONNECTION=mongodb
 set TYPEORM_DATABASE=nest-typescript-starter
@@ -60,13 +54,11 @@ set TYPEORM_CONNECTION=sqlite
 set TYPEORM_DATABASE=test
 ```
 
-DEVELOPMENT
----
+## DEVELOPMENT
 * `npm run dev:wd -- --env.devtool=inline-cheap-source-map` Debug with webpack and HMR (show srouces as transformed code)
 * `node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate`
 
-WEBPACK DEVTOOL SETTING (HMR)
----
+## WEBPACK DEVTOOL SETTING (HMR)
 | Value                            | Valid stacktrace | Source updates | Breakpoints | Rebuild | Quality          |
 |:---------------------------------|:-----------------|:---------------|:------------|:--------|:-----------------|
 | `cheap-eval-source-map`          | No               | Yes            | No          | ++      | transformed code |
@@ -79,8 +71,7 @@ WEBPACK DEVTOOL SETTING (HMR)
 | `source-map`                     | Yes              | Yes            | Yes         | --      | original source  |
 
 
-RESOURCES
----
+## RESOURCES
 * https://github.com/nestjs/nest/tree/master/examples
 * GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
 * Router Module For Nestjs Framework - https://github.com/shekohex/nest-router
@@ -114,8 +105,10 @@ RESOURCES
 * Another example of chiny app - https://github.com/notadd/notadd
 * Another example of nest - https://github.com/bojidaryovchev/nest-angular
 * Blog made with nestJS - https://github.com/bashleigh/nestjs-blog
-TODO
----
+* An easiest web app template on top of nest, TypeORM, Next.js and Material UI - https://github.com/saltyshiomix/ark
+* Ever® - On-Demand Commerce Platform (Example Application) - https://github.com/ever-co/ever
+
+## TODO
 * TypeORM: Mongoose: Clarify what exactly need todo
 * https://github.com/nestjs/mongoose
 * Health endpoint
