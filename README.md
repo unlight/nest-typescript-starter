@@ -107,6 +107,10 @@ set TYPEORM_DATABASE=test
 * Blog made with nestJS - https://github.com/bashleigh/nestjs-blog
 * An easiest web app template on top of nest, TypeORM, Next.js and Material UI - https://github.com/saltyshiomix/ark
 * Ever® - On-Demand Commerce Platform (Example Application) - https://github.com/ever-co/ever
+* https://github.com/AryanJ-NYC/nestjs-graphql-tutorial
+* Example prisma2 integration - https://github.com/fivethree-team/nestjs-prisma-starter/tree/prisma2
+* End to end repo testing all core components in this stack - https://github.com/webnoob/quasar-ts-jest-nestjs-apollojs-prisma2
+* graphql-prisma2 with all(okay most of) the required configuration you need - https://github.com/5achinJani/graphql-prisma2
 
 ## TODO
 * TypeORM: Mongoose: Clarify what exactly need todo
