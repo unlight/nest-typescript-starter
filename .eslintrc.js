@@ -14,7 +14,7 @@ module.exports = {
         'plugin:promise/recommended',
         'plugin:sonarjs/recommended',
     ],
-    parser: 'typescript-eslint-parser',
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         project: 'tsconfig.json',
         sourceType: 'module',
