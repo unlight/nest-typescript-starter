@@ -11,6 +11,7 @@
 -   TypeScript
 -   ESLint
 -   Jest
+-   GraphQL (type-graphql)
 
 ## Installation
 
@@ -77,6 +78,7 @@ $ npm ci
 
 ## Todo
 
+-   https://docs.nestjs.com/graphql/quick-start
 -   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
 -   Health endpoint
 
