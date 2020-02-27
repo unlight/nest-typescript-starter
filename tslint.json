@@ -1,0 +1,72 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-etc",
+    "tslint-microsoft-contrib",
+    "tslint-clean-code",
+    "tslint-consistent-codestyle"
+  ],
+  "rulesDirectory": [
+    "node_modules/tslint/lib/rules",
+    "node_modules/tslint-microsoft-contrib",
+    "node_modules/tslint-clean-code/dist/src",
+    "node_modules/tslint-consistent-codestyle"
+  ],
+  "rules": {
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "no-unused-declaration": {
+      "options": [
+        {
+          "declarations": true,
+          "ignored": {},
+          "imports": true
+        }
+      ],
+      "severity": "warn"
+    },
+    "triple-equals": [true, "allow-undefined-check"],
+    "no-use-before-declare": false,
+    "no-function-expression": false,
+    "member-access": false,
+    "ordered-imports": false,
+    "quotemark": false,
+    "no-var-keyword": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "arrow-parens": false,
+    "max-line-length": false,
+    "object-literal-key-quotes": false,
+    "no-shadowed-variable": false,
+    "only-arrow-functions": false,
+    "no-var-requires": false,
+    "semicolon": false,
+    "interface-over-type-literal": false,
+    "align": false,
+    "trailing-comma": false,
+    "typedef": false,
+    "newline-before-return": false,
+    "interface-name": false,
+    "ban-types": false,
+    "no-relative-imports": false,
+    "missing-jsdoc": false,
+    "export-name": false,
+    "no-require-imports": false,
+    "no-http-string": false,
+    "no-parameter-reassignment": false,
+    "strict-boolean-expressions": false,
+    "no-unsafe-any": false,
+    "no-backbone-get-set-outside-model": false,
+    "no-function-constructor-with-string-args": false,
+    "no-reserved-keywords": false,
+    "no-increment-decrement": false,
+    "no-unnecessary-bind": false,
+    "linebreak-style": false,
+    "no-parameter-properties": false,
+    "newline-per-chained-call": false
+  }
+}
