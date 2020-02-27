@@ -17,11 +17,16 @@
     "eslint:w": "watchexec -w src \"npm run eslint\"",
     "tslint:fix": "node node_modules/tslint/bin/tslint -p tsconfig.json --fix",
     "lint:fix": "npm run tslint:fix || true && npm run eslint:fix",
-    "test": "jest",
+    "tscheck": "echo tscheck... && tsc --noEmit",
+    "tscheck:w": "npm run tscheck -- --watch",
+    "test": "npm run eslint && npm run tscheck && npm run test:cov",
+    "test:r": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest --coverage --verbose",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:e2e": "jest --config ./test/jest-e2e.config.js",
+    "commit": "node node_modules/cz-customizable/standalone.js",
+    "cmlint": "sh Taskfile commit_lint",
     "#start": "tsc && npm run app:bin",
     "#dev:nd": "node-dev --no-deps -r tsconfig-paths/register -r ts-node/register/transpile-only --inspect src/server.ts --program=tsnode",
     "#dev:n": "ts-node-dev --no-deps -r tsconfig-paths/register --transpileOnly src/server.ts --program=tsnode",
@@ -38,15 +43,15 @@
     "#test:cov": "nyc mocha -r tsconfig-paths/register -r ts-node/register/transpile-only -t 15s src/**/*.spec.ts --node_env=test",
     "#test:d": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register/transpile-only node_modules/mocha/bin/_mocha --no-timeouts --watch-extensions ts --watch src/**/*.spec.ts --node_env=test",
     "#test:m": "stryker run",
-    "#tscheck": "echo tscheck... && tsc --noEmit",
-    "#tscheck:w": "npm run tscheck -- --watch",
-    "#tsclint": "tsc --noEmit --strictNullChecks --forceConsistentCasingInFileNames --noImplicitReturns --noImplicitThis --noUnusedLocals",
-    "#tsclint:w": "npm run tsclint -- --watch",
-    "#eslint": "gulp eslint",
-    "#eslint:fix": "eslint src --ext \"ts\" --fix",
-    "#eslint:w": "gulp eslint:w",
     "#lint:w": "run-p tsclint:w eslint:w",
     "#dev:update": "updtr --out --save exact --to latest --test \"npm test && npm run test:m\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "precise-commits",
+      "pre-push": "npm run test",
+      "commit-msg": "git-branch-is -r \"^(release|master|develop)\" && commitlint -E HUSKY_GIT_PARAMS || echo \"Ignoring commitlint error...\""
+    }
   },
   "dependencies": {
     "@nestjs/common": "^6.11.8",
@@ -67,6 +72,7 @@
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
+    "cz-customizable": "6.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-import-resolver-node": "^0.3.3",
@@ -89,12 +95,12 @@
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
     "tslint": "^6.0.0",
-    "typescript": "^3.8.2",
     "tslint-clean-code": "^0.2.10",
     "tslint-consistent-codestyle": "^1.16.0",
     "tslint-etc": "^1.10.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tslint-sonarts": "^1.9.0",
+    "typescript": "^3.8.2",
     "watchexec-bin": "^1.0.0"
   }
 }
