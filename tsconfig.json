@@ -1,27 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2017",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "sourceMap": true,
+    "outDir": "./dist",
     "sourceMap": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "outDir": "app_bin",
-    "lib": [
-      "esnext"
-    ],
+    "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "~components/*": [
-        "src/components/*"
-      ]
+      "~components/*": ["src/components/*"]
     }
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
