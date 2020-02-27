@@ -6,5 +6,5 @@ module.exports = {
     reporter: ['text'],
     sourceMap: true,
     instrument: true,
-    tempDir: './.node_modules/.nyc_output',
+    tempDirectory: '.node_modules/.nyc_output',
 };
