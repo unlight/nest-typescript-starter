@@ -10,58 +10,28 @@
 
 -   TypeScript
 -   ESLint
+-   Jest
 
 ## Installation
 
 ```bash
-$ npm install
+$ npm ci
 ```
 
-## Running the app
+## Task
 
-```bash
-# development
-$ npm run start
+| Command            | Description                         |
+| :----------------- | :---------------------------------- |
+| npm run start      | Running the app in development mode |
+| npm run start:dev  | Running the app in watch mode       |
+| npm run start:prod | Running the app in production mode  |
+| npm run test:r     | Unit tests                          |
+| npm run test:e2e   | E2E tests                           |
+| npm run test:cov   | Test coverage                       |
 
-# watch mode
-$ npm run start:dev
+## Project Structure
 
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test:r
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-<!-- ## Folder Structure -->
-
-<!-- ## DEVELOPMENT
-
--   `npm run dev:wd -- --env.devtool=inline-cheap-source-map` Debug with webpack and HMR (show srouces as transformed code)
--   `node -r ts-node/register/transpile-only --inspect src/database/scripts.ts migrate`
-
-## WEBPACK DEVTOOL SETTING (HMR)
-
-| Value                            | Valid stacktrace | Source updates | Breakpoints | Rebuild | Quality          |
-| :------------------------------- | :--------------- | :------------- | :---------- | :------ | :--------------- |
-| `cheap-eval-source-map`          | No               | Yes            | No          | ++      | transformed code |
-| `cheap-module-source-map`        | Yes              | Yes            | Yes         | -       | original source  |
-| `inline-cheap-module-source-map` | Yes              | Yes            | Yes         | -       | original source  |
-| `inline-cheap-source-map`        | No               | Yes            | Yes         | o       | transformed code |
-| `cheap-source-map`               | No               | Yes            | Yes         | o       | transformed code |
-| `inline-source-map`              | Yes              | Yes            | Yes         | --      | original source  |
-| `eval-source-map`                | ?                | ?              | ?           | +       | original source  |
-| `source-map`                     | Yes              | Yes            | Yes         | --      | original source  | -->
+-   `src` - Source code
 
 ## Resources
 
@@ -105,13 +75,9 @@ $ npm run test:cov
 -   End to end repo testing all core components in this stack - https://github.com/webnoob/quasar-ts-jest-nestjs-apollojs-prisma2
 -   graphql-prisma2 with all(okay most of) the required configuration you need - https://github.com/5achinJani/graphql-prisma2
 
-## ToDo
+## Todo
 
--   Prettier
--   Husky
--   Remove gulp
--   TypeORM: Mongoose: Clarify what exactly need todo
--   https://github.com/nestjs/mongoose
+-   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
 -   Health endpoint
 
 ## Previous Versions
