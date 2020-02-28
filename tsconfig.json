@@ -9,15 +9,15 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "sourceMap": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
     "incremental": true,
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
+      "@generated/*": ["@generated/*"],
       "~components/*": ["src/components/*"]
     }
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts", "prisma/*.ts"]
 }

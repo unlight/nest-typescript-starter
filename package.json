@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "node -r dotenv/config node_modules/@nestjs/cli/bin/nest.js start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "eslint": "eslint \"{src,test}/**/*.ts\"",
@@ -21,8 +21,8 @@
     "tscheck": "echo tscheck... && tsc --noEmit --incremental false",
     "tscheck:w": "npm run tscheck -- --watch",
     "test": "npm run eslint && npm run tscheck && npm run test:cov",
-    "test:r": "jest",
-    "test:watch": "jest --watch",
+    "test:r": "jest --runInBand",
+    "test:watch": "jest --runInBand --watch",
     "test:cov": "jest --coverage --verbose",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest --runInBand --testMatch \"<rootDir>/**/*.spec.ts\"",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -30,7 +30,12 @@
     "commit": "node node_modules/cz-customizable/standalone.js",
     "cmlint": "sh Taskfile commit_lint",
     "test:m": "stryker run",
-    "dev:update": "updtr --out --save exact --to latest --test \"npm test\""
+    "migrate:save": "node -r dotenv/config node_modules/prisma2/build/index.js migrate save --experimental",
+    "migrate:up": "node -r dotenv/config node_modules/prisma2/build/index.js migrate up --experimental",
+    "prisma:w": "node -r dotenv/config node_modules/prisma2/build/index.js generate --watch",
+    "prisma:generate": "node -r dotenv/config node_modules/prisma2/build/index.js generate",
+    "prisma:studio": "node -r dotenv/config node_modules/prisma2/build/index.js studio --experimental",
+    "dev:update": "updtr --out --save exact --to latest --test \"npm test:r\""
   },
   "husky": {
     "hooks": {
@@ -44,7 +49,9 @@
     "@nestjs/core": "^6.11.8",
     "@nestjs/graphql": "6.6.1",
     "@nestjs/platform-express": "^6.11.8",
+    "@prisma/client": "2.0.0-alpha.843",
     "apollo-server-express": "2.10.1",
+    "dataloader": "2.0.0",
     "graphql": "14.6.0",
     "graphql-tools": "4.0.7",
     "reflect-metadata": "^0.1.13",
@@ -68,6 +75,7 @@
     "@typescript-eslint/eslint-plugin-tslint": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "cz-customizable": "6.2.0",
+    "dotenv": "8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-import-resolver-node": "^0.3.3",
@@ -86,6 +94,7 @@
     "patch-package": "6.2.1",
     "precise-commits": "^1.0.2",
     "prettier": "^1.19.1",
+    "prisma2": "2.0.0-alpha.843",
     "stryker-cli": "1.0.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
@@ -98,6 +107,7 @@
     "tslint-etc": "^1.10.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tslint-sonarts": "^1.9.0",
+    "typegraphql-prisma": "0.1.5",
     "typescript": "^3.8.2",
     "watchexec-bin": "^1.0.0"
   }

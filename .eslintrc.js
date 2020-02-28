@@ -31,6 +31,7 @@ module.exports = {
         'sonarjs',
         'only-warn',
     ],
+    ignorePatterns: ['src/@generated'],
     rules: {
         // core
         'no-unused-vars': 0,

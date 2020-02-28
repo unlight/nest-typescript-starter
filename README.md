@@ -79,6 +79,7 @@ $ npm ci
 -   https://github.com/toondaey/nestjs-boiler
 -   https://github.com/notiz-dev/nestjs-prisma
 -   https://github.com/chnirt/nestjs-graphql-best-practice
+-   https://github.com/fivethree-team/nestjs-prisma-starter
 
 ### Todo
 
