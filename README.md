@@ -1,13 +1,11 @@
-## Description
+### Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Versions
 
 -   This version (v6)
 -   [Previous version v5 (TypeScript, ESLint, Mocha, TypeORM, Stryker)](./tree/v5)
 
-## Stack
+### Stack
 
 -   NestJS
 -   TypeScript
@@ -16,28 +14,28 @@
 -   Jest
 -   Stryker
 
-## Installation
+### Installation
 
 ```bash
 $ npm ci
 ```
 
-## Task
+### Task
 
-| Command            | Description                         |
-| :----------------- | :---------------------------------- |
-| npm run start      | Running the app in development mode |
-| npm run start:dev  | Running the app in watch mode       |
-| npm run start:prod | Running the app in production mode  |
-| npm run test:r     | Unit tests                          |
-| npm run test:e2e   | E2E tests                           |
-| npm run test:cov   | Test coverage                       |
+| Command              | Description                         |
+| :------------------- | :---------------------------------- |
+| `npm run start`      | Running the app in development mode |
+| `npm run start:dev`  | Running the app in watch mode       |
+| `npm run start:prod` | Running the app in production mode  |
+| `npm run test:r`     | Unit tests                          |
+| `npm run test:e2e`   | E2E tests                           |
+| `npm run test:cov`   | Test coverage                       |
 
-## Project Structure
+### Project Structure
 
 -   `src` - Source code
 
-## Resources
+### Resources
 
 -   https://github.com/nestjs/nest/tree/master/examples
 -   GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
@@ -79,7 +77,7 @@ $ npm ci
 -   End to end repo testing all core components in this stack - https://github.com/webnoob/quasar-ts-jest-nestjs-apollojs-prisma2
 -   graphql-prisma2 with all(okay most of) the required configuration you need - https://github.com/5achinJani/graphql-prisma2
 
-## Todo
+### Todo
 
 -   https://www.npmjs.com/package/typegraphql-prisma
 -   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md

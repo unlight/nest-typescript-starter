@@ -3,7 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AppVersionResolver } from './version.resolver';
+import { VersionResolver } from './version.resolver';
 
 @Module({
     imports: [
@@ -14,7 +14,7 @@ import { AppVersionResolver } from './version.resolver';
     controllers: [AppController],
     providers: [
         { provide: AppService, useClass: AppService },
-        { provide: AppVersionResolver, useClass: AppVersionResolver },
+        { provide: VersionResolver, useClass: VersionResolver },
     ],
 })
 export class AppModule {}
