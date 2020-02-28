@@ -5,13 +5,11 @@ module.exports = {
         '^.+\\.tsx?$': 'ts-jest',
     },
     collectCoverage: false,
-    coverageDirectory: 'coverage',
-    coverageReporters: [
-        // "lcov",
-        'text',
-    ],
+    coverageDirectory: '<rootDir>/../coverage',
+    coverageReporters: ['lcov', 'text'],
     collectCoverageFrom: ['**/*.ts', '!**/*.spec.ts'],
-    testMatch: ['<rootDir>/**/*.spec.ts'],
+    testRegex: ['\\.spec\\.[jt]sx?$'],
+    // testMatch: ['<rootDir>/src/**/*.spec.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
     // modulePathIgnorePatterns: ['<rootDir>/dist'],
     globals: {

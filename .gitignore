@@ -391,3 +391,4 @@ docker-compose.yml
 dist
 ~*
 app_bin
+.stryker-tmp
