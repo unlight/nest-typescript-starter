@@ -76,6 +76,9 @@ $ npm ci
 -   Example prisma2 integration - https://github.com/fivethree-team/nestjs-prisma-starter/tree/prisma2
 -   End to end repo testing all core components in this stack - https://github.com/webnoob/quasar-ts-jest-nestjs-apollojs-prisma2
 -   graphql-prisma2 with all(okay most of) the required configuration you need - https://github.com/5achinJani/graphql-prisma2
+-   https://github.com/toondaey/nestjs-boiler
+-   https://github.com/notiz-dev/nestjs-prisma
+-   https://github.com/chnirt/nestjs-graphql-best-practice
 
 ### Todo
 
