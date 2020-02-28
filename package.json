@@ -23,7 +23,7 @@
     "test": "npm run eslint && npm run tscheck && npm run test:cov",
     "test:r": "jest --runInBand",
     "test:watch": "jest --runInBand --watch",
-    "test:cov": "jest --coverage --verbose",
+    "test:cov": "jest --runInBand --coverage --verbose",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest --runInBand --testMatch \"<rootDir>/**/*.spec.ts\"",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.config.js",
