@@ -8,6 +8,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  output   = "../@generated/prisma"
 }
 
 generator typegraphql {
@@ -16,9 +17,9 @@ generator typegraphql {
 }
 
 model User {
-  id    String  @default(cuid()) @id
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-  email String  @unique
-  name  String?
+  id         String    @id  @default(cuid())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  email      String    @unique
+  name       String?
 }

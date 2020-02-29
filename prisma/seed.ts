@@ -1,10 +1,11 @@
-import { PrismaClient } from '@prisma/client';
 import 'dotenv/config';
+import { PrismaClient } from '../@generated/prisma';
 
 const prisma = new PrismaClient();
 
 async function main() {
     console.log('Seeding...');
+    await prisma.connect();
 
     const user1 = await prisma.user.create({
         data: {
