@@ -86,5 +86,7 @@ $ npm ci
 
 ## Todo
 
+-   validate input args
+-   https://github.com/MagnusCloudCorp/nestjs-type-graphql
 -   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
 -   Health endpoint

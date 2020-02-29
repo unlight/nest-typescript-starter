@@ -6,15 +6,20 @@ import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { UserModule } from './user/user.module';
+import { PrismaService } from './prisma/prisma.service';
 
 @Module({
     imports: [
         UserModule,
         PrismaModule,
         GraphQLModule.forRootAsync({
-            useFactory: async () => {
+            imports: [PrismaModule],
+            inject: [PrismaService],
+            useFactory: async (prismaService: PrismaService) => {
                 return {
+                    tracing: false,
                     autoSchemaFile: '~schema.gql',
+                    context: () => ({ prisma: prismaService }),
                 };
             },
         }),
