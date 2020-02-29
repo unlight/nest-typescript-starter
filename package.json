@@ -49,6 +49,7 @@
     "@nestjs/core": "^6.11.8",
     "@nestjs/graphql": "^6.6.2",
     "@nestjs/platform-express": "^6.11.8",
+    "@prisma/client": "^2.0.0-alpha.843",
     "apollo-server-express": "^2.10.1",
     "dataloader": "^2.0.0",
     "graphql": "^14.6.0",

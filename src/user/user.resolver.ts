@@ -9,8 +9,10 @@ export class UserResolver {
 
     @Query(returns => User)
     async randomUser(): Promise<User> {
-        // this.prisma.raw()
-        const result = await this.prisma.user.findOne({ where: { id: '1' } });
-        return result!;
+        const [result] = await this.prisma.raw<User[]>(`
+            select [id], [name], [email], [createdAt], [updatedAt]
+            from [User]
+            order by random() limit 1`);
+        return result;
     }
 }

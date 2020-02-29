@@ -82,9 +82,9 @@ $ npm ci
 -   https://github.com/notiz-dev/nestjs-prisma
 -   https://github.com/chnirt/nestjs-graphql-best-practice
 -   https://github.com/fivethree-team/nestjs-prisma-starter
+-   https://www.npmjs.com/package/typegraphql-prisma
 
 ## Todo
 
--   https://www.npmjs.com/package/typegraphql-prisma
 -   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
 -   Health endpoint
