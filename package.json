@@ -5,7 +5,7 @@
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
   "scripts": {
-    "postinstall": "patch-package",
+    "postinstall": "patch-package && npm run prisma:generate",
     "#build": "nest build --webpack",
     "build": "sh Taskfile build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
