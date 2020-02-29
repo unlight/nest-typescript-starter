@@ -4,14 +4,15 @@ set -e
 
 build() {
     set -x
-    rm -rfv dist
-    cp -rfv src dist
+    rm -rf dist
+    mkdir dist
+    cp -r src @generated dist/
     cat tsconfig.json | jq 'del(.include, .compilerOptions.outDir)' > dist/tsconfig.json
-    cp -v README.md LICENSE package.json dist
+    cp -v tsconfig.build.json dist
     cd dist
     /usr/bin/find . -name '*.spec.ts' | xargs rm -rvf
-    tsc -p .
-    rm -rvf tsconfig.json
+    nest build
+    rm -rvf tsconfig.build.json tsconfig.json tsconfig.build.tsbuildinfo
     cd ..
     set +x
 }

@@ -1,5 +1,5 @@
 import { User } from '@generated/type-graphql/models';
-import { Query, Resolver, Context, Args } from '@nestjs/graphql';
+import { Args, Context, Query, Resolver } from '@nestjs/graphql';
 
 import { UserService } from './user.service';
 import { FindOneUserArgs } from '@generated/type-graphql/resolvers/crud/User/args/FindOneUserArgs';
@@ -16,7 +16,7 @@ export class UserResolver {
     @Query(() => User, {
         nullable: true,
     })
-    async findOneUser(@Context() ctx: any, @Args() args: FindOneUserArgs): Promise<User | null> {
-        return ctx.prisma.user.findOne(args);
+    async findOneUser(@Context() context, @Args() args: FindOneUserArgs): Promise<User | null> {
+        return context.prisma.user.findOne(args);
     }
 }

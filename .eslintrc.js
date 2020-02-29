@@ -61,6 +61,7 @@ module.exports = {
                     prod: false,
                     ref: false,
                     params: false,
+                    args: false,
                 },
             },
         ],
