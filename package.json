@@ -34,7 +34,8 @@
     "prisma:w": "node -r dotenv/config node_modules/prisma2/build/index.js generate --watch",
     "prisma:generate": "node -r dotenv/config node_modules/prisma2/build/index.js generate",
     "prisma:studio": "node -r dotenv/config node_modules/prisma2/build/index.js studio --experimental",
-    "dev:update": "updtr --out --to latest --test \"npm test:r\""
+    "dev:update": "updtr --out --to latest --test \"npm test:r\"",
+    "sync-dotenv": "sync-dotenv"
   },
   "husky": {
     "hooks": {
@@ -94,6 +95,7 @@
     "prisma2": "^2.0.0-alpha.843",
     "stryker-cli": "^1.0.0",
     "supertest": "^4.0.2",
+    "sync-dotenv": "^2.4.0",
     "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
