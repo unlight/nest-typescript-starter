@@ -1,11 +1,11 @@
-### Description
+# nest-typescript-starter
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 -   This version (v6)
 -   [Previous version v5 (TypeScript, ESLint, Mocha, TypeORM, Stryker)](./tree/v5)
 
-### Stack
+## Stack
 
 -   NestJS
 -   TypeScript
@@ -14,13 +14,13 @@
 -   Jest
 -   Stryker
 
-### Installation
+## Installation
 
 ```bash
 $ npm ci
 ```
 
-### Task
+## Tasks
 
 | Command              | Description                              |
 | :------------------- | :--------------------------------------- |
@@ -32,12 +32,12 @@ $ npm ci
 | `npm run test:cov`   | Test coverage                            |
 | `npm run test:m`     | Run mutation tests (use wsl on Windows ) |
 
-### Project Structure
+## Project Structure
 
 -   `src` - Source code
 -   `@generated` - Generated code
 
-### Resources
+## Resources
 
 -   https://github.com/nestjs/nest/tree/master/examples
 -   GDG DevFest 2017 (Presentation) - https://github.com/Caballerog/devfestmalaga2017
@@ -83,7 +83,7 @@ $ npm ci
 -   https://github.com/chnirt/nestjs-graphql-best-practice
 -   https://github.com/fivethree-team/nestjs-prisma-starter
 
-### Todo
+## Todo
 
 -   https://www.npmjs.com/package/typegraphql-prisma
 -   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
