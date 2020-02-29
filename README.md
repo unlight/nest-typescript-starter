@@ -10,6 +10,7 @@
 -   NestJS
 -   TypeScript
 -   TypeGraphQL
+-   Prisma 2
 -   ESLint
 -   Jest
 -   Stryker
