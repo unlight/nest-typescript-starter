@@ -4,6 +4,7 @@ set -e
 
 build() {
     set -x
+    npm run prisma:generate
     rm -rf dist
     mkdir dist
     cp -r src @generated dist/
