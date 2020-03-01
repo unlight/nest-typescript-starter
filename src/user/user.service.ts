@@ -1,4 +1,3 @@
-import { User } from '@generated/type-graphql/models/User';
 import { Injectable } from '@nestjs/common';
 
 import { UserRepository } from './user.repository';
@@ -7,7 +6,7 @@ import { UserRepository } from './user.repository';
 export class UserService {
     constructor(private readonly userRepository: UserRepository) {}
 
-    async randomUser(): Promise<User> {
+    async randomUser() {
         return this.userRepository.randomUser();
     }
 }

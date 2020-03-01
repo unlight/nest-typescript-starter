@@ -84,6 +84,7 @@ $ npm ci
 -   https://github.com/chnirt/nestjs-graphql-best-practice
 -   https://github.com/fivethree-team/nestjs-prisma-starter
 -   https://www.npmjs.com/package/typegraphql-prisma
+-   https://github.com/benawad/nest-mongo-graphql
 
 ## Todo
 

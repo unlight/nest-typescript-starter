@@ -1,5 +1,5 @@
-import { User } from '@generated/type-graphql/models/User';
 import { Injectable } from '@nestjs/common';
+import { User } from '@prisma/client';
 
 import { PrismaService } from '../prisma/prisma.service';
 
@@ -7,7 +7,7 @@ import { PrismaService } from '../prisma/prisma.service';
 export class UserRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-    async randomUser(): Promise<User> {
+    async randomUser() {
         const [result] = await this.prisma.raw<User[]>(`
             select [id], [name], [email], [createdAt], [updatedAt]
             from [User]
