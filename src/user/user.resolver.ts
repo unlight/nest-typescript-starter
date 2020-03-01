@@ -1,11 +1,10 @@
-import { Args, Context, Query, Resolver, Info } from '@nestjs/graphql';
+import { Args, Context, Parent, Query, ResolveProperty, Resolver } from '@nestjs/graphql';
 
-import { UserService } from './user.service';
+import { Post } from '../post/models/post';
 import { PrismaService } from '../prisma/prisma.service';
 import { User } from './models/user';
-import { FindOneUserArgs, UserWhereUniqueInput } from './models/user.input';
-import { SelectFields } from '../common/select-fields.decorator';
-import { UserSelect } from '@prisma/client';
+import { UserWhereUniqueInput } from './models/user.input';
+import { UserService } from './user.service';
 
 @Resolver(() => User)
 export class UserResolver {
@@ -20,11 +19,20 @@ export class UserResolver {
     async findOneUser(
         @Context() context,
         @Args('where') where: UserWhereUniqueInput,
-        @SelectFields() select: UserSelect,
+        // @SelectFields() select: UserSelect,
     ) {
         return (context.prisma as PrismaService).user.findOne({
             where,
-            select,
+            // select,
         });
+    }
+
+    @ResolveProperty(() => [Post])
+    async posts(@Parent() user, @Context() context) {
+        const result = await (context.prisma as PrismaService).post.findMany({
+            first: 5,
+            where: { author: { id: user.id } },
+        });
+        return result || [];
     }
 }
