@@ -1,22 +1,14 @@
-import { InputType, Field, ObjectType, ID } from 'type-graphql';
+import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
+import { Field, InputType } from 'type-graphql';
 
 @InputType()
 export class UserCreateInput {
-    @Field(_type => ID)
-    id?: string | null;
+    @IsEmail()
+    @Field(_type => String, { nullable: false })
+    email: string;
 
-    @Field(_type => Date, {
-        nullable: true,
-    })
-    createdAt?: Date | null;
-
-    @Field(_type => String, {
-        nullable: false,
-    })
-    email!: string;
-
-    @Field(_type => String, {
-        nullable: true,
-    })
-    name?: string | null;
+    @IsNotEmpty()
+    @MinLength(3)
+    @Field(_type => String, { nullable: false })
+    name: string;
 }

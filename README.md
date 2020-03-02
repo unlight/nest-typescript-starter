@@ -85,10 +85,8 @@ $ npm ci
 -   https://github.com/fivethree-team/nestjs-prisma-starter
 -   https://www.npmjs.com/package/typegraphql-prisma
 -   https://github.com/benawad/nest-mongo-graphql
+-   https://github.com/MagnusCloudCorp/nestjs-type-graphql
 
 ## Todo
 
--   validate input args
--   https://github.com/MagnusCloudCorp/nestjs-type-graphql
--   https://github.com/MichalLytek/type-graphql/blob/prisma/examples/Readme.md
 -   Health endpoint

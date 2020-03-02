@@ -13,6 +13,9 @@
     "node_modules/tslint-consistent-codestyle"
   ],
   "rules": {
+    "no-implicit-dependencies": [true, ["@generated/type-graphql"]],
+    "no-submodule-imports": false,
+    "no-unnecessary-class": false,
     "member-ordering": [
       true,
       {
