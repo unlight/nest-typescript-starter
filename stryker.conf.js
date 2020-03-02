@@ -16,7 +16,7 @@ module.exports = function(config) {
         ],
         mutator: 'typescript',
         packageManager: 'npm',
-        reporters: ['progress', 'html'],
+        reporters: ['progress', 'html', 'clear-text'],
         testRunner: 'jest',
         transpilers: [],
         coverageAnalysis: 'off',
