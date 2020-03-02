@@ -8,6 +8,14 @@ import { PrismaModule } from './prisma/prisma.module';
 import { PrismaService } from './prisma/prisma.service';
 import { UserModule } from './user/user.module';
 
+export async function graphqlModuleFactory(prismaService: PrismaService) {
+    return {
+        tracing: false,
+        autoSchemaFile: '~schema.gql',
+        context: () => ({ prisma: prismaService }),
+    };
+}
+
 @Module({
     imports: [
         UserModule,
@@ -15,13 +23,7 @@ import { UserModule } from './user/user.module';
         GraphQLModule.forRootAsync({
             imports: [PrismaModule],
             inject: [PrismaService],
-            useFactory: async (prismaService: PrismaService) => {
-                return {
-                    tracing: false,
-                    autoSchemaFile: '~schema.gql',
-                    context: () => ({ prisma: prismaService }),
-                };
-            },
+            useFactory: graphqlModuleFactory,
         }),
     ],
     controllers: [AppController],
