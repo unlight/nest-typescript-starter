@@ -6,6 +6,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
     constructor() {
         super({
             errorFormat: 'minimal',
+            log: ['query'],
         });
     }
 

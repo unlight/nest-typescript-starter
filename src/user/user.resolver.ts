@@ -1,10 +1,11 @@
+import { FindManyPostArgs } from '@generated/type-graphql/resolvers/crud/Post/args/FindManyPostArgs';
 import { FindManyUserArgs } from '@generated/type-graphql/resolvers/crud/User/args/FindManyUserArgs';
 import { UserWhereUniqueInput } from '@generated/type-graphql/resolvers/inputs/UserWhereUniqueInput';
 import { Args, Context, Mutation, Parent, Query, ResolveProperty, Resolver } from '@nestjs/graphql';
 import { UserSelect } from '@prisma/client';
 
-import { SelectFields } from '../common/select-fields.decorator';
 import { Post } from '../post/models/post';
+import { Select } from '../prisma/select.decorator';
 import { GraphQLContext } from '../types';
 import { User } from './models/user';
 import { UserCreateInput } from './models/user-create-input';
@@ -23,7 +24,7 @@ export class UserResolver {
     async findOneUser(
         @Context() context: GraphQLContext,
         @Args('where') where: UserWhereUniqueInput,
-        @SelectFields() select: UserSelect,
+        @Select() select: UserSelect,
     ) {
         return context.prisma.user.findOne({
             where,
@@ -32,12 +33,8 @@ export class UserResolver {
     }
 
     @ResolveProperty(() => [Post])
-    async posts(@Parent() user, @Context() context: GraphQLContext) {
-        const result = await context.prisma.post.findMany({
-            first: 5,
-            where: { author: { id: user.id } },
-        });
-        return result || [];
+    async posts(@Parent() user: User, @Args() args: FindManyPostArgs) {
+        return user.posts;
     }
 
     @Query(() => [User])

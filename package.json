@@ -59,6 +59,7 @@
     "dataloader": "^2.0.0",
     "graphql": "^14.6.0",
     "graphql-fields": "^2.0.3",
+    "graphql-info-transformer": "0.0.1",
     "graphql-tools": "^4.0.7",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
