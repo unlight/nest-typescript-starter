@@ -6,4 +6,8 @@ module.exports = {
     transform: {
         '^.+\\.(t|j)s$': 'ts-jest',
     },
+    moduleNameMapper: {
+        '@generated/(.*)': '<rootDir>/../@generated/$1',
+        '~components/(.*)': '<rootDir>/../src/~components/$1',
+    },
 };
