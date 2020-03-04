@@ -21,6 +21,7 @@ module.exports = function(config) {
         transpilers: [],
         coverageAnalysis: 'off',
         tsconfigFile: 'tsconfig.json',
+        tempDirName: 'stryker-tmp',
         htmlReporter: {
             baseDir: 'coverage/mutation',
         },
