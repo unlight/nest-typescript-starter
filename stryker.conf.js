@@ -3,6 +3,7 @@ module.exports = function(config) {
         mutate: [
             'src/**/*.{ts,tsx}',
             '!src/**/*.spec.{ts,tsx}',
+            '!src/**/*.module.ts',
             '!src/examples/**/*',
             '!src/**/testing/**/*',
         ],
