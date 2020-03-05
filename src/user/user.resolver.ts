@@ -15,9 +15,9 @@ import { UserService } from './user.service';
 export class UserResolver {
     constructor(private readonly userService: UserService) {}
 
-    @Query(() => User)
+    @Query(() => User, { nullable: true })
     async randomUser() {
-        return this.userService.randomUser();
+        return this.userService.findOneRandom();
     }
 
     @Query(() => User, { nullable: true })
@@ -34,16 +34,16 @@ export class UserResolver {
 
     @ResolveProperty(() => [Post])
     async posts(@Parent() user: User, @Args() args: FindManyPostArgs) {
-        return user.posts;
+        return user.posts || [];
     }
 
     @Query(() => [User])
-    async findManyUser(@Context() context: GraphQLContext, @Args() args: FindManyUserArgs) {
-        return context.prisma.user.findMany(args);
+    async findManyUser(@Args() args: FindManyUserArgs) {
+        return this.userService.findMany(args);
     }
 
     @Mutation(() => User)
-    async createUser(@Context() context: GraphQLContext, @Args('data') data: UserCreateInput) {
-        return context.prisma.user.create({ data });
+    async createUser(@Args('data') data: UserCreateInput) {
+        return this.userService.create(data);
     }
 }

@@ -13,6 +13,7 @@ export async function graphqlModuleFactory(prismaService: PrismaService) {
         tracing: false,
         autoSchemaFile: '~schema.gql',
         context: () => ({ prisma: prismaService }),
+        // formatError: null as any,
     };
 }
 
