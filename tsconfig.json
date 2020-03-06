@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@generated/*": ["@generated/*"],
-      "~components/*": ["src/components/*"]
+      "~app_modules/*": ["src/app_modules/*"]
     }
   },
   "include": ["src/**/*.ts", "test/**/*.ts", "@generated/*"]

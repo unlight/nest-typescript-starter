@@ -5,11 +5,11 @@ import { Args, Context, Mutation, Parent, Query, ResolveProperty, Resolver } fro
 import { UserSelect } from '@prisma/client';
 
 import { Post } from '../post/models/post';
-import { Select } from '../prisma/select.decorator';
 import { GraphQLContext } from '../types';
 import { User } from './models/user';
 import { UserCreateInput } from './models/user-create-input';
 import { UserService } from './user.service';
+import { Select } from '~app_modules/nestjs-prisma-select';
 
 @Resolver(() => User)
 export class UserResolver {
