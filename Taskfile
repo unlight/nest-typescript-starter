@@ -15,6 +15,9 @@ build() {
     nest build
     # rm -rvf tsconfig.build.json tsconfig.json tsconfig.build.tsbuildinfo
     # cd ..
+    mkdir -p dist/prisma/migrations
+    cp -r prisma/migrations/* dist/prisma/migrations
+    cp prisma/schema.prisma dist/prisma
     set +x
 }
 
