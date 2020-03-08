@@ -7,14 +7,7 @@ build() {
     npm run prisma:generate
     rm -rf dist
     mkdir dist
-    # cp -r src/* dist/
-    # cat tsconfig.json | jq 'del(.include, .compilerOptions.outDir)' > dist/tsconfig.json
-    # cp -v tsconfig.build.json dist
-    # cd dist
-    # /usr/bin/find . -name '*.spec.ts' | xargs rm -rvf
     nest build
-    # rm -rvf tsconfig.build.json tsconfig.json tsconfig.build.tsbuildinfo
-    # cd ..
     mkdir -p dist/prisma/migrations
     cp -r prisma/migrations/* dist/prisma/migrations
     cp prisma/schema.prisma dist/prisma
