@@ -1,1 +1,8 @@
-node_modules/
+**
+!src
+!prisma
+!package.json
+!package-lock.json
+!Taskfile
+!tsconfig.build.json
+!nest-cli.json
