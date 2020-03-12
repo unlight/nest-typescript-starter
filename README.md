@@ -76,16 +76,15 @@ $ npm ci
 -   An easiest web app template on top of nest, TypeORM, Next.js and Material UI - https://github.com/saltyshiomix/ark
 -   Ever® - On-Demand Commerce Platform (Example Application) - https://github.com/ever-co/ever
 -   https://github.com/AryanJ-NYC/nestjs-graphql-tutorial
--   Example prisma2 integration - https://github.com/fivethree-team/nestjs-prisma-starter/tree/prisma2
 -   End to end repo testing all core components in this stack - https://github.com/webnoob/quasar-ts-jest-nestjs-apollojs-prisma2
 -   graphql-prisma2 with all(okay most of) the required configuration you need - https://github.com/5achinJani/graphql-prisma2
--   [nestjs-boiler](https://github.com/toondaey/nestjs-boiler)
--   [nestjs-prisma](https://github.com/notiz-dev/nestjs-prisma)
--   [nestjs-graphql-best-practice](https://github.com/chnirt/nestjs-graphql-best-practice)
--   [nestjs-prisma-starter](https://github.com/fivethree-team/nestjs-prisma-starter)
--   [typegraphql-prisma](https://www.npmjs.com/package/typegraphql-prisma)
--   [nest-mongo-graphql](https://github.com/benawad/nest-mongo-graphql)
--   [nestjs-type-graphql](https://github.com/MagnusCloudCorp/nestjs-type-graphql)
+-   https://github.com/toondaey/nestjs-boiler
+-   https://github.com/notiz-dev/nestjs-prisma
+-   https://github.com/chnirt/nestjs-graphql-best-practice
+-   Starter template for NestJS includes Graphql with Prisma Client, Passport-JWT authentication, Swagger Api and Docker - https://github.com/fivethree-team/nestjs-prisma-starter
+-   https://www.npmjs.com/package/typegraphql-prisma
+-   https://github.com/benawad/nest-mongo-graphql
+-   https://github.com/MagnusCloudCorp/nestjs-type-graphql
 
 ## Todo
 

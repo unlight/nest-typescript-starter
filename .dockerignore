@@ -4,5 +4,6 @@
 !package.json
 !package-lock.json
 !Taskfile
+!tsconfig.json
 !tsconfig.build.json
 !nest-cli.json
