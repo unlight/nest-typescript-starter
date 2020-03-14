@@ -8,6 +8,7 @@ module.exports = {
     },
     moduleNameMapper: {
         '@generated/(.*)': '<rootDir>/../@generated/$1',
-        '~components/(.*)': '<rootDir>/../src/~components/$1',
+        '~components/(.*)': '<rootDir>/../src/components/$1',
+        '~app_modules/(.*)': '<rootDir>/../src/app_modules/$1',
     },
 };

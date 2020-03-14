@@ -2,7 +2,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
--   This version (v6)
+-   [This version v7](./tree/master)
+-   [Previous version v6](./tree/v6)
 -   [Previous version v5 (TypeScript, ESLint, Mocha, TypeORM, Stryker)](./tree/v5)
 
 ## Stack

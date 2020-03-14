@@ -14,7 +14,8 @@ module.exports = {
     // modulePathIgnorePatterns: ['<rootDir>/dist'],
     moduleNameMapper: {
         '@generated/(.*)': '<rootDir>/../@generated/$1',
-        '~components/(.*)': '<rootDir>/~components/$1',
+        '~components/(.*)': '<rootDir>/components/$1',
+        '~app_modules/(.*)': '<rootDir>/app_modules/$1',
     },
     globals: {
         'ts-jest': {
