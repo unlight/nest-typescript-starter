@@ -1,0 +1,33 @@
+// This is Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+   provider = "node_modules/typegraphql-prisma/generator.js"
+   output   = "../@generated/type-graphql"
+}
+
+model User {
+  id         String    @id  @default(cuid())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  name      String?
+  posts      Post[]
+  countPosts  Int  @default(0)
+}
+
+model Post {
+  id         String    @id  @default(cuid())
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  author     User
+  title      String
+}
