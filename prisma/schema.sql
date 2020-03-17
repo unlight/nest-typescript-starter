@@ -8,11 +8,23 @@ BEGIN TRANSACTION;
 
 -- Table: User
 CREATE TABLE User (
-    id CHAR (36) NOT NULL PRIMARY KEY,
-    name VARCHAR (255),
-    email VARCHAR (255) UNIQUE NOT NULL,
-    createdAt DATETIME,
-    updatedAt DATETIME
+    createdAt DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    email     TEXT NOT NULL DEFAULT '',
+    id        TEXT NOT NULL,
+    name      TEXT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Post (
+    author    TEXT NOT NULL,
+    createdAt DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id        TEXT NOT NULL,
+    title     TEXT NOT NULL DEFAULT '',
+    updatedAt DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (author)
+    REFERENCES User (id) ON DELETE CASCADE
+                         ON UPDATE CASCADE
 );
 
 COMMIT TRANSACTION;
