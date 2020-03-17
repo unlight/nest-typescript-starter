@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "run-p start:dev prisma:w",
     "postinstall": "patch-package && npm run prisma:generate",
-    "#build": "nest build --webpack",
     "build": "sh Taskfile build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
