@@ -38,6 +38,7 @@ $ npm ci
 
 -   `src` - Source code
 -   `@generated` - Generated code
+-   `prisma` - DB toolkit to query, migrate and model your database
 
 ## Resources
 
