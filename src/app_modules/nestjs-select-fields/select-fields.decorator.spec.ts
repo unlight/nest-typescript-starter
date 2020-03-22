@@ -53,7 +53,7 @@ async function executeGraphQL(query) {
         fieldResolver: resolver,
     };
     const response: ExecutionResult = await graphql(graphqlArgs);
-    (createParamDecorator as jest.Mock).mockImplementation(callback => {
+    (createParamDecorator as jest.Mock).mockImplementation((callback) => {
         return callback.bind(undefined, undefined, [undefined, undefined, undefined, info]);
     });
     const { SelectFields } = await import('./select-fields.decorator');

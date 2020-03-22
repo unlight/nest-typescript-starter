@@ -4,12 +4,13 @@ import { UserWhereUniqueInput } from '@generated/type-graphql/resolvers/inputs/U
 import { Args, Context, Mutation, Parent, Query, ResolveProperty, Resolver } from '@nestjs/graphql';
 import { UserSelect } from '@prisma/client';
 
+import { Select } from '~app_modules/nestjs-prisma-select';
+
 import { Post } from '../post/models/post';
 import { GraphQLContext } from '../types';
 import { User } from './models/user';
 import { UserCreateInput } from './models/user-create-input';
 import { UserService } from './user.service';
-import { Select } from '~app_modules/nestjs-prisma-select';
 
 @Resolver(() => User)
 export class UserResolver {

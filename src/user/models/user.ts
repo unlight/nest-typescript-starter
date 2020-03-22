@@ -3,7 +3,7 @@ import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType({})
 export class User extends UserModel {
-    @Field(_type => ID, {
+    @Field((_type) => ID, {
         nullable: false,
         description: undefined,
     })
