@@ -28,6 +28,7 @@ export async function graphqlModuleFactory(prismaService: PrismaService) {
         }),
         LoggerModule.forRoot({
             pinoHttp: {
+                useLevel: 'trace',
                 level: process.env.NODE_ENV === 'production' ? 'warn' : 'info',
                 prettyPrint: process.env.NODE_ENV !== 'production',
             },
