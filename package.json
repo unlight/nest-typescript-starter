@@ -27,7 +27,7 @@
     "test:cov": "jest --runInBand --coverage --verbose",
     "test:d": "node --inspect-brk node_modules/jest/bin/jest --runInBand",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "node -r dotenv/config node_modules/jest/bin/jest --detectOpenHandles --config ./test/jest-e2e.config.js",
+    "test:e2e": "node -r dotenv/config node_modules/jest/bin/jest --runInBand --detectOpenHandles --config ./test/jest-e2e.config.js",
     "commit": "node node_modules/cz-customizable/standalone.js",
     "cmlint": "sh Taskfile commit_lint",
     "test:m": "stryker run",

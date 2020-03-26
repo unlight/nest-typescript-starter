@@ -23,16 +23,16 @@ describe('AppController (e2e)', () => {
         await app.close();
     });
 
-    it('/ (GET)', async (done) => {
-        await request(server).get('/').expect(200).expect('Hello World!');
-        done();
-    });
-
     it('graphql app version', async (done) => {
         const result = await request(server)
             .post('/graphql')
             .send({ query: `{ app { version } }` });
         expect(result.body.data).toEqual({ app: { version: '0.0.1' } });
+        done();
+    });
+
+    it('/ (GET)', async (done) => {
+        await request(server).get('/').expect(404);
         done();
     });
 });
