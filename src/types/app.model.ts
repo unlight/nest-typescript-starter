@@ -4,4 +4,7 @@ import { Field, ObjectType } from 'type-graphql';
 export class AppModel {
     @Field(() => String, { nullable: false })
     version: string;
+
+    @Field(() => String, { nullable: false })
+    databaseHealth: string;
 }

@@ -387,6 +387,7 @@ Temporary Items
 
 # Local
 .env
+.env*
 dist
 ~*
 app_bin
