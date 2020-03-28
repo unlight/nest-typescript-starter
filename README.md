@@ -87,6 +87,7 @@ $ npm ci
 -   https://www.npmjs.com/package/typegraphql-prisma
 -   https://github.com/benawad/nest-mongo-graphql
 -   https://github.com/MagnusCloudCorp/nestjs-type-graphql
+-   https://github.com/TimurRK/nestjs-example
 
 ## Todo
 
