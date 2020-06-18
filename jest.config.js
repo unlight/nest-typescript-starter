@@ -8,7 +8,7 @@ module.exports = {
         '^.+\\.tsx?$': 'ts-jest',
     },
     collectCoverage: false,
-    coverageDirectory: '<rootDir>/../coverage',
+    coverageDirectory: `${__dirname}/coverage`,
     coverageReporters: ['lcov', 'text'],
     collectCoverageFrom: ['**/*.ts', '!**/*.spec.ts', '!**/*.module.ts'],
     testRegex: ['(\\.|/)(test|spec)\\.[jt]sx?$'],

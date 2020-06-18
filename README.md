@@ -89,6 +89,7 @@ $ npm ci
 -   https://github.com/MagnusCloudCorp/nestjs-type-graphql
 -   https://github.com/TimurRK/nestjs-example
 -   A collection of badass modules and utilities to help you level up your NestJS applications - https://github.com/golevelup/nestjs
+-   https://github.com/TannerGabriel/nestjs-graphql-boilerplate
 
 ## Todo
 
