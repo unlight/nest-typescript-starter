@@ -4,7 +4,7 @@
 
 -   [Next version v7 (DOESNT WORK)](./tree/v7)
     -   [nestjs-graphql-prisma-realworld-example-app](https://github.com/unlight/nestjs-graphql-prisma-realworld-example-app)
--   [This version v6](./tree/v6)
+-   [This version v6](./tree/v6) (OUTDATED)
 -   [Previous version v5 (TypeScript, ESLint, Mocha, TypeORM, Stryker)](./tree/v5)
 
 ## Stack
