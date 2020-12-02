@@ -3,6 +3,7 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 -   [Next version v7 (DOESNT WORK)](./tree/v7)
+    -   [nestjs-graphql-prisma-realworld-example-app](https://github.com/unlight/nestjs-graphql-prisma-realworld-example-app)
 -   [This version v6](./tree/v6)
 -   [Previous version v5 (TypeScript, ESLint, Mocha, TypeORM, Stryker)](./tree/v5)
 
@@ -93,6 +94,7 @@ $ npm ci
 -   https://github.com/svtslv/nestjs-kubernetes
 -   https://github.com/lujakob/nestjs-realworld-example-app
 -   https://github.com/chnirt/nestjs-graphql-best-practice
+-   https://github.com/unlight/nestjs-graphql-prisma-realworld-example-app
 
 ## Todo
 
