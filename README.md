@@ -91,6 +91,8 @@ $ npm ci
 -   A collection of badass modules and utilities to help you level up your NestJS applications - https://github.com/golevelup/nestjs
 -   https://github.com/TannerGabriel/nestjs-graphql-boilerplate
 -   https://github.com/svtslv/nestjs-kubernetes
+-   https://github.com/lujakob/nestjs-realworld-example-app
+-   https://github.com/chnirt/nestjs-graphql-best-practice
 
 ## Todo
 
