@@ -95,6 +95,7 @@ $ npm ci
 -   https://github.com/lujakob/nestjs-realworld-example-app
 -   https://github.com/chnirt/nestjs-graphql-best-practice
 -   https://github.com/unlight/nestjs-graphql-prisma-realworld-example-app
+-   https://github.com/Sameerkash/Nest-microservcies
 
 ## Todo
 
