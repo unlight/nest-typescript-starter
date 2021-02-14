@@ -96,6 +96,9 @@ $ npm ci
 -   https://github.com/chnirt/nestjs-graphql-best-practice
 -   https://github.com/unlight/nestjs-graphql-prisma-realworld-example-app
 -   https://github.com/Sameerkash/Nest-microservcies
+-   https://github.com/toondaey/nestjs-module-boilerplate
+-   End to end build a project with NestJS - https://github.com/tienduy-nguyen/nestjs-flow
+-   https://github.com/tienduy-nguyen/nestjs-graphql-prisma - Boilerplate backend NestJS GraphQL project using Prisma 2 & PostgreSQL
 
 ## Todo
 
