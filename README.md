@@ -99,6 +99,8 @@ $ npm ci
 -   https://github.com/toondaey/nestjs-module-boilerplate
 -   End to end build a project with NestJS - https://github.com/tienduy-nguyen/nestjs-flow
 -   https://github.com/tienduy-nguyen/nestjs-graphql-prisma - Boilerplate backend NestJS GraphQL project using Prisma 2 & PostgreSQL
+-   https://github.com/Sairyss/domain-driven-hexagon
+-   https://wanago.io/2020/12/07/api-nestjs-introduction-cqrs/ - API with NestJS
 
 ## Todo
 
